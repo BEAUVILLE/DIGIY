@@ -1,390 +1,548 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <title>DIGIY POS PRO — Tarifs</title>
-  <meta name="description" content="Tarifs DIGIY POS PRO — 0% commission, paiement direct au pro."/>
-  <meta name="theme-color" content="#0A0E1A"/>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs DIGIYLYFE - Tous les Modules</title>
   <style>
-    :root{
-      --bg:#050814;
-      --card:#0B1120;
-      --card2:#0E172A;
-      --line:rgba(255,255,255,.10);
-      --text:#E5E7EB;
-      --muted:#9CA3AF;
-      --gold:#FACC15;
-      --green:#22C55E;
-      --orange:#F97316;
-      --red:#EF4444;
-      --radius:18px;
-      --shadow: 0 18px 50px rgba(0,0,0,.50);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; color:var(--text);
-      font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(250,204,21,.18), transparent 60%),
-        radial-gradient(900px 500px at 90% 0%, rgba(34,197,94,.14), transparent 55%),
-        linear-gradient(180deg, #030612, var(--bg));
-      min-height:100vh;
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:1100px; margin:0 auto; padding:18px 14px 40px}
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:10px; padding:10px 10px; border:1px solid var(--line);
-      background:rgba(11,17,32,.65); backdrop-filter: blur(10px);
-      border-radius:16px;
-    }
-    .brand{display:flex; align-items:center; gap:10px}
-    .logo{
-      width:40px; height:40px; border-radius:14px;
-      display:grid; place-items:center;
-      background: radial-gradient(120% 120% at 30% 20%, rgba(250,204,21,.35), rgba(34,197,94,.10));
-      border:1px solid rgba(250,204,21,.35);
-      box-shadow: 0 12px 35px rgba(250,204,21,.10);
-      font-family:Outfit; font-weight:900;
-    }
-    .brand h1{font-family:Outfit; font-size:14px; margin:0; letter-spacing:.2px}
-    .brand p{margin:0; font-size:12px; color:var(--muted)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:10px 12px; border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-weight:700; font-size:13px;
-    }
-    .btn:hover{transform:translateY(-1px); border-color:rgba(250,204,21,.30)}
-    .btn-primary{
-      background: linear-gradient(180deg, rgba(250,204,21,.25), rgba(250,204,21,.10));
-      border-color: rgba(250,204,21,.40);
-    }
-    .hero{padding:18px 4px 6px}
-    .hero h2{
-      font-family:Outfit; margin:10px 0 8px;
-      font-size:26px; line-height:1.12;
-    }
-    .hero .sub{
-      color:var(--muted); font-size:14px; line-height:1.55;
-      max-width:780px;
-    }
-    .pills{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .pill{
-      padding:7px 10px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      font-size:12px; color:var(--text);
-    }
-    .pill b{color:var(--gold)}
-    .grid{
-      display:grid; gap:12px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top:14px;
-    }
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
-      .hero h2{font-size:24px}
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .card .head{
-      padding:14px 14px 10px;
-      background: rgba(11,17,32,.55);
-      border-bottom:1px solid var(--line);
-    }
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      font-family:Outfit; font-weight:800;
-      font-size:12px; letter-spacing:.3px;
-      padding:6px 10px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-    }
-    .tag.gold{border-color: rgba(250,204,21,.35)}
-    .tag.green{border-color: rgba(34,197,94,.35)}
-    .tag.orange{border-color: rgba(249,115,22,.35)}
-    .title{
-      margin:10px 0 6px;
-      font-family:Outfit; font-weight:900;
-      letter-spacing:.2px; font-size:18px;
-    }
-    .desc{margin:0; color:var(--muted); font-size:13px; line-height:1.55}
-    .price{
-      display:flex; align-items:baseline; gap:8px;
-      margin-top:12px;
-      font-family:Outfit;
-    }
-    .price .amt{font-size:30px; font-weight:900}
-    .price .per{font-size:12px; color:var(--muted); font-weight:800}
-    .body{padding:12px 14px}
-    ul{margin:0; padding-left:18px; color:var(--text)}
-    li{margin:8px 0; color:#d1d5db; font-size:13px}
-    .muted{color:var(--muted)}
-    .actions{display:flex; gap:10px; flex-wrap:wrap; padding:14px; border-top:1px solid var(--line); background:rgba(2,6,23,.35)}
-    .btn-wide{flex:1; min-width:220px}
-    .btn-ghost{background:rgba(255,255,255,.03)}
-    .recommended{
-      outline:2px solid rgba(250,204,21,.35);
-      box-shadow: 0 18px 55px rgba(250,204,21,.13);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .panel{
-      margin-top:14px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:rgba(11,17,32,.55);
-      padding:14px;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #1e293b;
     }
-    .panel h3{margin:0 0 8px; font-family:Outfit}
-    .panel p{margin:6px 0; color:var(--muted); font-size:13px; line-height:1.6}
 
-    .foot{
-      margin-top:14px;
-      color:var(--muted);
-      font-size:12px;
-      text-align:center;
-      padding:8px 0;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .small{font-size:12px; color:var(--muted)}
-    .kpi{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .kpi .box{
-      flex:1; min-width:180px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:10px;
-      background:rgba(255,255,255,.02);
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     }
-    .kpi .box .n{font-family:Outfit; font-weight:900; font-size:16px}
-    .kpi .box .t{font-size:12px; color:var(--muted); margin-top:4px}
+
+    h1 {
+      font-size: 48px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 20px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 16px;
+      color: white;
+    }
+
+    .contact-info h3 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .contact-details {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .pay-button {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #facc15;
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      border-radius: 12px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 16px rgba(250, 204, 21, 0.4);
+    }
+
+    .pay-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(250, 204, 21, 0.6);
+      background: #fbbf24;
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .module-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s;
+    }
+
+    .module-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .module-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .module-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .module-description {
+      font-size: 15px;
+      font-weight: 600;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .price-badge {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-size: 24px;
+      font-weight: 900;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .tiers-container {
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 15px;
+    }
+
+    .tiers-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #334155;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tier {
+      background: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid #667eea;
+    }
+
+    .tier:last-child {
+      margin-bottom: 0;
+    }
+
+    .tier-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .tier-price {
+      font-size: 16px;
+      font-weight: 900;
+      color: #667eea;
+    }
+
+    .features {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .features li {
+      font-size: 14px;
+      font-weight: 600;
+      color: #475569;
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    .commission-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 900;
+      color: white;
+      text-align: center;
+      margin: 40px 0 30px 0;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .tagline {
+        font-size: 16px;
+      }
+
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .module-title {
+        font-size: 24px;
+      }
+
+      .price-badge {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-
-    <div class="topbar">
-      <div class="brand">
-        <div class="logo">♾️</div>
-        <div>
-          <h1>DIGIY POS PRO</h1>
-          <p>Tarifs — 0% commission • paiement direct • données au pro</p>
+  <div class="container">
+    <header>
+      <h1>🦅 DIGIYLYFE</h1>
+      <p class="tagline">L'Afrique enracinée, connectée au monde • 0% Commission</p>
+      
+      <div class="contact-info">
+        <h3>💳 Paiement & Contact</h3>
+        <div class="contact-details">
+          👤 JB BEAUVILLE<br>
+          📞 +221 77 134 28 89
         </div>
+        <a href="https://beauville.github.io/commencer-a-payer/" class="pay-button">
+          💰 COMMENCER À PAYER
+        </a>
+      </div>
+    </header>
+
+    <div class="section-title">📦 Modules Individuels</div>
+
+    <div class="modules-grid">
+      <!-- DIGIY DRIVER -->
+      <div class="module-card">
+        <div class="module-icon">🚗</div>
+        <h2 class="module-title">DIGIY DRIVER</h2>
+        <p class="module-description">
+          Transport VTC • GPS temps réel • Courses instantanées • Paiement sécurisé
+        </p>
+        <div class="price-badge">9,900 F/mois</div>
+        <ul class="features">
+          <li>Géolocalisation GPS en temps réel</li>
+          <li>Calcul automatique de distance</li>
+          <li>Paiement Wave & Orange Money</li>
+          <li>Historique des courses</li>
+        </ul>
+        <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <div style="display:flex; gap:8px; flex-wrap:wrap">
-        <a class="btn btn-ghost" href="core.html">← Retour HUB</a>
-        <a class="btn btn-primary" href="#" id="btnWhats">💬 Demander une licence</a>
-      </div>
-    </div>
-
-    <div class="hero">
-      <h2>Une caisse simple. Puissante. Et 100% au service du pro.</h2>
-      <div class="sub">
-        Le client paie, le pro encaisse. Point. Pas de commission cachée.
-        Tu pilotes ta boutique avec de vraies données, et tu peux activer en 2 minutes sur téléphone, tablette ou PC.
-      </div>
-
-      <div class="pills">
-        <div class="pill">✅ <b>0%</b> commission</div>
-        <div class="pill">✅ Paiement direct (Espèces / Wave / OM)</div>
-        <div class="pill">✅ Installation PWA</div>
-        <div class="pill">✅ Support terrain</div>
-      </div>
-
-      <div class="kpi">
-        <div class="box"><div class="n">Activation</div><div class="t">Licence + WhatsApp (2 min)</div></div>
-        <div class="box"><div class="n">Encaissement</div><div class="t">Direct pro, sans détour</div></div>
-        <div class="box"><div class="n">Données</div><div class="t">Ventes, produits, stocks</div></div>
-      </div>
-    </div>
-
-    <div class="grid">
-
-      <!-- START -->
-      <div class="card">
-        <div class="head">
-          <div class="tag green">🌱 START</div>
-          <div class="title">Starter Boutique</div>
-          <p class="desc">Parfait pour démarrer propre et encaisser dès aujourd’hui.</p>
-          <div class="price">
-            <div class="amt">9 900</div>
-            <div class="per">FCFA / mois</div>
+      <!-- DIGIY LOC -->
+      <div class="module-card">
+        <div class="module-icon">🏠</div>
+        <h2 class="module-title">DIGIY LOC</h2>
+        <p class="module-description">
+          Location courte durée • Gestion logements • Réservations • 0% commission
+        </p>
+        <div class="price-badge">À partir de 9,900 F/mois</div>
+        
+        <div class="tiers-container">
+          <div class="tiers-title">Par nombre de logements</div>
+          <div class="tier">
+            <span class="tier-name">🥉 1 à 5 logements</span>
+            <span class="tier-price">9,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥈 6 à 9 logements</span>
+            <span class="tier-price">15,000 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥇 10 à 20 logements</span>
+            <span class="tier-price">25,000 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">💎 21 à 30 logements</span>
+            <span class="tier-price">30,000 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">👑 Plus de 30 logements</span>
+            <span class="tier-price">50,000 F</span>
           </div>
         </div>
-        <div class="body">
-          <ul>
-            <li>Produits illimités</li>
-            <li>Tickets & historique ventes</li>
-            <li>Modes de paiement : espèces, Wave, OM</li>
-            <li class="muted">1 point de vente (1 boutique)</li>
-          </ul>
-          <div class="small">Idéal : kiosque, petite boutique, pop-up.</div>
-        </div>
-        <div class="actions">
-          <button class="btn btn-wide btn-ghost" data-plan="Starter Boutique" data-price="9900">Choisir</button>
-          <a class="btn btn-wide btn-primary" href="#" data-cta="whats" data-plan="Starter Boutique" data-price="9900">💬 Licence</a>
-        </div>
+        <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- PRO (RECO) -->
-      <div class="card recommended">
-        <div class="head">
-          <div class="tag gold">👑 PRO (Recommandé)</div>
-          <div class="title">Pro Boutique</div>
-          <p class="desc">Le pack terrain : caisse + gestion + rythme de croisière.</p>
-          <div class="price">
-            <div class="amt">24 900</div>
-            <div class="per">FCFA / mois</div>
+      <!-- DIGIY RESTO PRO -->
+      <div class="module-card">
+        <div class="module-icon">🍽️</div>
+        <h2 class="module-title">DIGIY RESTO PRO</h2>
+        <p class="module-description">
+          Gestion restaurant complète • Plan de salle • Commandes • KDS • Caisse • Offline
+        </p>
+        <div class="price-badge">À partir de 9,900 F/mois</div>
+        
+        <div class="tiers-container">
+          <div class="tiers-title">Par nombre de licences</div>
+          <div class="tier">
+            <span class="tier-name">🥉 ESSENTIEL • 2 licences (15 tables)</span>
+            <span class="tier-price">9,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥈 STANDARD • 4 licences (30 tables)</span>
+            <span class="tier-price">14,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥇 PRO • 6 licences (45 tables)</span>
+            <span class="tier-price">24,900 F</span>
           </div>
         </div>
-        <div class="body">
-          <ul>
-            <li>Tout Starter + suivi avancé</li>
-            <li>Gestion stock simple + alertes</li>
-            <li>Multi-caissiers (équipe)</li>
-            <li class="muted">1–3 points de vente (selon configuration)</li>
-          </ul>
-          <div class="small">Idéal : boutique active, linge/robes, supérette, pharmacie.</div>
-        </div>
-        <div class="actions">
-          <button class="btn btn-wide btn-ghost" data-plan="Pro Boutique" data-price="24900">Choisir</button>
-          <a class="btn btn-wide btn-primary" href="#" data-cta="whats" data-plan="Pro Boutique" data-price="24900">💬 Licence</a>
-        </div>
+        
+        <ul class="features">
+          <li>Plan de salle interactif</li>
+          <li>Prise de commande multi-zones</li>
+          <li>Kitchen Display System</li>
+          <li>Caisse avec imprimante thermique</li>
+          <li>Mode hors ligne</li>
+        </ul>
+        <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- ELITE -->
-      <div class="card">
-        <div class="head">
-          <div class="tag orange">⚔️ ELITE</div>
-          <div class="title">Elite Réseau</div>
-          <p class="desc">Pour ceux qui veulent un dispositif solide, scalable.</p>
-          <div class="price">
-            <div class="amt">49 900</div>
-            <div class="per">FCFA / mois</div>
+      <!-- DIGIY RÉSA -->
+      <div class="module-card">
+        <div class="module-icon">📅</div>
+        <h2 class="module-title">DIGIY RÉSA</h2>
+        <p class="module-description">
+          Réservations restaurant • Planning temps réel • SMS auto • Gestion tables
+        </p>
+        <div class="price-badge">À partir de 9,900 F/mois</div>
+        
+        <div class="tiers-container">
+          <div class="tiers-title">Par nombre de tables</div>
+          <div class="tier">
+            <span class="tier-name">🥉 1 à 5 tables</span>
+            <span class="tier-price">9,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥈 6 à 9 tables</span>
+            <span class="tier-price">15,000 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥇 10 à 20 tables</span>
+            <span class="tier-price">25,000 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">💎 21 à 30 tables</span>
+            <span class="tier-price">30,000 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">👑 Plus de 30 tables</span>
+            <span class="tier-price">50,000 F</span>
           </div>
         </div>
-        <div class="body">
-          <ul>
-            <li>Tout Pro + suivi multi-points</li>
-            <li>Rapports détaillés (jour/semaine/mois)</li>
-            <li>Paramètres avancés + accompagnement</li>
-            <li class="muted">Réseau : plusieurs boutiques</li>
-          </ul>
-          <div class="small">Idéal : mini-chaîne, réseau, alliance terrain.</div>
-        </div>
-        <div class="actions">
-          <button class="btn btn-wide btn-ghost" data-plan="Elite Réseau" data-price="49900">Choisir</button>
-          <a class="btn btn-wide btn-primary" href="#" data-cta="whats" data-plan="Elite Réseau" data-price="49900">💬 Licence</a>
-        </div>
+        <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-    </div>
+      <!-- DIGIY POS PRO -->
+      <div class="module-card">
+        <div class="module-icon">🧾</div>
+        <h2 class="module-title">DIGIY POS PRO</h2>
+        <p class="module-description">
+          Caisse enregistreuse pro • Gestion stock • Ventes • Stats • Multi-utilisateurs
+        </p>
+        <div class="price-badge">12,900 F/mois</div>
+        <ul class="features">
+          <li>Caisse tactile intuitive</li>
+          <li>Gestion complète du stock</li>
+          <li>Statistiques de vente en temps réel</li>
+          <li>Multi-utilisateurs avec droits</li>
+          <li>Imprimante thermique 80mm</li>
+          <li>Mode hors ligne</li>
+        </ul>
+        <div class="commission-badge">✅ 0% Commission</div>
+      </div>
 
-    <div class="panel" id="panelChoice" style="display:none">
-      <h3>✅ Plan sélectionné</h3>
-      <p id="choiceTxt" style="margin:0"></p>
-      <p class="small">Prochaine étape : on génère ta licence et on l’active. Paiement direct (Wave/OM) possible.</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
-        <a class="btn btn-primary" id="choiceWhats" href="#">💬 Demander la licence maintenant</a>
-        <a class="btn btn-ghost" href="digiy-pos-pro.html">→ Ouvrir le POS</a>
+      <!-- DIGIY MARKET -->
+      <div class="module-card">
+        <div class="module-icon">🛒</div>
+        <h2 class="module-title">DIGIY MARKET</h2>
+        <p class="module-description">
+          Marketplace • Vente en ligne • Catalogue produits • Paiement mobile
+        </p>
+        <div class="price-badge">12,900 F/mois</div>
+        <ul class="features">
+          <li>Boutique en ligne personnalisée</li>
+          <li>Catalogue produits illimité</li>
+          <li>Paiement Wave & Orange Money</li>
+          <li>Gestion commandes</li>
+          <li>Stats et analytics</li>
+        </ul>
+        <div class="commission-badge">✅ 0% Commission</div>
+      </div>
+
+      <!-- DIGIY JOBS -->
+      <div class="module-card">
+        <div class="module-icon">💼</div>
+        <h2 class="module-title">DIGIY JOBS</h2>
+        <p class="module-description">
+          Emploi & recrutement • Offres d'emploi • Candidatures • CV en ligne
+        </p>
+        <div class="price-badge">7,900 F/mois</div>
+        <ul class="features">
+          <li>Publication offres illimitées</li>
+          <li>Réception candidatures</li>
+          <li>Tri et filtrage avancé</li>
+          <li>CV en ligne des candidats</li>
+          <li>Messagerie intégrée</li>
+        </ul>
+        <div class="commission-badge">✅ 0% Commission</div>
+      </div>
+
+      <!-- DIGIY BUILD -->
+      <div class="module-card">
+        <div class="module-icon">🏗️</div>
+        <h2 class="module-title">DIGIY BUILD</h2>
+        <p class="module-description">
+          Artisans & construction • Devis • Chantiers • Portfolio • Avis clients
+        </p>
+        <div class="price-badge">9,900 F/mois</div>
+        <ul class="features">
+          <li>Portfolio de réalisations</li>
+          <li>Système de devis</li>
+          <li>Gestion de chantiers</li>
+          <li>Avis clients vérifiés</li>
+          <li>Géolocalisation</li>
+        </ul>
+        <div class="commission-badge">✅ 0% Commission</div>
       </div>
     </div>
 
-    <div class="panel">
-      <h3>Activation licence</h3>
-      <p>
-        Tu reçois un code du type <b>DIGIY-XXXX-XXXX</b>. Tu le colles dans le POS et c’est parti.
-        Pour les démos, ton compte admin peut entrer directement (si activé côté guard).
-      </p>
-      <p class="small">⚠️ Les prix ci-dessus sont indicatifs : tu peux les ajuster à tout moment selon la stratégie terrain.</p>
+    <!-- DIGIY FRET Section séparée -->
+    <div class="section-title">🚚 DIGIY FRET - Transport & Logistique</div>
+
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-icon">🚚</div>
+        <h2 class="module-title">DIGIY FRET CHAUFFEUR</h2>
+        <p class="module-description">
+          Transport marchandises • 4 zones géographiques • Commandes pro
+        </p>
+        
+        <div class="tiers-container">
+          <div class="tiers-title">Tarifs Chauffeur par Zone</div>
+          <div class="tier">
+            <span class="tier-name">🥉 LOCAL (moins de 50km)</span>
+            <span class="tier-price">14,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥈 RÉGIONAL (50-200km)</span>
+            <span class="tier-price">29,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥇 NATIONAL (200km+)</span>
+            <span class="tier-price">49,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">👑 INTERNATIONAL (CEDEAO)</span>
+            <span class="tier-price">99,900 F</span>
+          </div>
+        </div>
+        <div class="commission-badge">✅ 0% Commission</div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-icon">📦</div>
+        <h2 class="module-title">DIGIY FRET CLIENT</h2>
+        <p class="module-description">
+          Envoyer marchandises • Suivi GPS • Tarifs transparents • Paiement mobile
+        </p>
+        
+        <div class="tiers-container">
+          <div class="tiers-title">Tarifs Client par Zone</div>
+          <div class="tier">
+            <span class="tier-name">🥉 LOCAL (moins de 50km)</span>
+            <span class="tier-price">4,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥈 RÉGIONAL (50-200km)</span>
+            <span class="tier-price">19,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">🥇 NATIONAL (200km+)</span>
+            <span class="tier-price">39,900 F</span>
+          </div>
+          <div class="tier">
+            <span class="tier-name">👑 INTERNATIONAL (CEDEAO)</span>
+            <span class="tier-price">69,900 F</span>
+          </div>
+        </div>
+        <div class="commission-badge">✅ 0% Commission</div>
+      </div>
     </div>
 
-    <div class="foot">DIGIYLYFE ♾️ — Built here. Built to last.</div>
+    <!-- Contact final -->
+    <header style="margin-top: 40px;">
+      <h2 style="color: #1e293b; margin-bottom: 20px;">💳 Prêt à commencer ?</h2>
+      <div class="contact-info">
+        <h3>Contacte JB BEAUVILLE</h3>
+        <div class="contact-details">
+          📞 +221 77 134 28 89<br>
+          💬 WhatsApp disponible
+        </div>
+        <a href="https://beauville.github.io/commencer-a-payer/" class="pay-button">
+          🚀 COMMENCER À PAYER MAINTENANT
+        </a>
+      </div>
+    </header>
   </div>
-
-<script>
-  // ⚙️ Paramètres simples (modifie si tu veux)
-  const WHATSAPP_ADMIN = "+221771234567"; // mets ton numéro démo / support
-  const DEFAULT_CITY = "Saly";
-
-  function waLink(text){
-    const n = WHATSAPP_ADMIN.replace(/\D/g,'');
-    return "https://wa.me/" + n + "?text=" + encodeURIComponent(text);
-  }
-
-  // Bouton WhatsApp global
-  document.getElementById("btnWhats").addEventListener("click", (e)=>{
-    e.preventDefault();
-    const msg =
-`Salam DIGIY ♾️
-Je veux activer DIGIY POS PRO.
-
-Ville: ${DEFAULT_CITY}
-Plan: (à préciser)
-Nom boutique:
-Téléphone:
-Je veux une licence DIGIY-XXXX-XXXX.`;
-    location.href = waLink(msg);
-  });
-
-  // Sélection de plan + CTA WhatsApp par plan
-  const panel = document.getElementById("panelChoice");
-  const choiceTxt = document.getElementById("choiceTxt");
-  const choiceWhats = document.getElementById("choiceWhats");
-
-  function setChoice(plan, price){
-    panel.style.display = "block";
-    choiceTxt.textContent = `Plan: ${plan} — ${Number(price).toLocaleString("fr-FR")} FCFA / mois`;
-    const msg =
-`Salam DIGIY ♾️
-Activation DIGIY POS PRO
-
-Ville: ${DEFAULT_CITY}
-Plan: ${plan} (${Number(price).toLocaleString("fr-FR")} FCFA/mois)
-Nom boutique:
-Téléphone:
-Merci de générer ma licence (DIGIY-XXXX-XXXX).`;
-    choiceWhats.href = waLink(msg);
-    panel.scrollIntoView({behavior:"smooth", block:"start"});
-  }
-
-  document.querySelectorAll("button[data-plan]").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      setChoice(btn.dataset.plan, btn.dataset.price);
-    });
-  });
-
-  document.querySelectorAll("a[data-cta='whats']").forEach(a=>{
-    a.addEventListener("click", (e)=>{
-      e.preventDefault();
-      const plan = a.dataset.plan;
-      const price = a.dataset.price;
-      const msg =
-`Salam DIGIY ♾️
-Activation DIGIY POS PRO
-
-Ville: ${DEFAULT_CITY}
-Plan: ${plan} (${Number(price).toLocaleString("fr-FR")} FCFA/mois)
-Nom boutique:
-Téléphone:
-Je veux ma licence DIGIY-XXXX-XXXX.`;
-      location.href = waLink(msg);
-    });
-  });
-</script>
 </body>
 </html>
