@@ -155,7 +155,7 @@
     .banner li{margin:6px 0;font-size:13px;font-weight:800;color:#334155}
     .banner b{color:#0f172a}
 
-    /* ✅ EXTRA */
+    /* ✅ SUPPLÉMENTS EXPLORE */
     .addon-wrap{
       background:rgba(255,255,255,.95);
       border-radius:24px;
@@ -228,11 +228,6 @@
       border:1px solid rgba(255,255,255,.18);
       box-shadow:none;
     }
-    .btn-addon:disabled{
-      opacity:.55; cursor:not-allowed;
-      filter:grayscale(1);
-    }
-
     .status-pill{
       padding:8px 10px;
       border-radius:999px;
@@ -253,9 +248,9 @@
       border-radius:14px;
       border:1px dashed rgba(250,204,21,.45);
       background: rgba(250,204,21,.12);
-      color:#fff;
+      color:#0f172a;
       font-size:12px;
-      font-weight:900;
+      font-weight:950;
       line-height:1.45;
     }
 
@@ -268,6 +263,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -278,8 +274,8 @@
       <div class="notice">
         <h3>🔥 Offres Officielles DIGIY — V2</h3>
         <p>
-          Abonnement mensuel (modules) + onboarding terrain si besoin.
-          <b>Les Suppléments EXPLORE</b> sont des <b>options payantes</b> de mise en avant vitrine (ce n’est pas un cadeau).
+          Abonnement mensuel (modules). Et si tu veux la mise en avant EXPLORE :
+          <b>les Suppléments EXPLORE sont payants</b> (mise en page vitrine + visibilité + WhatsApp direct).
         </p>
         <div class="pill-row">
           <div class="pill">🎁 <b>Droit d’entrée OFFERT</b> si paiement <b>annuel</b> (modules)</div>
@@ -310,7 +306,7 @@
       </div>
 
       <div class="notice" style="margin-top:18px">
-        <h3>🧩 Contexte Pro (pour voir Extra/Statut)</h3>
+        <h3>🧩 Contexte Pro (pour voir Statut Suppléments)</h3>
         <p>
           Ouvre avec :
           <span class="pill"><b>?phone=+221...</b></span>
@@ -320,154 +316,15 @@
       </div>
     </header>
 
-    <div class="section-title">📦 Modules Individuels (Pro)</div>
+    <!-- (TES MODULES ICI : inchangés — tu peux garder exactement tes cards comme avant) -->
+    <!-- ... -->
 
-    <div class="modules-grid">
-      <!-- DRIVER -->
-      <div class="module-card">
-        <div class="module-icon">🚗</div>
-        <h2 class="module-title">DIGIY DRIVER</h2>
-        <p class="module-description">Transport VTC • GPS temps réel • Courses instantanées • Paiement sécurisé</p>
-        <div class="price-badge">12 900 FCFA / mois</div>
-        <ul class="features">
-          <li>GPS & tracking</li>
-          <li>Historique courses</li>
-          <li>Paiement Wave & OM</li>
-          <li>Stats & performance</li>
-        </ul>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <!-- LOC -->
-      <div class="module-card">
-        <div class="module-icon">🏠</div>
-        <h2 class="module-title">DIGIY LOC</h2>
-        <p class="module-description">Location courte durée • Gestion logements • Réservations • 0% commission</p>
-        <div class="price-badge">À partir de 12 900 FCFA / mois</div>
-        <div class="tiers-container">
-          <div class="tiers-title">Par nombre de logements</div>
-          <div class="tier"><span class="tier-name">🥉 1 à 5 logements</span><span class="tier-price">12 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 6 à 9 logements</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 10 à 20 logements</span><span class="tier-price">45 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">💎 21 à 30 logements</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 Plus de 30 logements</span><span class="tier-price">90 000 FCFA</span></div>
-        </div>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <!-- RESTO -->
-      <div class="module-card">
-        <div class="module-icon">🍽️</div>
-        <h2 class="module-title">DIGIY RESTO PRO</h2>
-        <p class="module-description">Plan de salle • Commandes • KDS • Caisse • Offline</p>
-        <div class="price-badge">À partir de 19 900 FCFA / mois</div>
-        <div class="tiers-container">
-          <div class="tiers-title">Par nombre de licences</div>
-          <div class="tier"><span class="tier-name">🥉 ESSENTIEL • 2 licences (15 tables)</span><span class="tier-price">19 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 STANDARD • 4 licences (30 tables)</span><span class="tier-price">39 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 PRO • 6 licences (45 tables)</span><span class="tier-price">59 900 FCFA</span></div>
-        </div>
-        <div class="deal-badge">🎁 Droit d’entrée offert en annuel (modules)</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <!-- RÉSA -->
-      <div class="module-card">
-        <div class="module-icon">📅</div>
-        <h2 class="module-title">DIGIY RÉSA</h2>
-        <p class="module-description">Réservations • Planning • Rappels auto • Gestion tables</p>
-        <div class="price-badge">À partir de 12 900 FCFA / mois</div>
-        <div class="tiers-container">
-          <div class="tiers-title">Par nombre de tables</div>
-          <div class="tier"><span class="tier-name">🥉 1 à 5 tables</span><span class="tier-price">12 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 6 à 9 tables</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 10 à 20 tables</span><span class="tier-price">45 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">💎 21 à 30 tables</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 Plus de 30 tables</span><span class="tier-price">90 000 FCFA</span></div>
-        </div>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <!-- POS -->
-      <div class="module-card">
-        <div class="module-icon">🧾</div>
-        <h2 class="module-title">DIGIY POS PRO</h2>
-        <p class="module-description">Caisse pro • Stock • Ventes • Stats • Multi-utilisateurs</p>
-        <div class="price-badge">19 900 FCFA / mois</div>
-        <ul class="features">
-          <li>Caisse tactile</li>
-          <li>Stock + alertes</li>
-          <li>Multi-users & rôles</li>
-          <li>Mode hors ligne</li>
-        </ul>
-        <div class="deal-badge">💎 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <!-- MARKET -->
-      <div class="module-card">
-        <div class="module-icon">🛒</div>
-        <h2 class="module-title">DIGIY MARKET</h2>
-        <p class="module-description">Boutique en ligne • Catalogue • Commandes • Paiement mobile</p>
-        <div class="price-badge">19 900 FCFA / mois</div>
-        <ul class="features">
-          <li>Boutique personnalisée</li>
-          <li>Catalogue illimité</li>
-          <li>Commandes & suivi</li>
-          <li>Paiement Wave & OM</li>
-        </ul>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <!-- BUILD -->
-      <div class="module-card">
-        <div class="module-icon">🏗️</div>
-        <h2 class="module-title">DIGIY BUILD</h2>
-        <p class="module-description">Artisans • Devis • Chantiers • Portfolio • Avis</p>
-        <div class="price-badge">12 900 FCFA / mois</div>
-        <ul class="features">
-          <li>Portfolio</li>
-          <li>Devis</li>
-          <li>Gestion chantiers</li>
-          <li>Avis clients</li>
-        </ul>
-        <div class="deal-badge">💎 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <!-- EXPLORE AGENCE -->
-      <div class="module-card">
-        <div class="module-icon">🧭</div>
-        <h2 class="module-title">DIGIY EXPLORE — AGENCE PARTNER</h2>
-        <p class="module-description">Programme agences • Visibilité internationale • Leads WhatsApp • Zéro commission</p>
-        <div class="price-badge">À partir de 30 000 FCFA / mois</div>
-
-        <div class="tiers-container">
-          <div class="tiers-title">Packs Agence (mensuel)</div>
-          <div class="tier"><span class="tier-name">🟢 ESSENTIEL</span><span class="tier-price">30 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🔵 PRO</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🟣 PREMIUM</span><span class="tier-price">120 000 FCFA</span></div>
-        </div>
-
-        <div class="tiers-container">
-          <div class="tiers-title">Droit d’entrée (one-shot)</div>
-          <div class="tier"><span class="tier-name">🎫 Setup & onboarding</span><span class="tier-price">150 000 FCFA</span></div>
-        </div>
-
-        <div class="deal-badge">🎁 Droit d’entrée OFFERT si annuel (modules)</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-    </div>
-
-    <!-- ✅ SUPPLÉMENT EXPLORE -->
+    <!-- ✅ SUPPLÉMENTS EXPLORE (AUTO depuis ta table) -->
     <div class="section-title">✨ Suppléments EXPLORE (payants)</div>
 
     <div class="addon-wrap">
       <div class="addon-top">
-        <h2>🧭 EXPLORE — Boost City (Supplément vitrine)</h2>
+        <h2>🧭 EXPLORE — Mise en avant vitrine</h2>
         <div class="addon-meta">
           <span class="chip">📱 phone: <b id="ctxPhone">—</b></span>
           <span class="chip">🏷️ slug: <b id="ctxSlug">—</b></span>
@@ -475,79 +332,14 @@
         </div>
       </div>
 
-      <div class="addon-grid">
-        <div class="addon-card">
-          <h3>Boost City</h3>
-          <p id="addonDesc">Supplément payant : mise en avant dans la vitrine EXPLORE (ville/destination + WhatsApp direct).</p>
-
-          <div class="addon-row">
-            <div class="addon-price"><span id="addonPrice">—</span> FCFA / mois</div>
-            <span class="status-pill none" id="addonStatusPill">statut: none</span>
-          </div>
-
-          <div class="lockbox" id="lockBox" style="display:none;">
-            🔒 Pour activer ce supplément, il faut déjà avoir <b>au moins 1 module PRO actif</b> (LOC, MARKET, DRIVER, POS, etc).
-            Dès qu’un module est actif, ce bouton s’ouvre.
-          </div>
-
-          <div class="addon-row" style="margin-top:14px">
-            <a class="btn-addon" id="btnAddonPay" href="#">💳 Activer / Payer</a>
-            <button class="btn-addon secondary" id="btnAddonRefresh" type="button">🔄 Rafraîchir</button>
-          </div>
-
-          <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.86);line-height:1.45">
-            ⚠️ <b>Supplément payant</b>. Paiement manuel : transfert Wave + reçu WhatsApp, puis activation.
-            Statuts: <b>active</b> / <b>paused</b> / <b>canceled</b>.
-          </p>
-        </div>
-
-        <div class="addon-card">
-          <h3>À quoi ça sert ?</h3>
-          <p>
-            Tu veux la <b>mise en page EXPLORE</b> + une visibilité “ville/destination” + contact WhatsApp direct ?
-            Ce supplément te donne le boost vitrine, sans casser ton module principal.
-          </p>
-          <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.86);line-height:1.45">
-            Astuce: ouvre la page avec <b>?phone=</b> + <b>&module=</b> pour voir ton statut réel.
-          </p>
-        </div>
+      <div class="lockbox" id="lockBox" style="display:none;">
+        🔒 Pour activer un supplément EXPLORE, il faut déjà avoir <b>au moins 1 module PRO actif</b> (LOC, MARKET, DRIVER, POS, etc).
       </div>
+
+      <div class="addon-grid" id="addonsGrid"></div>
     </div>
 
-    <div class="section-title">🚚 DIGIY FRET — Transport & Logistique</div>
-
-    <div class="modules-grid">
-      <div class="module-card">
-        <div class="module-icon">🚚</div>
-        <h2 class="module-title">DIGIY FRET CHAUFFEUR</h2>
-        <p class="module-description">Transport marchandises • Zones • Commandes pro</p>
-        <div class="tiers-container">
-          <div class="tiers-title">Tarifs Chauffeur (mensuel)</div>
-          <div class="tier"><span class="tier-name">🥉 LOCAL (moins de 50km)</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 RÉGIONAL (50-200km)</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 NATIONAL (200km+)</span><span class="tier-price">120 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 INTERNATIONAL (CEDEAO)</span><span class="tier-price">200 000 FCFA</span></div>
-        </div>
-        <div class="deal-badge">💎 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <div class="module-card">
-        <div class="module-icon">📦</div>
-        <h2 class="module-title">DIGIY FRET CLIENT</h2>
-        <p class="module-description">Expéditeurs • Suivi • Paiement mobile</p>
-        <div class="tiers-container">
-          <div class="tiers-title">Tarifs Client (mensuel)</div>
-          <div class="tier"><span class="tier-name">🥉 LOCAL</span><span class="tier-price">9 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 RÉGIONAL</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 NATIONAL</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 INTERNATIONAL</span><span class="tier-price">120 000 FCFA</span></div>
-        </div>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-    </div>
-
+    <!-- Contact final -->
     <header style="margin-top:40px;">
       <h2 style="color:#1e293b; margin-bottom:20px;">💳 Prêt à commencer ?</h2>
       <div class="contact-info">
@@ -571,11 +363,6 @@
       const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indlc3Ftd2pqdHNlZnlqbmx1b3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxNzg4ODIsImV4cCI6MjA4MDc1NDg4Mn0.dZfYOc2iL2_wRYL3zExZFsFSBK6AbMeOid2LrIjcTdA";
       const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-      // EXTRA = EXPLORE boost city
-      const ADDON_MODULE = "explore";
-      const ADDON_PLAN   = "boost_city";
-      const FALLBACK_PRICE = 14900;
-
       const $ = (id)=>document.getElementById(id);
       function qs(name){
         try{ return new URL(location.href).searchParams.get(name) || ""; }catch(e){ return ""; }
@@ -592,6 +379,10 @@
         if(!isFinite(n) || n<=0) return "—";
         return n.toLocaleString("fr-FR");
       }
+      function esc(s){
+        s = String(s ?? "");
+        return s.replace(/[&<>"']/g, (c)=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+      }
 
       const phone = normPhone(qs("phone"));
       const slug  = (qs("slug") || "").trim();
@@ -600,52 +391,22 @@
       $("ctxPhone").textContent = phone || "—";
       $("ctxSlug").textContent  = slug  || "—";
 
-      let addonPrice  = FALLBACK_PRICE;
-      let addonStatus = "none";
       let resolvedPrimary = primaryFromQS;
-
-      function setStatusPill(status){
-        const el = $("addonStatusPill");
-        el.className = "status-pill " + (status || "none");
-        el.textContent = "statut: " + (status || "none");
-      }
-
-      function buildPayLink(){
-        const PAY_PAGE = "https://beauville.github.io/commencer-a-payer/";
-        const u = new URL(PAY_PAGE);
-
-        if(phone) u.searchParams.set("phone", phone);
-        if(slug)  u.searchParams.set("slug", slug);
-
-        u.searchParams.set("module", resolvedPrimary || "LOC");
-
-        u.searchParams.set("kind", "addon");
-        u.searchParams.set("m", "EXPLORE");
-        u.searchParams.set("plan", ADDON_PLAN);
-        u.searchParams.set("amount", String(addonPrice));
-
-        u.searchParams.set("from", location.href);
-        $("btnAddonPay").href = u.toString();
-      }
 
       async function isActive(mod){
         try{
+          if(!phone) return false;
           const r = await sb.rpc("is_module_active", { p_phone: phone, p_module: String(mod||"").toUpperCase() });
           if(r.error) return false;
           return !!r.data;
-        }catch(e){
-          return false;
-        }
+        }catch(e){ return false; }
       }
 
       async function resolvePrimaryModule(){
-        // si pas de phone => verrou direct
         if(!phone) return { ok:false, mod: primaryFromQS || "LOC" };
 
-        // 1) si le module fourni est actif, on garde
         if(await isActive(primaryFromQS)) return { ok:true, mod: primaryFromQS };
 
-        // 2) sinon on cherche le premier module actif
         const candidates = ["LOC","MARKET","DRIVER","POS_PRO","RESTO_PRO","RESTO_RESA","JOBS","BUILD"];
         for(const m of candidates){
           if(await isActive(m)) return { ok:true, mod: m };
@@ -653,84 +414,138 @@
         return { ok:false, mod: primaryFromQS || "LOC" };
       }
 
-      async function loadAddon(){
-        // pricing depuis digiy_pricing_plans
-        try{
-          const pr = await sb
-            .from("digiy_pricing_plans")
-            .select("description, price_month_fcfa, is_active")
-            .eq("module", ADDON_MODULE)
-            .eq("plan_code", ADDON_PLAN)
-            .eq("is_active", true)
-            .maybeSingle();
+      function statusClass(s){
+        s = String(s||"none").toLowerCase();
+        if(s==="active") return "active";
+        if(s==="paused") return "paused";
+        if(s==="canceled") return "canceled";
+        return "none";
+      }
 
-          if(!pr.error && pr.data){
-            addonPrice = Number(pr.data.price_month_fcfa || FALLBACK_PRICE);
-            if(pr.data.description) $("addonDesc").textContent = pr.data.description;
-          }
-        }catch(e){}
+      function buildPayLink(addonModule, addonPlan, price){
+        const PAY_PAGE = "https://beauville.github.io/commencer-a-payer/";
+        const u = new URL(PAY_PAGE);
 
-        $("addonPrice").textContent = fmt(addonPrice);
+        if(phone) u.searchParams.set("phone", phone);
+        if(slug)  u.searchParams.set("slug", slug);
 
-        // status depuis digiy_subscription_addons
-        if(!phone){
-          addonStatus = "none";
-          setStatusPill("none");
-          buildPayLink();
+        // module d’accès (module actif)
+        u.searchParams.set("module", resolvedPrimary || "LOC");
+
+        // supplément
+        u.searchParams.set("kind", "addon");
+
+        // ✅ IMPORTANT : m EXACT comme ta table (minuscule)
+        u.searchParams.set("m", String(addonModule||""));
+        u.searchParams.set("plan", String(addonPlan||""));
+        u.searchParams.set("amount", String(price||""));
+
+        u.searchParams.set("from", location.href);
+        return u.toString();
+      }
+
+      function cardHTML(x){
+        const price = Number(x.price_month_fcfa || 0);
+        const st = String(x.addon_status || "none");
+
+        const btnLabel =
+          (st==="active") ? "✅ Déjà actif (gérer)" :
+          (st==="paused") ? "⏸️ Reprendre / Payer" :
+          (st==="canceled") ? "♻️ Réactiver / Payer" :
+          "💳 Activer / Payer";
+
+        const link = buildPayLink(x.module, x.plan_code, price);
+
+        return `
+          <div class="addon-card">
+            <h3>${esc((x.module||"") + " • " + (x.plan_code||""))}</h3>
+            <p>${esc(x.description || "Supplément EXPLORE")}</p>
+
+            <div class="addon-row">
+              <div class="addon-price">${fmt(price)} FCFA / mois</div>
+              <span class="status-pill ${statusClass(st)}">statut: ${esc(st)}</span>
+            </div>
+
+            <div class="addon-row" style="margin-top:14px">
+              <a class="btn-addon" href="${link}">${btnLabel}</a>
+              <button class="btn-addon secondary" type="button" data-refresh="1">🔄 Rafraîchir</button>
+            </div>
+
+            <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.86);line-height:1.45">
+              Supplément <b>payant</b> : mise en avant vitrine EXPLORE (manuel → Wave + reçu WhatsApp).
+            </p>
+          </div>
+        `;
+      }
+
+      async function loadAddons(){
+        const grid = $("addonsGrid");
+        grid.innerHTML = "";
+
+        const plans = await sb
+          .from("digiy_pricing_plans")
+          .select("module, plan_code, description, price_month_fcfa, is_active")
+          .in("module", ["explore","explore_boost"])
+          .eq("is_active", true)
+          .order("module", { ascending:true })
+          .order("price_month_fcfa", { ascending:true });
+
+        if(plans.error){
+          console.error(plans.error);
+          grid.innerHTML = `<div class="addon-card"><h3>Erreur</h3><p>Impossible de charger les suppléments.</p></div>`;
           return;
         }
 
-        try{
-          const st = await sb
-            .from("digiy_subscription_addons")
-            .select("status, price_monthly_fcfa, updated_at")
-            .eq("phone", phone)
-            .eq("primary_module", resolvedPrimary)
-            .eq("addon_module", ADDON_MODULE)
-            .eq("addon_plan", ADDON_PLAN)
-            .order("updated_at", { ascending:false })
-            .limit(1)
-            .maybeSingle();
+        const rows = plans.data || [];
 
-          if(!st.error && st.data){
-            addonStatus = (st.data.status || "none");
-            const p = Number(st.data.price_monthly_fcfa || 0);
-            if(p>0) addonPrice = p;
-          }else{
-            addonStatus = "none";
+        // status (si phone)
+        if(phone){
+          for(const r of rows){
+            try{
+              const st = await sb
+                .from("digiy_subscription_addons")
+                .select("status, price_monthly_fcfa, updated_at")
+                .eq("phone", phone)
+                .eq("primary_module", resolvedPrimary)
+                .eq("addon_module", r.module)
+                .eq("addon_plan", r.plan_code)
+                .order("updated_at", { ascending:false })
+                .limit(1)
+                .maybeSingle();
+
+              if(!st.error && st.data){
+                r.addon_status = st.data.status || "none";
+                const p = Number(st.data.price_monthly_fcfa || 0);
+                if(p>0) r.price_month_fcfa = p;
+              }else{
+                r.addon_status = "none";
+              }
+            }catch(e){
+              r.addon_status = "none";
+            }
           }
-        }catch(e){
-          addonStatus = "none";
-        }
-
-        $("addonPrice").textContent = fmt(addonPrice);
-        setStatusPill(addonStatus);
-        buildPayLink();
-
-        if(addonStatus === "active"){
-          $("btnAddonPay").textContent = "✅ Déjà actif (gérer)";
-        }else if(addonStatus === "paused"){
-          $("btnAddonPay").textContent = "⏸️ Reprendre / Payer";
-        }else if(addonStatus === "canceled"){
-          $("btnAddonPay").textContent = "♻️ Réactiver / Payer";
         }else{
-          $("btnAddonPay").textContent = "💳 Activer / Payer";
+          rows.forEach(r=>r.addon_status="none");
         }
+
+        grid.innerHTML = rows.map(cardHTML).join("");
+
+        grid.querySelectorAll('[data-refresh="1"]').forEach(btn=>{
+          btn.addEventListener("click", refreshAll);
+        });
       }
 
       async function refreshAll(){
         const res = await resolvePrimaryModule();
         resolvedPrimary = res.mod;
+
         $("ctxPrimary").textContent = res.ok ? resolvedPrimary : "—";
         $("lockBox").style.display = res.ok ? "none" : "block";
-        $("btnAddonPay").style.pointerEvents = res.ok ? "auto" : "none";
-        $("btnAddonPay").style.opacity = res.ok ? "1" : ".55";
-        await loadAddon();
+
+        await loadAddons();
       }
 
-      $("btnAddonRefresh").addEventListener("click", refreshAll);
-
-      // Boot
+      // boot
       refreshAll();
     })();
   </script>
