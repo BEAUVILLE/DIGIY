@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarifs Officiels DIGIYLYFE — Grille V2</title>
+
+  <!-- Supabase (pour afficher Extra + statut) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{
@@ -152,6 +156,92 @@
     .banner li{margin:6px 0;font-size:13px;font-weight:800;color:#334155}
     .banner b{color:#0f172a}
 
+    /* ✅ EXTRA ADDONS BOX */
+    .addon-wrap{
+      background:rgba(255,255,255,.95);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 18px 60px rgba(0,0,0,.18);
+      margin: 8px 0 26px;
+    }
+    .addon-top{
+      display:flex; gap:14px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+      margin-bottom:12px;
+    }
+    .addon-top h2{
+      font-size:22px; font-weight:950; color:#0f172a;
+    }
+    .addon-meta{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      font-size:12px; font-weight:900; color:#334155;
+    }
+    .chip{
+      padding:8px 10px;
+      border-radius:999px;
+      background:#f1f5f9;
+      border:1px solid rgba(2,6,23,.08);
+    }
+    .chip b{color:#0f172a}
+    .addon-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:16px;
+      margin-top:12px;
+    }
+    .addon-card{
+      background:#0f172a;
+      color:#fff;
+      border-radius:18px;
+      padding:16px 16px 14px;
+      box-shadow:0 12px 36px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .addon-card h3{font-size:16px;font-weight:950;margin-bottom:6px;color:#facc15}
+    .addon-card p{font-size:13px;line-height:1.55;color:rgba(255,255,255,.86)}
+    .addon-row{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+      margin-top:12px;
+    }
+    .addon-price{
+      font-size:20px; font-weight:1000;
+      color:#22c55e;
+    }
+    .btn-addon{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:950;
+      text-decoration:none;
+      background:#facc15;
+      color:#0f172a;
+      border:0;
+      cursor:pointer;
+      box-shadow:0 10px 18px rgba(250,204,21,.25);
+    }
+    .btn-addon:hover{filter:brightness(.98); transform:translateY(-1px)}
+    .btn-addon.secondary{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:none;
+    }
+    .status-pill{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:950;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.08);
+      color:#fff;
+    }
+    .status-pill.active{border-color:rgba(34,197,94,.45); color:#86efac}
+    .status-pill.paused{border-color:rgba(245,158,11,.45); color:#fde68a}
+    .status-pill.canceled{border-color:rgba(239,68,68,.45); color:#fecaca}
+    .status-pill.none{border-color:rgba(148,163,184,.35); color:#e2e8f0}
+
     @media(max-width:768px){
       h1{font-size:32px}
       .tagline{font-size:16px}
@@ -204,6 +294,17 @@
           <li><b>Multi-modules</b> : 2+ modules → <b>-10% sur les mensualités</b></li>
           <li><b>0% commission</b> : le pro garde l’argent, DIGIY garde l’honneur.</li>
         </ul>
+      </div>
+
+      <!-- ✅ CONTEXTE (pour l’EXTRA) -->
+      <div class="notice" style="margin-top:18px">
+        <h3>🧩 Contexte Pro (pour activer les Extras)</h3>
+        <p>
+          Pour afficher le statut de tes options, ouvre cette page avec :
+          <span class="pill"><b>?phone=+221...</b></span>
+          <span class="pill"><b>&slug=chez-...</b></span>
+          <span class="pill"><b>&module=LOC</b></span>
+        </p>
       </div>
     </header>
 
@@ -350,6 +451,52 @@
       </div>
     </div>
 
+    <!-- ✅ EXTRA SECTION -->
+    <div class="section-title">✨ Extras (Addons)</div>
+    <div class="addon-wrap">
+      <div class="addon-top">
+        <h2>🧭 DIGIY EXPLORE — Boost City (Extra)</h2>
+        <div class="addon-meta">
+          <span class="chip">📱 phone: <b id="ctxPhone">—</b></span>
+          <span class="chip">🏷️ slug: <b id="ctxSlug">—</b></span>
+          <span class="chip">📦 primary: <b id="ctxPrimary">—</b></span>
+        </div>
+      </div>
+
+      <div class="addon-grid">
+        <div class="addon-card">
+          <h3>Boost City</h3>
+          <p id="addonDesc">Mise en avant + visibilité ville + WhatsApp direct</p>
+
+          <div class="addon-row">
+            <div class="addon-price"><span id="addonPrice">—</span> FCFA / mois</div>
+            <span class="status-pill none" id="addonStatusPill">statut: none</span>
+          </div>
+
+          <div class="addon-row" style="margin-top:14px">
+            <a class="btn-addon" id="btnAddonPay" href="#">💳 Activer / Payer</a>
+            <button class="btn-addon secondary" id="btnAddonRefresh" type="button">🔄 Rafraîchir</button>
+          </div>
+
+          <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.45">
+            Statuts autorisés: <b>active</b> / <b>paused</b> / <b>canceled</b>.
+            Le paiement ouvre la porte, puis ton système valide l’activation.
+          </p>
+        </div>
+
+        <div class="addon-card">
+          <h3>À quoi ça sert ?</h3>
+          <p>
+            Pour les propriétaires (ex: LOC) : on ajoute une couche visibilité “ville/destination” + contact WhatsApp direct.
+            C’est une option propre, sans casser ton module principal.
+          </p>
+          <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.8);line-height:1.45">
+            Astuce: ouvre la page avec <b>?phone=</b> + <b>&module=</b> pour voir le statut réel.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div class="section-title">🚚 DIGIY FRET — Transport & Logistique</div>
 
     <div class="modules-grid">
@@ -399,5 +546,161 @@
       </div>
     </header>
   </div>
+
+  <script>
+    (function(){
+      "use strict";
+
+      // === CONFIG (tes clés déjà intégrées) ===
+      const SUPABASE_URL = "https://wesqmwjjtsefyjnluosj.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indlc3Ftd2pqdHNlZnlqbmx1b3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxNzg4ODIsImV4cCI6MjA4MDc1NDg4Mn0.dZfYOc2iL2_wRYL3zExZFsFSBK6AbMeOid2LrIjcTdA";
+      const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+      // === TARGETS ===
+      const ADDON_MODULE = "explore";
+      const ADDON_PLAN   = "boost_city";
+      const FALLBACK_PRICE = 14900;
+
+      // === helpers ===
+      const $ = (id)=>document.getElementById(id);
+      function qs(name){
+        try{ return new URL(location.href).searchParams.get(name) || ""; }catch(e){ return ""; }
+      }
+      function normPhone(p){
+        p = String(p||"").trim().replace(/\s+/g,"").replace(/[^\d+]/g,"");
+        if(p.startsWith("00221")) p = "+221" + p.slice(5);
+        if(!p.startsWith("+") && p.startsWith("221")) p = "+" + p;
+        if(!p.startsWith("+221") && /^\d{9}$/.test(p)) p = "+221" + p;
+        return p;
+      }
+      function fmt(n){
+        n = Number(n||0);
+        if(!isFinite(n) || n<=0) return "—";
+        return n.toLocaleString("fr-FR");
+      }
+
+      const phone = normPhone(qs("phone"));
+      const slug  = (qs("slug") || "").trim();
+      const primaryModule = (qs("module") || "LOC").trim().toUpperCase();
+
+      $("ctxPhone").textContent   = phone || "—";
+      $("ctxSlug").textContent    = slug  || "—";
+      $("ctxPrimary").textContent = primaryModule || "—";
+
+      let addonPrice = FALLBACK_PRICE;
+      let addonDesc  = $("addonDesc").textContent;
+      let addonStatus = "none";
+
+      function setStatusPill(status){
+        const el = $("addonStatusPill");
+        el.className = "status-pill " + (status || "none");
+        el.textContent = "statut: " + (status || "none");
+      }
+
+      function buildPayLink(){
+        // 👉 Mets ici l’URL de TA page paiement/activation (celle avec Wave QR).
+        // Exemple: https://beauville.github.io/digiy-pro/payer.html
+        // Là je mets "commencer-a-payer" en placeholder si tu veux rediriger vers ta page.
+        const PAY_PAGE = "https://beauville.github.io/commencer-a-payer/";
+
+        const u = new URL(PAY_PAGE);
+
+        // on passe le contexte pour la caisse / retour
+        if(phone) u.searchParams.set("phone", phone);
+        if(slug)  u.searchParams.set("slug", slug);
+
+        // module principal (accès)
+        u.searchParams.set("module", primaryModule);
+
+        // choix addon
+        u.searchParams.set("kind", "addon");
+        u.searchParams.set("m", "EXPLORE");
+        u.searchParams.set("plan", ADDON_PLAN);
+        u.searchParams.set("amount", String(addonPrice));
+
+        // optionnel: d’où on vient
+        u.searchParams.set("from", location.href);
+
+        $("btnAddonPay").href = u.toString();
+      }
+
+      async function loadAddon(){
+        try{
+          // 1) pricing depuis digiy_pricing_plans
+          const pr = await sb
+            .from("digiy_pricing_plans")
+            .select("description, price_month_fcfa, is_active")
+            .eq("module", ADDON_MODULE)
+            .eq("plan_code", ADDON_PLAN)
+            .eq("is_active", true)
+            .maybeSingle();
+
+          if(!pr.error && pr.data){
+            addonPrice = Number(pr.data.price_month_fcfa || FALLBACK_PRICE);
+            addonDesc = pr.data.description || addonDesc;
+          }
+          $("addonPrice").textContent = fmt(addonPrice);
+          $("addonDesc").textContent  = addonDesc;
+
+          // 2) status depuis digiy_subscription_addons
+          if(!phone){
+            addonStatus = "none";
+            setStatusPill("none");
+            buildPayLink();
+            return;
+          }
+
+          const st = await sb
+            .from("digiy_subscription_addons")
+            .select("status, price_monthly_fcfa, updated_at")
+            .eq("phone", phone)
+            .eq("primary_module", primaryModule)
+            .eq("addon_module", ADDON_MODULE)
+            .eq("addon_plan", ADDON_PLAN)
+            .order("updated_at", { ascending:false })
+            .limit(1)
+            .maybeSingle();
+
+          if(st.error){
+            addonStatus = "none";
+          }else{
+            addonStatus = (st.data?.status || "none");
+            const p = Number(st.data?.price_monthly_fcfa || 0);
+            if(p>0) addonPrice = p;
+          }
+
+          $("addonPrice").textContent = fmt(addonPrice);
+          setStatusPill(addonStatus);
+          buildPayLink();
+
+          // label bouton selon status
+          if(addonStatus === "active"){
+            $("btnAddonPay").textContent = "✅ Gérer (déjà actif)";
+          }else if(addonStatus === "paused"){
+            $("btnAddonPay").textContent = "⏸️ Reprendre / Payer";
+          }else if(addonStatus === "canceled"){
+            $("btnAddonPay").textContent = "♻️ Réactiver / Payer";
+          }else{
+            $("btnAddonPay").textContent = "💳 Activer / Payer";
+          }
+
+        }catch(e){
+          console.error(e);
+          $("addonPrice").textContent = fmt(FALLBACK_PRICE);
+          setStatusPill("none");
+          buildPayLink();
+        }
+      }
+
+      $("btnAddonRefresh").addEventListener("click", function(){
+        loadAddon();
+      });
+
+      // boot
+      buildPayLink();
+      loadAddon();
+
+    })();
+  </script>
 </body>
 </html>
