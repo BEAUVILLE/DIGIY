@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarifs Officiels DIGIYLYFE — Grille V2</title>
+  <title>Tarifs DIGIYLYFE — Menu Codifié V2 🥡</title>
 
   <!-- Supabase JS v2 -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -90,6 +90,19 @@
       overflow:hidden;
     }
     .module-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+    
+    .module-code{
+      display:inline-block;
+      padding:10px 16px;
+      background:#0f172a;
+      color:#facc15;
+      font-size:24px;
+      font-weight:900;
+      border-radius:12px;
+      margin-bottom:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,.2);
+    }
+    
     .module-icon{font-size:48px;margin-bottom:15px}
     .module-title{font-size:26px;font-weight:900;color:#1e293b;margin-bottom:10px}
     .module-description{font-size:14px;font-weight:700;color:#64748b;line-height:1.6;margin-bottom:18px}
@@ -108,12 +121,38 @@
       font-size:13px; font-weight:900; color:#334155;
       margin-bottom:10px; text-transform:uppercase; letter-spacing:.6px;
     }
+    
     .tier{
       background:white; padding:12px 14px; border-radius:10px; margin-bottom:8px;
-      display:flex; justify-content:space-between; align-items:center;
+      display:flex; align-items:center; gap:12px;
       border-left:4px solid #667eea;
     }
     .tier:last-child{margin-bottom:0}
+    
+    .tier-code{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:48px;
+      height:48px;
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+      color:white;
+      font-size:18px;
+      font-weight:900;
+      border-radius:10px;
+      flex-shrink:0;
+      box-shadow:0 4px 12px rgba(102,126,234,.3);
+    }
+    
+    .tier-content{
+      flex:1;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    
     .tier-name{font-size:13px;font-weight:800;color:#334155}
     .tier-price{font-size:14px;font-weight:900;color:#667eea}
 
@@ -156,7 +195,43 @@
     .banner li{margin:6px 0;font-size:13px;font-weight:800;color:#334155}
     .banner b{color:#0f172a}
 
-    /* ✅ SUPPLÉMENTS EXPLORE */
+    .quick-ref{
+      background:rgba(255,255,255,.95);
+      border-radius:24px;
+      padding:30px;
+      margin:30px 0;
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
+    }
+    .quick-ref h2{
+      font-size:32px;
+      font-weight:900;
+      color:#0f172a;
+      margin-bottom:20px;
+      text-align:center;
+    }
+    .ref-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+      gap:12px;
+    }
+    .ref-item{
+      background:#f1f5f9;
+      padding:14px;
+      border-radius:12px;
+      border-left:4px solid #667eea;
+    }
+    .ref-code{
+      font-size:20px;
+      font-weight:900;
+      color:#667eea;
+      margin-bottom:4px;
+    }
+    .ref-label{
+      font-size:13px;
+      font-weight:800;
+      color:#334155;
+    }
+
     .addon-wrap{
       background:rgba(255,255,255,.95);
       border-radius:24px;
@@ -260,6 +335,7 @@
       .modules-grid{grid-template-columns:1fr}
       .module-title{font-size:22px}
       .price-badge{font-size:18px}
+      .ref-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
     }
   </style>
 </head>
@@ -268,19 +344,19 @@
   <div class="container">
     <header>
       <h1>🦅 DIGIYLYFE</h1>
-      <p class="tagline">Grille Officielle V2 • 0% Commission • Paiement direct au Pro</p>
-      <p class="subtag">Tarifs pensés terrain Sénégal • Simples • Progressifs • Justes</p>
+      <p class="tagline">Menu Codifié V2 — Style Resto Chinois 🥡</p>
+      <p class="subtag">Dis juste le CODE au téléphone • Pas de blabla • Rapide</p>
 
       <div class="notice">
-        <h3>🔥 Offres Officielles DIGIY — V2</h3>
+        <h3>📱 COMMANDER = DIS LE CODE !</h3>
         <p>
-          Abonnement mensuel (modules) + onboarding terrain si besoin.
-          <b>Les Suppléments EXPLORE</b> sont des <b>options payantes</b> de mise en avant vitrine (ce n’est pas un cadeau).
+          Comme au resto chinois : chaque offre a un <b>CODE</b>. 
+          Tu appelles, tu dis <b>"Je veux le 2B"</b> → on sait direct que c'est LOC 6-9 logements à 25 000 FCFA.
         </p>
         <div class="pill-row">
-          <div class="pill">🎁 <b>Droit d’entrée OFFERT</b> si paiement <b>annuel</b> (modules)</div>
-          <div class="pill">💎 <b>-10%</b> si <b>Multi-Modules</b> (2+ modules actifs)</div>
-          <div class="pill">✅ Toujours <b>0% commission</b></div>
+          <div class="pill">📞 <b>+221 77 134 28 89</b></div>
+          <div class="pill">💬 <b>WhatsApp disponible</b></div>
+          <div class="pill">🎁 <b>Annuel = Droit d'entrée OFFERT</b></div>
         </div>
       </div>
 
@@ -294,180 +370,386 @@
           💰 COMMENCER À PAYER
         </a>
       </div>
-
-      <div class="banner">
-        <h3>📌 Règles simples (pas de palabres 😄)</h3>
-        <p><b>Mensuel</b> = outil actif. <b>Annuel</b> = meilleur prix + onboarding offert (modules).</p>
-        <ul>
-          <li><b>Annuel</b> : paiement 12 mois → <b>Droit d’entrée OFFERT</b></li>
-          <li><b>Multi-modules</b> : 2+ modules → <b>-10% sur mensualités</b></li>
-          <li><b>0% commission</b> : le pro garde l’argent.</li>
-        </ul>
-      </div>
-
-      <div class="notice" style="margin-top:18px">
-        <h3>🧩 Contexte Pro (pour voir Extra/Statut)</h3>
-        <p>
-          Ouvre avec :
-          <span class="pill"><b>?phone=+221...</b></span>
-          <span class="pill"><b>&slug=chez-...</b></span>
-          <span class="pill"><b>&module=LOC</b></span>
-        </p>
-      </div>
     </header>
+
+    <!-- QUICK REFERENCE -->
+    <div class="quick-ref">
+      <h2>📋 Référence Rapide (dis juste le code !)</h2>
+      <div class="ref-grid">
+        <div class="ref-item"><div class="ref-code">1</div><div class="ref-label">DRIVER • 12 900 FCFA</div></div>
+        <div class="ref-item"><div class="ref-code">2A-2E</div><div class="ref-label">LOC (1-30+ log.)</div></div>
+        <div class="ref-item"><div class="ref-code">3A-3C</div><div class="ref-label">RESTO PRO</div></div>
+        <div class="ref-item"><div class="ref-code">4A-4E</div><div class="ref-label">RÉSA</div></div>
+        <div class="ref-item"><div class="ref-code">5</div><div class="ref-label">POS PRO • 19 900 FCFA</div></div>
+        <div class="ref-item"><div class="ref-code">6</div><div class="ref-label">MARKET • 19 900 FCFA</div></div>
+        <div class="ref-item"><div class="ref-code">7</div><div class="ref-label">BUILD • 12 900 FCFA</div></div>
+        <div class="ref-item"><div class="ref-code">8A-8D</div><div class="ref-label">EXPLORE AGENCE</div></div>
+        <div class="ref-item"><div class="ref-code">9A-9D</div><div class="ref-label">FRET CHAUFFEUR</div></div>
+        <div class="ref-item"><div class="ref-code">10A-10D</div><div class="ref-label">FRET CLIENT</div></div>
+        <div class="ref-item"><div class="ref-code">E1-E3</div><div class="ref-label">Boost EXPLORE</div></div>
+      </div>
+    </div>
 
     <div class="section-title">📦 Modules Individuels (Pro)</div>
 
     <div class="modules-grid">
-      <!-- DRIVER -->
+      <!-- 1 - DRIVER -->
       <div class="module-card">
+        <div class="module-code">1</div>
         <div class="module-icon">🚗</div>
         <h2 class="module-title">DIGIY DRIVER</h2>
-        <p class="module-description">Transport VTC • GPS temps réel • Courses instantanées • Paiement sécurisé</p>
+        <p class="module-description">Transport VTC • GPS temps réel • Courses instantanées</p>
         <div class="price-badge">12 900 FCFA / mois</div>
         <ul class="features">
           <li>GPS & tracking</li>
           <li>Historique courses</li>
           <li>Paiement Wave & OM</li>
-          <li>Stats & performance</li>
         </ul>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- LOC -->
+      <!-- 2 - LOC -->
       <div class="module-card">
+        <div class="module-code">2</div>
         <div class="module-icon">🏠</div>
         <h2 class="module-title">DIGIY LOC</h2>
-        <p class="module-description">Location courte durée • Gestion logements • Réservations • 0% commission</p>
+        <p class="module-description">Location courte durée • Gestion logements • 0% commission</p>
         <div class="price-badge">À partir de 12 900 FCFA / mois</div>
         <div class="tiers-container">
           <div class="tiers-title">Par nombre de logements</div>
-          <div class="tier"><span class="tier-name">🥉 1 à 5 logements</span><span class="tier-price">12 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 6 à 9 logements</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 10 à 20 logements</span><span class="tier-price">45 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">💎 21 à 30 logements</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 Plus de 30 logements</span><span class="tier-price">90 000 FCFA</span></div>
+          
+          <div class="tier">
+            <div class="tier-code">2A</div>
+            <div class="tier-content">
+              <span class="tier-name">🥉 1 à 5 logements</span>
+              <span class="tier-price">12 900 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">2B</div>
+            <div class="tier-content">
+              <span class="tier-name">🥈 6 à 9 logements</span>
+              <span class="tier-price">25 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">2C</div>
+            <div class="tier-content">
+              <span class="tier-name">🥇 10 à 20 logements</span>
+              <span class="tier-price">45 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">2D</div>
+            <div class="tier-content">
+              <span class="tier-name">💎 21 à 30 logements</span>
+              <span class="tier-price">60 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">2E</div>
+            <div class="tier-content">
+              <span class="tier-name">👑 Plus de 30 logements</span>
+              <span class="tier-price">90 000 FCFA</span>
+            </div>
+          </div>
         </div>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- RESTO -->
+      <!-- 3 - RESTO -->
       <div class="module-card">
+        <div class="module-code">3</div>
         <div class="module-icon">🍽️</div>
         <h2 class="module-title">DIGIY RESTO PRO</h2>
-        <p class="module-description">Plan de salle • Commandes • KDS • Caisse • Offline</p>
+        <p class="module-description">Plan de salle • Commandes • KDS • Caisse</p>
         <div class="price-badge">À partir de 19 900 FCFA / mois</div>
         <div class="tiers-container">
           <div class="tiers-title">Par nombre de licences</div>
-          <div class="tier"><span class="tier-name">🥉 ESSENTIEL • 2 licences (15 tables)</span><span class="tier-price">19 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 STANDARD • 4 licences (30 tables)</span><span class="tier-price">39 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 PRO • 6 licences (45 tables)</span><span class="tier-price">59 900 FCFA</span></div>
+          
+          <div class="tier">
+            <div class="tier-code">3A</div>
+            <div class="tier-content">
+              <span class="tier-name">🥉 ESSENTIEL • 2 licences (15 tables)</span>
+              <span class="tier-price">19 900 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">3B</div>
+            <div class="tier-content">
+              <span class="tier-name">🥈 STANDARD • 4 licences (30 tables)</span>
+              <span class="tier-price">39 900 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">3C</div>
+            <div class="tier-content">
+              <span class="tier-name">🥇 PRO • 6 licences (45 tables)</span>
+              <span class="tier-price">59 900 FCFA</span>
+            </div>
+          </div>
         </div>
-        <div class="deal-badge">🎁 Droit d’entrée offert en annuel (modules)</div>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- RÉSA -->
+      <!-- 4 - RÉSA -->
       <div class="module-card">
+        <div class="module-code">4</div>
         <div class="module-icon">📅</div>
         <h2 class="module-title">DIGIY RÉSA</h2>
-        <p class="module-description">Réservations • Planning • Rappels auto • Gestion tables</p>
+        <p class="module-description">Réservations • Planning • Rappels auto</p>
         <div class="price-badge">À partir de 12 900 FCFA / mois</div>
         <div class="tiers-container">
           <div class="tiers-title">Par nombre de tables</div>
-          <div class="tier"><span class="tier-name">🥉 1 à 5 tables</span><span class="tier-price">12 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 6 à 9 tables</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 10 à 20 tables</span><span class="tier-price">45 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">💎 21 à 30 tables</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 Plus de 30 tables</span><span class="tier-price">90 000 FCFA</span></div>
+          
+          <div class="tier">
+            <div class="tier-code">4A</div>
+            <div class="tier-content">
+              <span class="tier-name">🥉 1 à 5 tables</span>
+              <span class="tier-price">12 900 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">4B</div>
+            <div class="tier-content">
+              <span class="tier-name">🥈 6 à 9 tables</span>
+              <span class="tier-price">25 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">4C</div>
+            <div class="tier-content">
+              <span class="tier-name">🥇 10 à 20 tables</span>
+              <span class="tier-price">45 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">4D</div>
+            <div class="tier-content">
+              <span class="tier-name">💎 21 à 30 tables</span>
+              <span class="tier-price">60 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">4E</div>
+            <div class="tier-content">
+              <span class="tier-name">👑 Plus de 30 tables</span>
+              <span class="tier-price">90 000 FCFA</span>
+            </div>
+          </div>
         </div>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- POS -->
+      <!-- 5 - POS -->
       <div class="module-card">
+        <div class="module-code">5</div>
         <div class="module-icon">🧾</div>
         <h2 class="module-title">DIGIY POS PRO</h2>
-        <p class="module-description">Caisse pro • Stock • Ventes • Stats • Multi-utilisateurs</p>
+        <p class="module-description">Caisse pro • Stock • Ventes • Stats</p>
         <div class="price-badge">19 900 FCFA / mois</div>
         <ul class="features">
           <li>Caisse tactile</li>
           <li>Stock + alertes</li>
-          <li>Multi-users & rôles</li>
-          <li>Mode hors ligne</li>
+          <li>Multi-users</li>
         </ul>
-        <div class="deal-badge">💎 -10% si Multi-Modules</div>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- MARKET -->
+      <!-- 6 - MARKET -->
       <div class="module-card">
+        <div class="module-code">6</div>
         <div class="module-icon">🛒</div>
         <h2 class="module-title">DIGIY MARKET</h2>
-        <p class="module-description">Boutique en ligne • Catalogue • Commandes • Paiement mobile</p>
+        <p class="module-description">Boutique en ligne • Catalogue • Commandes</p>
         <div class="price-badge">19 900 FCFA / mois</div>
         <ul class="features">
           <li>Boutique personnalisée</li>
           <li>Catalogue illimité</li>
-          <li>Commandes & suivi</li>
           <li>Paiement Wave & OM</li>
         </ul>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- BUILD -->
+      <!-- 7 - BUILD -->
       <div class="module-card">
+        <div class="module-code">7</div>
         <div class="module-icon">🏗️</div>
         <h2 class="module-title">DIGIY BUILD</h2>
-        <p class="module-description">Artisans • Devis • Chantiers • Portfolio • Avis</p>
+        <p class="module-description">Artisans • Devis • Chantiers • Portfolio</p>
         <div class="price-badge">12 900 FCFA / mois</div>
         <ul class="features">
           <li>Portfolio</li>
           <li>Devis</li>
           <li>Gestion chantiers</li>
-          <li>Avis clients</li>
         </ul>
-        <div class="deal-badge">💎 -10% si Multi-Modules</div>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
 
-      <!-- EXPLORE AGENCE -->
+      <!-- 8 - EXPLORE AGENCE -->
       <div class="module-card">
+        <div class="module-code">8</div>
         <div class="module-icon">🧭</div>
-        <h2 class="module-title">DIGIY EXPLORE — AGENCE PARTNER</h2>
-        <p class="module-description">Programme agences • Visibilité internationale • Leads WhatsApp • Zéro commission</p>
+        <h2 class="module-title">DIGIY EXPLORE — AGENCE</h2>
+        <p class="module-description">Programme agences • Visibilité internationale</p>
         <div class="price-badge">À partir de 30 000 FCFA / mois</div>
 
         <div class="tiers-container">
           <div class="tiers-title">Packs Agence (mensuel)</div>
-          <div class="tier"><span class="tier-name">🟢 ESSENTIEL</span><span class="tier-price">30 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🔵 PRO</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🟣 PREMIUM</span><span class="tier-price">120 000 FCFA</span></div>
+          
+          <div class="tier">
+            <div class="tier-code">8A</div>
+            <div class="tier-content">
+              <span class="tier-name">🟢 ESSENTIEL</span>
+              <span class="tier-price">30 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">8B</div>
+            <div class="tier-content">
+              <span class="tier-name">🔵 PRO</span>
+              <span class="tier-price">60 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">8C</div>
+            <div class="tier-content">
+              <span class="tier-name">🟣 PREMIUM</span>
+              <span class="tier-price">120 000 FCFA</span>
+            </div>
+          </div>
         </div>
 
         <div class="tiers-container">
-          <div class="tiers-title">Droit d’entrée (one-shot)</div>
-          <div class="tier"><span class="tier-name">🎫 Setup & onboarding</span><span class="tier-price">150 000 FCFA</span></div>
+          <div class="tiers-title">Droit d'entrée (one-shot)</div>
+          <div class="tier">
+            <div class="tier-code">8D</div>
+            <div class="tier-content">
+              <span class="tier-name">🎫 Setup & onboarding</span>
+              <span class="tier-price">150 000 FCFA</span>
+            </div>
+          </div>
         </div>
 
-        <div class="deal-badge">🎁 Droit d’entrée OFFERT si annuel (modules)</div>
         <div class="commission-badge">✅ 0% Commission</div>
       </div>
     </div>
 
-    <!-- ✅ SUPPLÉMENTS EXPLORE (3 niveaux, manuel, NO QR) -->
+    <!-- FRET -->
+    <div class="section-title">🚚 DIGIY FRET — Transport & Logistique</div>
+
+    <div class="modules-grid">
+      <!-- 9 - FRET CHAUFFEUR -->
+      <div class="module-card">
+        <div class="module-code">9</div>
+        <div class="module-icon">🚚</div>
+        <h2 class="module-title">DIGIY FRET CHAUFFEUR</h2>
+        <p class="module-description">Transport marchandises • Zones • Commandes pro</p>
+        <div class="tiers-container">
+          <div class="tiers-title">Tarifs Chauffeur (mensuel)</div>
+          
+          <div class="tier">
+            <div class="tier-code">9A</div>
+            <div class="tier-content">
+              <span class="tier-name">🥉 LOCAL (moins de 50km)</span>
+              <span class="tier-price">25 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">9B</div>
+            <div class="tier-content">
+              <span class="tier-name">🥈 RÉGIONAL (50-200km)</span>
+              <span class="tier-price">60 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">9C</div>
+            <div class="tier-content">
+              <span class="tier-name">🥇 NATIONAL (200km+)</span>
+              <span class="tier-price">120 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">9D</div>
+            <div class="tier-content">
+              <span class="tier-name">👑 INTERNATIONAL (CEDEAO)</span>
+              <span class="tier-price">200 000 FCFA</span>
+            </div>
+          </div>
+        </div>
+        <div class="commission-badge">✅ 0% Commission</div>
+      </div>
+
+      <!-- 10 - FRET CLIENT -->
+      <div class="module-card">
+        <div class="module-code">10</div>
+        <div class="module-icon">📦</div>
+        <h2 class="module-title">DIGIY FRET CLIENT</h2>
+        <p class="module-description">Expéditeurs • Suivi • Paiement mobile</p>
+        <div class="tiers-container">
+          <div class="tiers-title">Tarifs Client (mensuel)</div>
+          
+          <div class="tier">
+            <div class="tier-code">10A</div>
+            <div class="tier-content">
+              <span class="tier-name">🥉 LOCAL</span>
+              <span class="tier-price">9 900 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">10B</div>
+            <div class="tier-content">
+              <span class="tier-name">🥈 RÉGIONAL</span>
+              <span class="tier-price">25 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">10C</div>
+            <div class="tier-content">
+              <span class="tier-name">🥇 NATIONAL</span>
+              <span class="tier-price">60 000 FCFA</span>
+            </div>
+          </div>
+          
+          <div class="tier">
+            <div class="tier-code">10D</div>
+            <div class="tier-content">
+              <span class="tier-name">👑 INTERNATIONAL</span>
+              <span class="tier-price">120 000 FCFA</span>
+            </div>
+          </div>
+        </div>
+        <div class="commission-badge">✅ 0% Commission</div>
+      </div>
+    </div>
+
+    <!-- SUPPLÉMENTS EXPLORE -->
     <div class="section-title">✨ Suppléments EXPLORE (payants)</div>
 
     <div class="addon-wrap">
       <div class="addon-top">
-        <h2>🧭 EXPLORE — Boost Tourisme (Supplément vitrine)</h2>
+        <h2>🧭 EXPLORE — Boost Tourisme</h2>
         <div class="addon-meta">
           <span class="chip">📱 phone: <b id="ctxPhone">—</b></span>
           <span class="chip">🏷️ slug: <b id="ctxSlug">—</b></span>
-          <span class="chip">📦 module actif: <b id="ctxPrimary">—</b></span>
+          <span class="chip">📦 module: <b id="ctxPrimary">—</b></span>
         </div>
       </div>
 
@@ -476,28 +758,30 @@
         <div class="addon-card">
           <h3>Choisis ton niveau</h3>
           <p style="margin-bottom:10px">
-            Supplément payant : mise en avant dans la vitrine EXPLORE (destination/ville + WhatsApp direct).
+            Supplément payant : mise en avant vitrine EXPLORE.
           </p>
 
           <div class="addon-row" style="margin-top:0">
             <span class="status-pill none" id="addonStatusPill">statut: none</span>
             <span style="font-size:12px;font-weight:900;color:rgba(255,255,255,.75)">
-              plan actuel: <b id="addonPlanLabel">—</b>
+              plan: <b id="addonPlanLabel">—</b>
             </span>
           </div>
 
           <div class="lockbox" id="lockBox" style="display:none;">
-            🔒 Pour activer un supplément EXPLORE, il faut déjà avoir <b>au moins 1 module PRO actif</b>
-            (LOC, MARKET, DRIVER, POS, etc). Active d’abord un module, puis reviens ici.
+            🔒 Il faut au moins 1 module PRO actif avant.
           </div>
 
           <div style="margin-top:12px; display:grid; gap:10px">
 
-            <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-              <div>
-                <div style="font-weight:950;color:#facc15">LOCAL</div>
-                <div style="font-size:12px;color:rgba(255,255,255,.82)" id="desc_local">
-                  BOOST TOURISME — Local (badge + présence vitrine locale + WhatsApp direct)
+            <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:2px solid rgba(250,204,21,.3);padding:12px;border-radius:12px;background:rgba(250,204,21,.05)">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div class="tier-code" style="background:#facc15;color:#0f172a">E1</div>
+                <div>
+                  <div style="font-weight:950;color:#facc15">LOCAL</div>
+                  <div style="font-size:12px;color:rgba(255,255,255,.82)" id="desc_local">
+                    Badge + vitrine locale + WhatsApp
+                  </div>
                 </div>
               </div>
               <div style="display:flex;gap:10px;align-items:center">
@@ -506,11 +790,14 @@
               </div>
             </div>
 
-            <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-              <div>
-                <div style="font-weight:950;color:#facc15">STANDARD</div>
-                <div style="font-size:12px;color:rgba(255,255,255,.82)" id="desc_standard">
-                  BOOST TOURISME — Standard (mise en avant + page destination + SEO + leads)
+            <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:2px solid rgba(250,204,21,.3);padding:12px;border-radius:12px;background:rgba(250,204,21,.05)">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div class="tier-code" style="background:#facc15;color:#0f172a">E2</div>
+                <div>
+                  <div style="font-weight:950;color:#facc15">STANDARD</div>
+                  <div style="font-size:12px;color:rgba(255,255,255,.82)" id="desc_standard">
+                    Mise en avant + SEO + leads
+                  </div>
                 </div>
               </div>
               <div style="display:flex;gap:10px;align-items:center">
@@ -519,11 +806,14 @@
               </div>
             </div>
 
-            <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
-              <div>
-                <div style="font-weight:950;color:#facc15">PREMIUM</div>
-                <div style="font-size:12px;color:rgba(255,255,255,.82)" id="desc_premium">
-                  BOOST TOURISME — Premium (priorité + support média + visibilité renforcée)
+            <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:2px solid rgba(250,204,21,.3);padding:12px;border-radius:12px;background:rgba(250,204,21,.05)">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div class="tier-code" style="background:#facc15;color:#0f172a">E3</div>
+                <div>
+                  <div style="font-weight:950;color:#facc15">PREMIUM</div>
+                  <div style="font-size:12px;color:rgba(255,255,255,.82)" id="desc_premium">
+                    Priorité + support média + max visibilité
+                  </div>
                 </div>
               </div>
               <div style="display:flex;gap:10px;align-items:center">
@@ -539,69 +829,42 @@
           </div>
 
           <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,.86);line-height:1.45">
-            ⚠️ <b>Paiement manuel</b> : transfert Wave + reçu WhatsApp, puis activation.
-            Statuts: <b>active</b> / <b>paused</b> / <b>canceled</b>.
+            ⚠️ <b>Paiement manuel</b> : transfert Wave + reçu WhatsApp.
           </p>
         </div>
 
         <div class="addon-card">
           <h3>À quoi ça sert ?</h3>
           <p>
-            Tu veux la <b>mise en page EXPLORE</b> + visibilité “ville/destination” + contact WhatsApp direct ?
-            Ce supplément te donne le boost vitrine, sans casser ton module principal.
+            Mise en avant <b>EXPLORE</b> + visibilité ville + WhatsApp direct.
+            Boost vitrine sans casser ton module principal.
           </p>
           <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.86);line-height:1.45">
-            Astuce: ouvre la page avec <b>?phone=</b> + <b>&module=</b> pour voir ton statut réel.
+            Astuce: ouvre avec <b>?phone=</b> + <b>&module=</b> pour voir ton statut.
           </p>
         </div>
 
-      </div>
-    </div>
-
-    <div class="section-title">🚚 DIGIY FRET — Transport & Logistique</div>
-
-    <div class="modules-grid">
-      <div class="module-card">
-        <div class="module-icon">🚚</div>
-        <h2 class="module-title">DIGIY FRET CHAUFFEUR</h2>
-        <p class="module-description">Transport marchandises • Zones • Commandes pro</p>
-        <div class="tiers-container">
-          <div class="tiers-title">Tarifs Chauffeur (mensuel)</div>
-          <div class="tier"><span class="tier-name">🥉 LOCAL (moins de 50km)</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 RÉGIONAL (50-200km)</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 NATIONAL (200km+)</span><span class="tier-price">120 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 INTERNATIONAL (CEDEAO)</span><span class="tier-price">200 000 FCFA</span></div>
-        </div>
-        <div class="deal-badge">💎 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
-      </div>
-
-      <div class="module-card">
-        <div class="module-icon">📦</div>
-        <h2 class="module-title">DIGIY FRET CLIENT</h2>
-        <p class="module-description">Expéditeurs • Suivi • Paiement mobile</p>
-        <div class="tiers-container">
-          <div class="tiers-title">Tarifs Client (mensuel)</div>
-          <div class="tier"><span class="tier-name">🥉 LOCAL</span><span class="tier-price">9 900 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥈 RÉGIONAL</span><span class="tier-price">25 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">🥇 NATIONAL</span><span class="tier-price">60 000 FCFA</span></div>
-          <div class="tier"><span class="tier-name">👑 INTERNATIONAL</span><span class="tier-price">120 000 FCFA</span></div>
-        </div>
-        <div class="deal-badge">💡 -10% si Multi-Modules</div>
-        <div class="commission-badge">✅ 0% Commission</div>
       </div>
     </div>
 
     <header style="margin-top:40px;">
-      <h2 style="color:#1e293b; margin-bottom:20px;">💳 Prêt à commencer ?</h2>
-      <div class="contact-info">
+      <h2 style="color:#1e293b; margin-bottom:20px;">📞 COMMANDER = DIS LE CODE !</h2>
+      <div class="banner">
+        <h3>🥡 Exemples de commande</h3>
+        <p><b>Client :</b> "Allô, je veux le numéro 2B"</p>
+        <p><b>JB :</b> "OK, LOC 6-9 logements = 25 000 FCFA/mois. Mensuel ou annuel ?"</p>
+        <p style="margin-top:8px"><b>Client :</b> "Le 3A et le 7"</p>
+        <p><b>JB :</b> "RESTO ESSENTIEL 19 900 + BUILD 12 900 = 32 800. Multi-modules = -10% → 29 520 FCFA"</p>
+      </div>
+
+      <div class="contact-info" style="margin-top:20px">
         <h3>Contacte JB BEAUVILLE</h3>
         <div class="contact-details">
           📞 +221 77 134 28 89<br>
           💬 WhatsApp disponible
         </div>
         <a href="https://beauville.github.io/commencer-a-payer/" class="pay-button">
-          🚀 COMMENCER À PAYER MAINTENANT
+          🚀 PAYER MAINTENANT
         </a>
       </div>
     </header>
@@ -612,12 +875,10 @@
   (function(){
     "use strict";
 
-    // === Supabase ===
     const SUPABASE_URL = "https://wesqmwjjtsefyjnluosj.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indlc3Ftd2pqdHNlZnlqbmx1b3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxNzg4ODIsImV4cCI6MjA4MDc1NDg4Mn0.dZfYOc2iL2_wRYL3zExZFsFSBK6AbMeOid2LrIjcTdA";
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // === Suppléments explore_boost (3 plans) ===
     const ADDON_MODULE = "explore_boost";
     const PLANS = [
       { code:"local",    label:"LOCAL",    fallbackPrice:5000  },
@@ -625,8 +886,7 @@
       { code:"premium",  label:"PREMIUM",  fallbackPrice:20000 },
     ];
 
-    // WhatsApp support (JB)
-    const SUPPORT_WA = "221771342889"; // sans +
+    const SUPPORT_WA = "221771342889";
 
     const $ = (id)=>document.getElementById(id);
 
@@ -664,19 +924,6 @@
       el.textContent = "statut: " + (status || "none");
     }
 
-    function waLink({planCode, planLabel, amount}){
-      const txt =
-`DIGIY — Demande activation supplément EXPLORE
-• phone: ${phone || "—"}
-• slug: ${slug || "—"}
-• module_actif: ${resolvedPrimary || "—"}
-• plan: ${planLabel} (${planCode})
-• montant: ${amount} FCFA / mois
-
-J’ai payé par Wave (manuel). Voici le reçu :`;
-      return "https://wa.me/" + SUPPORT_WA + "?text=" + encodeURIComponent(txt);
-    }
-
     function applyLock(ok){
       if($("ctxPrimary")) $("ctxPrimary").textContent = ok ? resolvedPrimary : "—";
       if($("lockBox")) $("lockBox").style.display = ok ? "none" : "block";
@@ -691,7 +938,6 @@ J’ai payé par Wave (manuel). Voici le reçu :`;
 
     async function isActive(mod){
       try{
-        // ⚠️ RPC attendu: is_module_active(p_phone, p_module)
         const r = await sb.rpc("is_module_active", { p_phone: phone, p_module: String(mod||"").toUpperCase() });
         if(r.error) return false;
         return !!r.data;
@@ -785,11 +1031,10 @@ J’ai payé par Wave (manuel). Voici le reçu :`;
       setStatusPill(currentStatus);
       if($("addonPlanLabel")) $("addonPlanLabel").textContent = currentPlan;
 
-      // labels (simple)
       if(currentStatus === "active"){
         for(const p of PLANS){
           const b = $("btnPay_" + p.code);
-          if(b) b.textContent = "Gérer (manuel)";
+          if(b) b.textContent = "Gérer";
         }
       }else if(currentStatus === "paused"){
         for(const p of PLANS){
@@ -820,7 +1065,6 @@ J’ai payé par Wave (manuel). Voici le reçu :`;
 
     if($("btnAddonRefresh")) $("btnAddonRefresh").addEventListener("click", refreshAll);
 
-    // Boot
     refreshAll();
   })();
   </script>
