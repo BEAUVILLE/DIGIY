@@ -15,6 +15,38 @@
       background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
       min-height:100vh; padding:20px; color:#1e293b;
     }
+
+    .floating-back{
+      position:fixed;
+      top:calc(env(safe-area-inset-top, 0px) + 14px);
+      left:calc(env(safe-area-inset-left, 0px) + 14px);
+      z-index:99999;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.28);
+      background:linear-gradient(135deg,#facc15 0%, #10b981 100%);
+      color:#0f172a;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:1000;
+      line-height:1;
+      box-shadow:0 16px 40px rgba(0,0,0,.28);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .floating-back:hover{
+      transform:translateY(-1px);
+      box-shadow:0 20px 46px rgba(0,0,0,.34);
+    }
+    .floating-back:active{
+      transform:translateY(0);
+    }
+
     .container{max-width:1200px;margin:0 auto}
     header{
       text-align:center; padding:40px 20px;
@@ -336,11 +368,21 @@
       .module-title{font-size:22px}
       .price-badge{font-size:18px}
       .ref-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+      .floating-back{
+        top:calc(env(safe-area-inset-top, 0px) + 10px);
+        left:calc(env(safe-area-inset-left, 0px) + 10px);
+        padding:11px 14px;
+        font-size:13px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <a class="floating-back" href="https://digiylyfe.com/" aria-label="Retour au site DIGIYLYFE">
+    ↩️ Retour site
+  </a>
+
   <div class="container">
     <header>
       <h1>🦅 DIGIYLYFE</h1>
