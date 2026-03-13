@@ -690,9 +690,9 @@
     <div class="quick-ref">
       <h2>📋 Référence Rapide (dis juste le code !)</h2>
       <div class="ref-grid">
-        <div class="ref-item"><div class="ref-code">1</div><div class="ref-label">DRIVER • 12 900 FCFA</div></div>
+        <div class="ref-item"><div class="ref-code">1</div><div class="ref-label">DRIVER • 19 900 FCFA</div></div>
         <div class="ref-item"><div class="ref-code">2A-2E</div><div class="ref-label">LOC (1 à 30+ unités)</div></div>
-        <div class="ref-item"><div class="ref-code">4A-4E</div><div class="ref-label">RÉSA</div></div>
+        <div class="ref-item"><div class="ref-code">4A-4E</div><div class="ref-label">RÉSA MULTI-BUSINESS</div></div>
         <div class="ref-item"><div class="ref-code">5</div><div class="ref-label">CAISSE BOUTIQUE • 19 900 FCFA</div></div>
         <div class="ref-item"><div class="ref-code">6</div><div class="ref-label">MARKET • 19 900 FCFA</div></div>
         <div class="ref-item"><div class="ref-code">7</div><div class="ref-label">MULTI-SERVICE • 12 900 FCFA</div></div>
@@ -780,53 +780,60 @@
         <div class="module-icon">📅</div>
         <h2 class="module-title">DIGIY RÉSA</h2>
         <p class="module-description">
-          Réservations • planning • rappels auto • présence de ton activité dans l'écosystème DIGIYLYFE
+          Réservations • planning • rappels auto • rendez-vous multi-business • coiffure • beauté • spa • couture • haute couture • cabinet • garage • atelier • resto
         </p>
-        <div class="price-badge">À partir de 12 900 FCFA / mois</div>
+        <div class="price-badge">À partir de 9 000 FCFA / mois</div>
 
         <div class="tiers-container">
-          <div class="tiers-title">Par nombre de tables</div>
+          <div class="tiers-title">Par niveau de business</div>
 
           <div class="tier">
             <div class="tier-code">4A</div>
             <div class="tier-content">
-              <span class="tier-name">🥉 1 à 5 tables</span>
-              <span class="tier-price">12 900 FCFA</span>
+              <span class="tier-name">Solo • activité simple sur rendez-vous</span>
+              <span class="tier-price">9 000 FCFA</span>
             </div>
           </div>
 
           <div class="tier">
             <div class="tier-code">4B</div>
             <div class="tier-content">
-              <span class="tier-name">🥈 6 à 9 tables</span>
-              <span class="tier-price">25 000 FCFA</span>
+              <span class="tier-name">Standard • petite activité organisée</span>
+              <span class="tier-price">15 000 FCFA</span>
             </div>
           </div>
 
           <div class="tier">
             <div class="tier-code">4C</div>
             <div class="tier-content">
-              <span class="tier-name">🥇 10 à 20 tables</span>
-              <span class="tier-price">45 000 FCFA</span>
+              <span class="tier-name">Pro • plusieurs services / planning structuré</span>
+              <span class="tier-price">25 000 FCFA</span>
             </div>
           </div>
+          <div class="deal-badge">✅ Le plus équilibré</div>
 
-          <div class="tier">
+          <div class="tier" style="margin-top:10px;">
             <div class="tier-code">4D</div>
             <div class="tier-content">
-              <span class="tier-name">💎 21 à 30 tables</span>
-              <span class="tier-price">60 000 FCFA</span>
+              <span class="tier-name">Business • activité coordonnée / équipe</span>
+              <span class="tier-price">40 000 FCFA</span>
             </div>
           </div>
 
           <div class="tier">
             <div class="tier-code">4E</div>
             <div class="tier-content">
-              <span class="tier-name">👑 Plus de 30 tables</span>
-              <span class="tier-price">90 000 FCFA</span>
+              <span class="tier-name">Premium • gros flux / usage intensif</span>
+              <span class="tier-price">60 000 FCFA</span>
             </div>
           </div>
         </div>
+
+        <ul class="features">
+          <li>Rendez-vous multi-business</li>
+          <li>Planning & créneaux</li>
+          <li>Rappels auto & présence pro</li>
+        </ul>
 
         <div class="commission-badge">✅ 0% Commission</div>
         <div class="presence-badge">📍 Fiche pro / présence Super App</div>
@@ -1060,6 +1067,9 @@
         <p><b>Client :</b> "Allô, je veux le numéro 2B"</p>
         <p><b>JB :</b> "OK, DIGIY LOC Standard, 6 à 9 unités = 35 000 FCFA / mois. Mensuel ou annuel ?"</p>
 
+        <p style="margin-top:8px"><b>Client :</b> "Je veux le 4B"</p>
+        <p><b>JB :</b> "OK, DIGIY RÉSA Standard, petite activité organisée = 15 000 FCFA / mois. Quel est ton métier ? Coiffure, couture, beauté, spa, cabinet, garage ou autre ?"</p>
+
         <p style="margin-top:8px"><b>Client :</b> "Je veux le 5 et le 7"</p>
         <p><b>JB :</b> "DIGIY CAISSE BOUTIQUE 19 900 + DIGIY MULTI-SERVICE 12 900 = 32 800. Multi-modules = -10% → 29 520 FCFA."</p>
 
@@ -1088,7 +1098,7 @@
     "use strict";
 
     const SUPABASE_URL = "https://wesqmwjjtsefyjnluosj.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indlc3Ftd2pqdHNlZnlqbmx1b3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxNzg4ODIsImV4cCI6MjA4MDc1NDg4Mn0.dZfYOc2iL2_wRYL3zExZFsFSBK6AbMeOid2LrIjcTdA";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXFtd2pqdHNlZnlqbmx1b3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxNzg4ODIsImV4cCI6MjA4MDc1NDg4Mn0.dZfYOc2iL2_wRYL3zExZFsFSBK6AbMeOid2LrIjcTdA";
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     const ADDON_MODULE = "explore_boost";
@@ -1167,7 +1177,7 @@
 
       if(await isActive(primaryFromQS)) return { ok:true, mod: primaryFromQS };
 
-      const candidates = ["LOC","MARKET","DRIVER","POS_PRO","RESTO_RESA","JOBS","BUILD"];
+      const candidates = ["LOC","MARKET","DRIVER","POS_PRO","RESA","JOBS","BUILD"];
       for(const m of candidates){
         if(await isActive(m)) return { ok:true, mod: m };
       }
