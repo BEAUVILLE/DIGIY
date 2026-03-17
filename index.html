@@ -697,6 +697,7 @@
         <div class="ref-item"><div class="ref-code">6</div><div class="ref-label">MARKET • 19 900 FCFA</div></div>
         <div class="ref-item"><div class="ref-code">7</div><div class="ref-label">MULTI-SERVICE • 12 900 FCFA</div></div>
         <div class="ref-item"><div class="ref-code">8A-8D</div><div class="ref-label">EXPLORE AGENCE</div></div>
+        <div class="ref-item"><div class="ref-code">9A-9C</div><div class="ref-label">MON ARGENT by DIGIY</div></div>
         <div class="ref-item"><div class="ref-code">E1-E3</div><div class="ref-label">Boost EXPLORE</div></div>
       </div>
     </div>
@@ -941,6 +942,55 @@
         <div class="commission-badge">✅ 0% Commission</div>
         <div class="presence-badge">📍 Présence tourisme / Super App</div>
       </div>
+
+      <div class="module-card">
+        <div class="module-code">9</div>
+        <div class="module-icon">💳</div>
+        <h2 class="module-title">MON ARGENT by DIGIY</h2>
+        <p class="module-description">
+          Pilotage financier simple • entrées • dépenses • épargne • lecture claire de ton activité
+          + présence affirmée dans l'écosystème DIGIYLYFE.
+        </p>
+        <div class="price-badge">À partir de 4 900 FCFA / mois</div>
+
+        <div class="tiers-container">
+          <div class="tiers-title">Plans PAY</div>
+
+          <div class="tier">
+            <div class="tier-code">9A</div>
+            <div class="tier-content">
+              <span class="tier-name">Starter • lecture simple</span>
+              <span class="tier-price">4 900 FCFA</span>
+            </div>
+          </div>
+
+          <div class="tier">
+            <div class="tier-code">9B</div>
+            <div class="tier-content">
+              <span class="tier-name">Pro • activité mieux pilotée</span>
+              <span class="tier-price">9 900 FCFA</span>
+            </div>
+          </div>
+
+          <div class="tier">
+            <div class="tier-code">9C</div>
+            <div class="tier-content">
+              <span class="tier-name">Business • vision renforcée</span>
+              <span class="tier-price">24 900 FCFA</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features">
+          <li>Entrées & dépenses</li>
+          <li>Lecture par canal</li>
+          <li>Lecture par module DIGIY</li>
+          <li>Épargne & net</li>
+        </ul>
+
+        <div class="commission-badge">✅ 0% Commission</div>
+        <div class="presence-badge">📍 Cockpit argent / présence DIGIY</div>
+      </div>
     </div>
 
     <div class="section-title">✨ Suppléments EXPLORE (payants)</div>
@@ -1073,6 +1123,12 @@
         <p style="margin-top:8px"><b>Client :</b> "Je veux le 5 et le 7"</p>
         <p><b>JB :</b> "DIGIY CAISSE BOUTIQUE 19 900 + DIGIY MULTI-SERVICE 12 900 = 32 800. Multi-modules = -10% → 29 520 FCFA."</p>
 
+        <p style="margin-top:8px"><b>Client :</b> "Je veux le 9A"</p>
+        <p><b>JB :</b> "OK, MON ARGENT by DIGIY Starter = 4 900 FCFA / mois. Tu veux lecture simple de tes entrées, dépenses et épargne."</p>
+
+        <p style="margin-top:8px"><b>Client :</b> "Je veux le 9B"</p>
+        <p><b>JB :</b> "OK, MON ARGENT by DIGIY Pro = 9 900 FCFA / mois. Tu auras une lecture plus complète de ton activité."</p>
+
         <p style="margin-top:10px">
           <b>Process :</b> tu choisis ton code • tu envoies tes informations • DIGIY prépare •
           <b>bon à tirer</b> • validation finale • activation •
@@ -1177,7 +1233,7 @@
 
       if(await isActive(primaryFromQS)) return { ok:true, mod: primaryFromQS };
 
-      const candidates = ["LOC","MARKET","DRIVER","POS_PRO","RESA","JOBS","BUILD"];
+      const candidates = ["LOC","MARKET","DRIVER","POS","RESA","JOBS","BUILD","PAY"];
       for(const m of candidates){
         if(await isActive(m)) return { ok:true, mod: m };
       }
