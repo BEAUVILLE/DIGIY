@@ -1700,7 +1700,8 @@
     text: "Bienvenue. Ici, tu peux choisir ton code DIGIY. Un A, deux B, cinquante-six, neuf A. Tu appelles, tu dis le code, et DIGIY comprend direct. Tu prends ton outil de travail et ta présence dans l’écosystème DIGIYLYFE. Simple. Direct. Humain.",
     buttonBg: "linear-gradient(135deg,#d4af37,#b78b34)",
     buttonColor: "#111827",
-    bottom: "24px",
+    /* Au-dessus de la barre fixe “WhatsApp / Payer” */
+    bottom: "118px",
     right: "24px",
     rate: 0.82,
     pitch: 1,
@@ -1749,13 +1750,25 @@
   }
   @media (max-width:600px){
     #digiy-audio-btn{
-      font-size:16px;
-      padding:15px 22px;
-      gap:11px;
-      bottom:84px !important;
+      font-size:15px;
+      padding:13px 18px;
+      gap:10px;
+      right:14px !important;
+      bottom:142px !important;
+      max-width:calc(100vw - 28px);
+      white-space:nowrap;
     }
     #digiy-audio-btn .digiy-audio-ico{
-      font-size:17px;
+      font-size:16px;
+    }
+  }
+
+  @media (max-width:380px){
+    #digiy-audio-btn{
+      left:14px !important;
+      right:auto !important;
+      bottom:154px !important;
+      justify-content:center;
     }
   }
   </style>
