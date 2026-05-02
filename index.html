@@ -49,6 +49,138 @@
     }
     .floating-back:active{transform:translateY(0)}
 
+    .floating-returns{
+      position:fixed;
+      top:calc(env(safe-area-inset-top, 0px) + 14px);
+      left:calc(env(safe-area-inset-left, 0px) + 14px);
+      z-index:99999;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .floating-returns .floating-back{
+      position:static;
+      top:auto;
+      left:auto;
+    }
+
+    .floating-back.hub{
+      background:linear-gradient(135deg,#0f172a 0%, #10b981 100%);
+      color:#fff;
+    }
+
+    .top-return-row{
+      margin:16px auto 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+    }
+
+    .top-return-row a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:46px;
+      padding:11px 16px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:1000;
+      border:1px solid rgba(15,23,42,.08);
+      background:rgba(255,255,255,.82);
+      color:#0f172a;
+      box-shadow:0 10px 24px rgba(0,0,0,.10);
+    }
+
+    .top-return-row a.primary{
+      background:#0f172a;
+      color:#fff;
+    }
+
+    .digiy-bottom-nav{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:9997;
+      padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));
+      background:linear-gradient(180deg, rgba(15,23,42,.02), rgba(15,23,42,.96) 28%);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+
+    .digiy-bottom-nav-inner{
+      max-width:760px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:6px;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(15,23,42,.08);
+      border-radius:18px;
+      padding:6px;
+      box-shadow:0 14px 36px rgba(0,0,0,.22);
+    }
+
+    .digiy-bottom-nav a,
+    .digiy-bottom-nav button{
+      min-height:54px;
+      border-radius:14px;
+      border:1px solid transparent;
+      background:transparent;
+      color:#475569;
+      display:grid;
+      place-items:center;
+      align-content:center;
+      gap:2px;
+      font-size:11px;
+      font-weight:1000;
+      text-align:center;
+      text-decoration:none;
+      cursor:pointer;
+      font-family:inherit;
+      padding:0 4px;
+    }
+
+    .digiy-bottom-nav .ico{font-size:18px;line-height:1}
+
+    .digiy-bottom-nav a.active,
+    .digiy-bottom-nav button.active{
+      background:linear-gradient(135deg,#facc15 0%,#10b981 100%);
+      color:#0f172a;
+      box-shadow:0 10px 22px rgba(0,0,0,.12);
+    }
+
+    .return-house{
+      margin:30px 0;
+      background:rgba(255,255,255,.95);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 18px 50px rgba(0,0,0,.16);
+      border:1px solid rgba(15,23,42,.08);
+      text-align:center;
+    }
+
+    .return-house h3{
+      font-size:24px;
+      font-weight:1000;
+      color:#0f172a;
+      margin-bottom:8px;
+    }
+
+    .return-house p{
+      color:#475569;
+      font-size:14px;
+      font-weight:800;
+      line-height:1.55;
+      max-width:760px;
+      margin:0 auto 14px;
+    }
+
     .container{max-width:1200px;margin:0 auto}
 
     header{
@@ -809,9 +941,12 @@
       .module-title{font-size:22px}
       .price-badge{font-size:18px}
       .ref-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
-      .floating-back{
+      .floating-returns{
         top:calc(env(safe-area-inset-top, 0px) + 10px);
         left:calc(env(safe-area-inset-left, 0px) + 10px);
+        right:calc(env(safe-area-inset-right, 0px) + 10px);
+      }
+      .floating-returns .floating-back{
         padding:11px 14px;
         font-size:13px;
       }
@@ -832,15 +967,26 @@
 </head>
 
 <body>
-  <a class="floating-back" href="https://digiylyfe.com/" aria-label="Retour au site DIGIYLYFE">
-    ↩️ Retour site
-  </a>
+  <div class="floating-returns" aria-label="Retours DIGIY">
+    <a class="floating-back" href="https://digiylyfe.com/" aria-label="Retour au site DIGIYLYFE">
+      🌍 Site
+    </a>
+    <a class="floating-back hub" href="https://digiy-hub.digiylyfe.com/" aria-label="Retour au HUB DIGIY">
+      🧭 HUB
+    </a>
+  </div>
 
   <div class="container">
     <header>
       <h1>🦅 DIGIYLYFE</h1>
       <p class="tagline">Codes simples — Outil de travail + présence digitale</p>
       <p class="subtag">Choisis ton action • Dis le code • DIGIY prépare ton outil</p>
+
+      <div class="top-return-row">
+        <a href="https://digiylyfe.com/">🌍 Site DIGIYLYFE</a>
+        <a class="primary" href="https://digiy-hub.digiylyfe.com/">🧭 HUB DIGIY</a>
+        <a href="https://wa.me/221771342889?text=Bonjour%20DIGIY,%20je%20veux%20des%20informations%20sur%20vos%20codes%20tarifs.">💬 WhatsApp</a>
+      </div>
 
       <div class="hero-action">
         <strong>Tu veux avancer ? Dis juste un code.</strong>
@@ -947,7 +1093,7 @@
           👤 JB BEAUVILLE<br>
           📞 +221 77 134 28 89
         </div>
-        <a href="https://beauville.github.io/commencer-a-payer/" class="pay-button">
+        <a href="https://commencer-a-payer.digiylyfe.com/" class="pay-button">
           💰 COMMENCER À PAYER
         </a>
       </div>
@@ -1489,11 +1635,26 @@
           📞 +221 77 134 28 89<br>
           💬 WhatsApp disponible
         </div>
-        <a href="https://beauville.github.io/commencer-a-payer/" class="pay-button">
+        <a href="https://commencer-a-payer.digiylyfe.com/" class="pay-button">
           🚀 PAYER MAINTENANT
         </a>
       </div>
     </header>
+
+    <div class="return-house" id="retours-digiy">
+      <h3>Revenir dans la maison DIGIY</h3>
+      <p>
+        Cette page est la grille officielle des codes et tarifs. Pour revenir à la vitrine, au HUB ou demander une activation,
+        utilise les portes ci-dessous.
+      </p>
+      <div class="hero-cta-row">
+        <a class="hero-cta-secondary" href="https://digiylyfe.com/">🌍 Site DIGIYLYFE</a>
+        <a class="hero-cta-primary" href="https://digiy-hub.digiylyfe.com/">🧭 HUB DIGIY</a>
+        <a class="hero-cta-secondary" href="https://commencer-a-payer.digiylyfe.com/">💰 Commencer à payer</a>
+        <a class="hero-cta-secondary" href="https://wa.me/221771342889?text=Bonjour%20DIGIY,%20je%20veux%20des%20informations%20sur%20vos%20codes%20tarifs.">💬 WhatsApp</a>
+      </div>
+    </div>
+
   </div>
 
   <div class="sticky-order">
@@ -1503,11 +1664,23 @@
         <strong>Dis juste un code : 1A • 2B • 56 • 9A</strong>
       </div>
       <div class="sticky-order-actions">
+        <a class="sticky-wa" href="https://digiy-hub.digiylyfe.com/">🧭 HUB</a>
         <a class="sticky-wa" href="https://wa.me/221771342889?text=Bonjour%20DIGIY,%20je%20veux%20des%20informations%20sur%20vos%20codes%20tarifs.">💬 WhatsApp</a>
-        <a class="sticky-pay" href="https://beauville.github.io/commencer-a-payer/">💰 Payer</a>
+        <a class="sticky-pay" href="https://commencer-a-payer.digiylyfe.com/">💰 Payer</a>
       </div>
     </div>
   </div>
+
+
+  <nav class="digiy-bottom-nav" aria-label="Navigation rapide DIGIY tarifs">
+    <div class="digiy-bottom-nav-inner">
+      <a href="https://digiylyfe.com/"><span class="ico">🌍</span><span>Site</span></a>
+      <a href="https://digiy-hub.digiylyfe.com/"><span class="ico">🧭</span><span>HUB</span></a>
+      <a class="active" href="https://tarifs.digiylyfe.com/"><span class="ico">📦</span><span>Tarifs</span></a>
+      <a href="https://wa.me/221771342889?text=Bonjour%20DIGIY,%20je%20veux%20des%20informations%20sur%20vos%20codes%20tarifs."><span class="ico">💬</span><span>WhatsApp</span></a>
+      <a href="https://commencer-a-payer.digiylyfe.com/"><span class="ico">💰</span><span>Payer</span></a>
+    </div>
+  </nav>
 
   <script>
   (function(){
@@ -1626,7 +1799,7 @@
 
         if($("btnPay_" + p.code)){
           $("btnPay_" + p.code).href =
-            "https://beauville.github.io/commencer-a-payer/?" +
+            "https://commencer-a-payer.digiylyfe.com/?" +
             new URLSearchParams({
               phone: phone || "",
               slug: slug || "",
