@@ -2039,6 +2039,20 @@
     var timer = null;
     var launchId = 0;
 
+    /* Doctrine audio DIGIYLYFE : le texte visible reste propre,
+       mais la voix lit les mots sensibles avec la bonne prononciation terrain. */
+    function applyDigiyPronunciation(text){
+      return String(text || "")
+        .replace(/\bDIGIYLYFE\b/g, "diji i laïfe")
+        .replace(/\bDIGIY\b/g, "diji i")
+        .replace(/\bBUILD\b/g, "artisans tout corps de métiers")
+        .replace(/\bQR\b/g, "Q R")
+        .replace(/\bSMS\b/g, "S M S")
+        .replace(/\bWhatsApp\b/gi, "Ouatsap")
+        .replace(/\bWave\b/gi, "Ouève")
+        .replace(/0\s*%/g, "zéro pour cent");
+    }
+
     function getFrenchVoice(){
       var voices = synth.getVoices() || [];
       if (!voices.length) return null;
@@ -2104,7 +2118,9 @@
 
       try { synth.cancel(); } catch(e){}
 
-      utterance = new SpeechSynthesisUtterance(config.text);
+      var spokenText = applyDigiyPronunciation(config.text);
+
+      utterance = new SpeechSynthesisUtterance(spokenText);
       utterance.lang = "fr-FR";
       utterance.rate = config.rate;
       utterance.pitch = config.pitch;
@@ -2116,7 +2132,7 @@
       utterance.onstart = function(){
         if (currentId !== launchId) return;
         setPlaying();
-        startProgress(config.text, currentId);
+        startProgress(spokenText, currentId);
       };
 
       utterance.onend = function(){
