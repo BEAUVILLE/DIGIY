@@ -1,168 +1,485 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-  <meta name="theme-color" content="#123c2d"/>
-  <meta name="digiy-fix-no-activation-404" content="bouton-module-404-retire-20260530"/>
-  <meta name="digiy-fix-hero-aside" content="paiement-direct-aside-retire-20260530"/>
-  <meta name="digiy-fix-public-clean" content="ancien-secours-secure-supprime-20260530"/>
-  <meta name="robots" content="index,follow"/>
-  <meta name="digiy-version" content="choisir-module-index-clean-20260530"/>
-  <title>Choisir mon module — DIGIYLYFE</title>
-  <meta name="description" content="Porte centrale DIGIYLYFE : choisis ton module métier et ouvre la bonne inscription pro."/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+  <title>DIGIY PAY — Ce que ça fait pour toi</title>
+  <meta name="theme-color" content="#04110d">
+  <meta name="robots" content="noindex,nofollow">
   <style>
-    :root{--bg:#123c2d;--bg2:#071b14;--card:#174b38;--line:rgba(255,255,255,.18);--text:#f7fff9;--muted:rgba(247,255,249,.82);--gold:#facc15;--green:#22c55e;--shadow:0 18px 48px rgba(0,0,0,.28)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,rgba(34,197,94,.18),transparent 34%),radial-gradient(circle at bottom right,rgba(250,204,21,.12),transparent 32%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font-size:18px;font-weight:850;padding-bottom:80px}a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:auto;padding:14px}.top{position:sticky;top:0;z-index:20;margin:-14px -14px 14px;padding:12px 14px;background:rgba(18,60,45,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.brand{font-weight:1000}.nav{display:flex;gap:8px;flex-wrap:wrap}.btn{min-height:46px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);display:inline-flex;align-items:center;justify-content:center;padding:0 14px;font-weight:1000}.btn.gold{background:linear-gradient(135deg,var(--gold),#f59e0b);color:#061b14;border:0}.hero{border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,rgba(25,82,60,.96),rgba(16,61,46,.96));box-shadow:var(--shadow);padding:22px;margin-bottom:14px;display:grid;grid-template-columns:1fr;gap:16px}h1{margin:0;font-size:clamp(36px,6vw,66px);line-height:.98;font-weight:1000;letter-spacing:-.04em;color:#fff8db}p{color:var(--muted);line-height:1.6;font-weight:850}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:1000;color:#fff8db}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.module-card{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.07);padding:16px;display:grid;gap:8px;min-height:170px;box-shadow:0 12px 30px rgba(0,0,0,.12)}.module-card:hover{border-color:rgba(250,204,21,.7);background:rgba(250,204,21,.10)}.icon{font-size:32px}.code{width:max-content;border-radius:999px;border:1px solid rgba(250,204,21,.36);background:rgba(250,204,21,.10);color:#fff8db;padding:6px 10px;font-size:12px;font-weight:1000}.module-card strong{font-size:24px;line-height:1.08}.module-card small{color:var(--muted);font-size:15px;line-height:1.45;font-weight:850}.module-card em{color:#bbf7d0;font-style:normal;font-weight:1000;margin-top:auto}.footer{margin-top:16px;border:1px solid var(--line);border-radius:20px;padding:14px;background:rgba(255,255,255,.055);color:var(--muted);font-size:15px;line-height:1.5}@media(max-width:760px){.hero,.grid{grid-template-columns:1fr}.btn{width:100%}.nav{width:100%}.module-card{min-height:150px}}
+    :root{
+      --bg:#04110d;--green:#167a46;--green2:#22c55e;
+      --gold:#c4973f;--gold2:#f4d27a;--red:#c2410c;
+      --ink:#172016;--max:420px;
+    }
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html,body{margin:0;padding:0;height:100%;overflow:hidden;background:var(--bg)}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:850;-webkit-font-smoothing:antialiased}
+
+    /* ── TRACK HORIZONTAL ── */
+    .track{
+      display:flex;
+      width:100vw;height:100vh;
+      overflow-x:auto;overflow-y:hidden;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    .track::-webkit-scrollbar{display:none}
+
+    /* ── SLIDE ── */
+    .slide{
+      flex:0 0 100vw;
+      height:100vh;
+      scroll-snap-align:start;
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      padding:24px 20px calc(80px + env(safe-area-inset-bottom,0px));
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Fonds par slide */
+    .s0{background:radial-gradient(circle at 30% 30%,rgba(196,151,63,.22),transparent 55%),linear-gradient(160deg,#04110d,#061a10)}
+    .s1{background:radial-gradient(circle at 70% 20%,rgba(34,197,94,.18),transparent 50%),linear-gradient(160deg,#03100b,#071a0f)}
+    .s2{background:radial-gradient(circle at 20% 70%,rgba(244,210,122,.16),transparent 50%),linear-gradient(160deg,#060f08,#04140d)}
+    .s3{background:radial-gradient(circle at 80% 60%,rgba(34,197,94,.14),transparent 50%),linear-gradient(160deg,#04110d,#081c10)}
+    .s4{background:radial-gradient(circle at 40% 30%,rgba(196,151,63,.20),transparent 50%),linear-gradient(160deg,#050e09,#071810)}
+    .s5{background:radial-gradient(circle at 60% 70%,rgba(34,197,94,.16),transparent 50%),linear-gradient(160deg,#030e08,#061510)}
+    .s6{background:radial-gradient(circle at 30% 50%,rgba(244,210,122,.18),transparent 50%),linear-gradient(160deg,#04110d,#091d12)}
+    .s7{background:radial-gradient(circle at 70% 30%,rgba(34,197,94,.20),transparent 50%),linear-gradient(160deg,#03100b,#071a0f)}
+
+    /* ── CONTENU SLIDE ── */
+    .slide-inner{width:min(var(--max),100%);text-align:center}
+
+    .emoji-big{font-size:56px;line-height:1;margin-bottom:16px;display:block}
+    .kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,210,122,.65);font-weight:1000;margin-bottom:8px}
+    .slide-title{font-size:28px;line-height:1.12;color:#fff;font-weight:1100;letter-spacing:-.03em;margin-bottom:12px}
+    .slide-title em{font-style:normal;color:var(--gold2)}
+    .slide-body{font-size:15px;line-height:1.65;color:rgba(255,255,255,.78);font-weight:900;margin-bottom:20px}
+    .slide-body strong{color:#fff}
+
+    /* CARTE DÉMO */
+    .demo-card{
+      background:linear-gradient(135deg,#fffaf0,#ead7aa);
+      border-radius:22px;padding:16px;
+      color:var(--ink);text-align:left;
+      box-shadow:0 18px 48px rgba(0,0,0,.32);
+      margin-bottom:20px;
+    }
+    .demo-card .dc-label{font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:#6b5a3b;font-weight:1000;margin-bottom:6px}
+    .demo-card .dc-amount{font-size:36px;font-weight:1100;color:var(--ink);letter-spacing:-1px;line-height:1}
+    .demo-card .dc-sub{margin-top:6px;font-size:12px;color:#6b5a3b;font-weight:1000}
+    .demo-card .dc-row{display:flex;gap:8px;margin-top:10px}
+    .dc-pill{flex:1;padding:8px 6px;border-radius:12px;background:rgba(22,122,70,.12);color:#052215;font-size:11px;font-weight:1000;text-align:center;border:1px solid rgba(22,122,70,.18)}
+    .dc-pill.red{background:rgba(194,65,12,.10);color:#7c2d12;border-color:rgba(194,65,12,.18)}
+
+    /* CHIPS DÉMO */
+    .chips-demo{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+    .chip-demo{
+      padding:10px 14px;border-radius:16px;
+      font-size:13px;font-weight:1000;
+      display:flex;align-items:center;gap:6px
+    }
+    .chip-in{background:linear-gradient(135deg,#dcfce7,#f0fdf4);color:#052215}
+    .chip-out{background:linear-gradient(135deg,#ffedd5,#fff7ed);color:#7c2d12}
+    .chip-mode{background:rgba(255,255,255,.10);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.15)}
+
+    /* BOUTON SLIDE */
+    .slide-btn{
+      width:100%;min-height:54px;border-radius:999px;border:none;
+      background:linear-gradient(135deg,var(--green2),#bbf7d0);
+      color:#052215;font-size:15px;font-weight:1100;
+      box-shadow:0 10px 26px rgba(34,197,94,.28);
+      display:flex;align-items:center;justify-content:center;gap:8px
+    }
+    .slide-btn.gold{
+      background:linear-gradient(135deg,var(--gold2),#fff3c4);
+      color:var(--ink);box-shadow:0 10px 26px rgba(196,151,63,.28)
+    }
+    .slide-btn.outline{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.22);
+      color:rgba(255,255,255,.85);box-shadow:none
+    }
+
+    /* PROGRESS DOTS */
+    .progress{
+      position:fixed;bottom:calc(28px + env(safe-area-inset-bottom,0px));
+      left:50%;transform:translateX(-50%);
+      display:flex;gap:6px;z-index:30
+    }
+    .dot{
+      width:6px;height:6px;border-radius:999px;
+      background:rgba(255,255,255,.25);
+      transition:all .25s
+    }
+    .dot.active{width:20px;background:var(--gold2)}
+
+    /* MODALE BLOQUÉE */
+    .lock-bg{
+      position:fixed;inset:0;z-index:60;
+      background:rgba(0,0,0,.65);
+      display:flex;align-items:flex-end;justify-content:center;
+      padding:0;
+      opacity:0;pointer-events:none;
+      transition:opacity .25s
+    }
+    .lock-bg.open{opacity:1;pointer-events:all}
+    .lock-box{
+      width:100%;max-width:var(--max);
+      background:linear-gradient(180deg,#fffaf0,#ead7aa);
+      border-radius:28px 28px 0 0;
+      padding:24px 20px calc(24px + env(safe-area-inset-bottom,0px));
+      color:var(--ink);
+      transform:translateY(40px);
+      transition:transform .3s cubic-bezier(.22,1,.36,1);
+    }
+    .lock-bg.open .lock-box{transform:translateY(0)}
+    .lock-ico{font-size:44px;text-align:center;margin-bottom:12px}
+    .lock-title{font-size:20px;font-weight:1100;color:var(--ink);text-align:center;margin-bottom:8px}
+    .lock-body{font-size:14px;line-height:1.65;color:#4c3d22;font-weight:900;text-align:center;margin-bottom:20px}
+    .lock-btn{
+      width:100%;min-height:54px;border-radius:999px;border:none;
+      background:linear-gradient(135deg,var(--green2),#bbf7d0);
+      color:#052215;font-size:15px;font-weight:1100;
+      box-shadow:0 10px 26px rgba(34,197,94,.22)
+    }
+    .lock-btn.gold{
+      background:linear-gradient(135deg,var(--gold2),#fff3c4);
+      color:var(--ink);box-shadow:0 10px 26px rgba(196,151,63,.22)
+    }
+
+    /* LISTE FEATURES */
+    .feat-list{text-align:left;margin-bottom:16px}
+    .feat-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .feat-item:last-child{border-bottom:none}
+    .feat-ico{font-size:20px;flex:0 0 28px;text-align:center;margin-top:1px}
+    .feat-text{font-size:14px;color:rgba(255,255,255,.85);font-weight:900;line-height:1.45}
+    .feat-text strong{color:#fff}
+
+    /* VOICE DEMO */
+    .voice-demo{
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:20px;padding:14px 16px;
+      margin-bottom:16px;text-align:left
+    }
+    .voice-line{font-size:13px;color:rgba(255,255,255,.70);font-weight:900;padding:5px 0;line-height:1.4}
+    .voice-line span{color:var(--gold2);font-weight:1000}
+
+    /* ROI DEMO */
+    .roi-big{
+      font-size:52px;font-weight:1100;letter-spacing:-2px;
+      color:var(--gold2);line-height:1;margin-bottom:6px;
+      text-shadow:0 0 40px rgba(244,210,122,.35)
+    }
+    .roi-sub{font-size:13px;color:rgba(255,255,255,.60);font-weight:1000}
+
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+    .pulse{animation:pulse 2s ease infinite}
+
+    @media(min-height:800px){
+      .slide-title{font-size:32px}
+      .emoji-big{font-size:64px}
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
 
-    <!-- NAV -->
-    <header class="top">
-      <a class="brand" href="./">∞ DIGIYLYFE · Choisir mon module</a>
-      <nav class="nav">
-        <a class="btn" href="https://digiylyfe.com/">🌍 Site</a>
-        <a class="btn" href="https://digiy-hub.digiylyfe.com/">🧭 HUB</a>
-      </nav>
-    </header>
+<div class="track" id="track">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <h1>Choisir mon module DIGIY</h1>
-        <p>Choisis ton métier. DIGIY t’envoie vers la bonne inscription. Le tarif officiel s’affiche dans le parcours du module.</p>
-        <div class="pills">
-          <span class="pill">Tarif fixe · pas de surprise</span>
-          <span class="pill">Inscription par module</span>
-          <span class="pill">Tickets NDIMBAL Express</span>
-          <span class="pill">0% commission</span>
-          <span class="pill">Contact direct</span>
+  <!-- SLIDE 0 — HERO -->
+  <div class="slide s0" id="slide-0">
+    <div class="slide-inner">
+      <span class="emoji-big pulse">🦅</span>
+      <div class="kicker">DIGIY PAY</div>
+      <h1 class="slide-title">Ton argent.<br><em>Sous contrôle.</em></h1>
+      <p class="slide-body">PRO et PERSO dans un seul coffre.<br><strong>0% commission. Tout pour toi.</strong></p>
+      <div class="roi-big">₣</div>
+      <div class="roi-sub" style="margin-bottom:20px">Le chiffre roi — toujours devant</div>
+      <button class="slide-btn" onclick="nextSlide()">Découvrir →</button>
+    </div>
+  </div>
+
+  <!-- SLIDE 1 — SOLDE ROI -->
+  <div class="slide s1" id="slide-1">
+    <div class="slide-inner">
+      <span class="emoji-big">💰</span>
+      <div class="kicker">Le chiffre qui commande</div>
+      <h2 class="slide-title">Solde <em>PRO</em> et <em>PERSO</em><br>en un coup d'œil</h2>
+      <div class="demo-card">
+        <div class="dc-label">Solde PRO</div>
+        <div class="dc-amount">487 500 F</div>
+        <div class="dc-sub">Aujourd'hui +85 000 F · Wave only</div>
+        <div class="dc-row">
+          <div class="dc-pill">＋ Entrées 120 000</div>
+          <div class="dc-pill red">− Sorties 35 000</div>
         </div>
       </div>
-    </section>
+      <p class="slide-body">Le solde <strong>flash à chaque mouvement</strong>.<br>Tu fermes les yeux si besoin — un tap.</p>
+      <button class="slide-btn" onclick="showLock(1)">Suivant →</button>
+    </div>
+  </div>
 
-    <!-- GRILLE MODULES -->
-    <section class="grid" aria-label="Choix des modules DIGIY">
+  <!-- SLIDE 2 — SAISIE RAPIDE -->
+  <div class="slide s2" id="slide-2">
+    <div class="slide-inner">
+      <span class="emoji-big">⚡</span>
+      <div class="kicker">Zéro frappe</div>
+      <h2 class="slide-title">Tu cliques.<br><em>PAY range.</em></h2>
+      <div class="chips-demo">
+        <div class="chip-demo chip-in">💼 Salaire</div>
+        <div class="chip-demo chip-in">🏪 Business</div>
+        <div class="chip-demo chip-in">🏦 Retraite</div>
+        <div class="chip-demo chip-out">⛽ Gasoil</div>
+        <div class="chip-demo chip-out">💡 Senelec</div>
+        <div class="chip-demo chip-out">🎒 École</div>
+      </div>
+      <div class="chips-demo">
+        <div class="chip-demo chip-mode">🌊 Wave</div>
+        <div class="chip-demo chip-mode">💵 Cash</div>
+        <div class="chip-demo chip-mode">📱 Orange Money</div>
+        <div class="chip-demo chip-mode">💳 Carte</div>
+      </div>
+      <p class="slide-body">Clic libellé → clic mode → montant → confirmé.<br><strong>Terrain, pas bureau.</strong></p>
+      <button class="slide-btn" onclick="showLock(2)">Suivant →</button>
+    </div>
+  </div>
 
-      <a class="module-card" href="https://driver-client.digiylyfe.com/inscription-driver.html?v=general">
-        <span class="icon">🚗</span>
-        <span class="code">DRIVER</span>
-        <strong>Je conduis</strong>
-        <small>Chauffeur, Jakarta, bus, taxi-local, VTC.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module DRIVER →</em>
+  <!-- SLIDE 3 — NOTE VOCALE -->
+  <div class="slide s3" id="slide-3">
+    <div class="slide-inner">
+      <span class="emoji-big">🎙</span>
+      <div class="kicker">Les mains occupées ?</div>
+      <h2 class="slide-title">Tu parles.<br><em>PAY comprend.</em></h2>
+      <div class="voice-demo">
+        <div class="voice-line">🗣 <span>"Gasoil 15 000 Wave"</span></div>
+        <div class="voice-line">🗣 <span>"Entrée salaire 200 000"</span></div>
+        <div class="voice-line">🗣 <span>"Retraite 350 000 Sendwave"</span></div>
+        <div class="voice-line">🗣 <span>"École 25 000 cash"</span></div>
+      </div>
+      <p class="slide-body">PAY détecte le type, le montant, le mode.<br><strong>Un tap pour confirmer.</strong></p>
+      <button class="slide-btn" onclick="showLock(3)">Suivant →</button>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — BILAN AUTO -->
+  <div class="slide s4" id="slide-4">
+    <div class="slide-inner">
+      <span class="emoji-big">📊</span>
+      <div class="kicker">Chaque soir</div>
+      <h2 class="slide-title">Bilan du jour<br><em>automatique</em></h2>
+      <div class="demo-card">
+        <div class="dc-label">Bilan du jour — 22h</div>
+        <div style="font-size:14px;font-weight:1000;color:#172016;line-height:1.7;margin-top:4px">
+          ＋ Entrées <strong>285 000 F</strong><br>
+          − Sorties <strong>42 000 F</strong><br>
+          <span style="color:#167a46;font-size:16px;font-weight:1100">Net ＋ 243 000 F</span>
+        </div>
+      </div>
+      <p class="slide-body">À 20h si tu as posé des mouvements,<br><strong>la bannière s'affiche seule.</strong> Zéro action.</p>
+      <button class="slide-btn" onclick="showLock(4)">Suivant →</button>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 — ALERTE SOLDE BAS -->
+  <div class="slide s5" id="slide-5">
+    <div class="slide-inner">
+      <span class="emoji-big">⚠️</span>
+      <div class="kicker">Ton garde-fou</div>
+      <h2 class="slide-title">Alerte <em>solde bas</em><br>sur mesure</h2>
+      <div class="feat-list">
+        <div class="feat-item"><span class="feat-ico">🎯</span><div class="feat-text">Tu fixes ton <strong>seuil d'alerte</strong> (ex: 50 000 F)</div></div>
+        <div class="feat-item"><span class="feat-ico">🔴</span><div class="feat-text">Le chiffre ROI <strong>vire en rouge et pulse</strong> dès que tu passes sous le seuil</div></div>
+        <div class="feat-item"><span class="feat-ico">🔕</span><div class="feat-text"><strong>Aucune notification</strong> — juste le visuel qui parle. Discret.</div></div>
+        <div class="feat-item"><span class="feat-ico">⚙️</span><div class="feat-text">Seuil <strong>modifiable à tout moment</strong>. 0 pour désactiver.</div></div>
+      </div>
+      <button class="slide-btn" onclick="showLock(5)">Suivant →</button>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 — SOURCES & MODULES -->
+  <div class="slide s6" id="slide-6">
+    <div class="slide-inner">
+      <span class="emoji-big">⠿</span>
+      <div class="kicker">Tout connecté</div>
+      <h2 class="slide-title">Tes sources<br><em>d'argent</em></h2>
+      <div class="feat-list">
+        <div class="feat-item"><span class="feat-ico">🚗</span><div class="feat-text"><strong>DRIVER</strong> · <strong>LOC</strong> · <strong>RESA</strong> · <strong>BUILD</strong> · <strong>MARKET</strong></div></div>
+        <div class="feat-item"><span class="feat-ico">💳</span><div class="feat-text"><strong>ABOS</strong> · <strong>POS</strong> · <strong>RÉSEAU</strong> · <strong>NDIMBAL</strong></div></div>
+        <div class="feat-item"><span class="feat-ico">🏦</span><div class="feat-text">Retraite · Sendwave · Virement · Retrait Wave</div></div>
+        <div class="feat-item"><span class="feat-ico">＋</span><div class="feat-text"><strong>Tu ajoutes tes propres sources</strong> en 3 secondes</div></div>
+      </div>
+      <button class="slide-btn" onclick="showLock(6)">Suivant →</button>
+    </div>
+  </div>
+
+  <!-- SLIDE 7 — CTA FINAL -->
+  <div class="slide s7" id="slide-7">
+    <div class="slide-inner">
+      <span class="emoji-big">🦅</span>
+      <div class="kicker">DIGIYLYFE · 0% commission</div>
+      <h2 class="slide-title"><em>Pierre par pierre.</em><br>Le patron garde la main.</h2>
+      <p class="slide-body" style="margin-bottom:24px">
+        <strong>DIGIY PAY</strong> — coffre PRO / PERSO,<br>
+        saisie rapide, note vocale, bilan auto,<br>
+        alerte solde bas, sauvegarde JSON.<br><br>
+        <strong>Abonnement fixe. Zéro commission.</strong>
+      </p>
+      <a href="https://tarifs.digiylyfe.com/" class="slide-btn gold" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
+        💳 Voir les tarifs
       </a>
+      <button class="slide-btn outline" onclick="goToApp()">
+        → Ouvrir DIGIY PAY
+      </button>
+    </div>
+  </div>
 
-      <a class="module-card" href="https://loc.digiylyfe.com/inscription-loc.html?v=general">
-        <span class="icon">🏠</span>
-        <span class="code">LOC</span>
-        <strong>Je loue</strong>
-        <small>Logements, villas, chambres, locations courte durée.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module LOC →</em>
-      </a>
+</div><!-- /track -->
 
-      <a class="module-card" href="https://resa-table-resto.digiylyfe.com/inscription-resa.html?v=general">
-        <span class="icon">📅</span>
-        <span class="code">RESA</span>
-        <strong>Je réserve</strong>
-        <small>Rendez-vous, tables, salons, docteurs, garages, services.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module RESA →</em>
-      </a>
+<!-- PROGRESS DOTS -->
+<div class="progress" id="progress"></div>
 
-      <a class="module-card" href="https://resto.digiylyfe.com/inscription.html">
-        <span class="icon">🍽️</span>
-        <span class="code">MON RESTO</span>
-        <strong>Mon resto</strong>
-        <small>Restaurant, menu, photos, présence digitale, contact direct.<br>Sans caisse · 0% commission<br><b>Tarif MON RESTO · 15 000 FCFA / mois · 26 €</b></small>
-        <em>Choisir le module MON RESTO →</em>
-      </a>
+<!-- MODALES BLOQUÉES -->
+<div class="lock-bg" id="lockModal">
+  <div class="lock-box">
+    <div class="lock-ico" id="lockIco"></div>
+    <div class="lock-title" id="lockTitle"></div>
+    <div class="lock-body" id="lockBody"></div>
+    <button class="lock-btn" id="lockBtn" type="button"></button>
+  </div>
+</div>
 
-      <a class="module-card" href="https://pay.digiylyfe.com/inscription-pay.html?v=general">
-        <span class="icon">💳</span>
-        <span class="code">PAY</span>
-        <strong>Mon argent</strong>
-        <small>Recettes, dépenses, preuves, dettes clients, suivi argent.<br>Accès pro sécurisé · 8h session<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module PAY →</em>
-      </a>
+<script>
+(function(){
+  'use strict';
 
-      <a class="module-card" href="https://mon-commerce.digiylyfe.com/inscription-pos.html?v=general">
-        <span class="icon">🧾</span>
-        <span class="code">MON COMMERCE</span>
-        <strong>Ma caisse</strong>
-        <small>Caisse mobile, produits, tickets, stock, total.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module MON COMMERCE →</em>
-      </a>
+  const track = document.getElementById('track');
+  const totalSlides = 8;
+  let currentSlide = 0;
+  let lockTarget = -1;
 
-      <a class="module-card" href="https://market.digiylyfe.com/inscription-market.html?v=general">
-        <span class="icon">🛒</span>
-        <span class="code">MARKET</span>
-        <strong>Je vends</strong>
-        <small>Boutiques, produits, catalogue, contact direct.<br>0% commission · Fiche partageable<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module MARKET →</em>
-      </a>
+  // ── PROGRESS DOTS ──
+  const progress = document.getElementById('progress');
+  for(let i=0;i<totalSlides;i++){
+    const d = document.createElement('div');
+    d.className = 'dot' + (i===0?' active':'');
+    d.onclick = () => goTo(i);
+    progress.appendChild(d);
+  }
 
-      <a class="module-card" href="https://build.digiylyfe.com/inscription-build.html?v=general">
-        <span class="icon">🧰</span>
-        <span class="code">BUILD</span>
-        <strong>Mes services</strong>
-        <small>Artisans tout corps de métiers, devis, interventions.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module BUILD →</em>
-      </a>
+  function updateDots(i){
+    progress.querySelectorAll('.dot').forEach((d,idx)=>{
+      d.classList.toggle('active', idx===i);
+    });
+  }
 
-      <a class="module-card" href="https://jobs.digiylyfe.com/inscription-jobs.html?v=general">
-        <span class="icon">💼</span>
-        <span class="code">JOBS</span>
-        <strong>Travail & missions</strong>
-        <small>Offres, recrutement, missions terrain, main-d'œuvre.<br>Contact direct · Fiche partageable<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module JOBS →</em>
-      </a>
+  // ── NAVIGATION ──
+  function goTo(i){
+    currentSlide = i;
+    track.scrollTo({left: i * window.innerWidth, behavior:'smooth'});
+    updateDots(i);
+  }
 
-      <a class="module-card" href="https://jobs.digiylyfe.com/ndimbal-express.html">
-        <span class="icon">⚡</span>
-        <span class="code">NDIMBAL EXPRESS</span>
-        <strong>Mission courte</strong>
-        <small>
-          Livraison, aide terrain, course, ménage, manutention, dépannage simple.<br>
-          Voir les annonces : gratuit · Publier avec ticket<br>
-          <b>N1 Express 48h · 5 000 FCFA</b><br>
-          <b>N2 Urgent · 10 000 FCFA</b><br>
-          <b>N3 Semaine · 15 000 FCFA</b>
-        </small>
-        <em>Prendre un ticket NDIMBAL →</em>
-      </a>
+  window.nextSlide = function(){
+    if(currentSlide < totalSlides-1) goTo(currentSlide+1);
+  };
 
-      <a class="module-card" href="https://explore.digiylyfe.com/inscription-explore.html?v=code8">
-        <span class="icon">🌍</span>
-        <span class="code">EXPLORE</span>
-        <strong>Me faire connaître</strong>
-        <small>Lieux, activités, guides, expériences locales.<br>CODE 8 · Contact direct<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module EXPLORE →</em>
-      </a>
+  // Sync dots au scroll natif
+  track.addEventListener('scroll', ()=>{
+    const i = Math.round(track.scrollLeft / window.innerWidth);
+    if(i !== currentSlide){
+      currentSlide = i;
+      updateDots(i);
+    }
+  }, {passive:true});
 
-      <a class="module-card" href="https://reseau-digiy.digiylyfe.com/inscription.html?v=general">
-        <span class="icon">📣</span>
-        <span class="code">RÉSEAU DIGIY</span>
-        <strong>Visibilité qualifiée</strong>
-        <small>Abonnés R7/R15/R30 ou FIRST non-abonné.<br>Présence qualifiée · Contact direct<br>Tarif officiel affiché à l'étape suivante</small>
-        <em>Choisir le module RÉSEAU →</em>
-      </a>
+  // ── MODALES BLOQUÉES ──
+  const LOCKS = {
+    1:{
+      ico:'💡',
+      title:'Le solde te parle',
+      body:'À chaque mouvement posé, le chiffre ROI flashe. PRO et PERSO séparés — tu sais toujours où tu en es. Appuie pour continuer.',
+      btn:'J\'ai compris — suivant',
+      next:2
+    },
+    2:{
+      ico:'⚡',
+      title:'Saisie en 3 taps',
+      body:'Un libellé, un mode de paiement, un montant. PAY classe tout automatiquement par source. Tu ajoutes tes propres libellés en Réglages.',
+      btn:'C\'est parti — suivant',
+      next:3
+    },
+    3:{
+      ico:'🎙',
+      title:'Parle, PAY écoute',
+      body:'Dis "Gasoil 15000 Wave" ou "Entrée salaire 200000". PAY détecte le type, le montant et le mode. Un tap pour confirmer.',
+      btn:'Impressionnant — suivant',
+      next:4
+    },
+    4:{
+      ico:'📊',
+      title:'Le bilan vient à toi',
+      body:'Dès 20h, si tu as bougé de l\'argent dans la journée, la bannière bilan s\'affiche automatiquement. Tu ne cherches pas — PAY amène.',
+      btn:'Pratique — suivant',
+      next:5
+    },
+    5:{
+      ico:'⚠️',
+      title:'Ton seuil, tes règles',
+      body:'Tu décides du niveau d\'alerte. En dessous, le chiffre ROI vire en rouge. Pas de notification — juste le visuel. Discret et efficace.',
+      btn:'Bien pensé — suivant',
+      next:6
+    },
+    6:{
+      ico:'⠿',
+      title:'Tous tes modules en un',
+      body:'Chaque source d\'argent DIGIY est listée dans PAY. Tu poses le montant, PAY range par module. L\'historique suit tout.',
+      btn:'Voir les tarifs →',
+      next:7,
+      btnClass:'gold'
+    },
+  };
 
-    </section>
+  const lockModal = document.getElementById('lockModal');
+  const lockIco   = document.getElementById('lockIco');
+  const lockTitle = document.getElementById('lockTitle');
+  const lockBody  = document.getElementById('lockBody');
+  const lockBtn   = document.getElementById('lockBtn');
 
-    <!-- FOOTER -->
-    <footer class="footer">DIGIYLYFE — Chaque pro trouve son module. NDIMBAL Express publie avec ticket. Le terrain garde la main. 🦅</footer>
+  window.showLock = function(id){
+    const l = LOCKS[id];
+    if(!l) return nextSlide();
+    lockTarget = l.next;
+    lockIco.textContent = l.ico;
+    lockTitle.textContent = l.title;
+    lockBody.textContent = l.body;
+    lockBtn.textContent = l.btn;
+    lockBtn.className = 'lock-btn' + (l.btnClass?' '+l.btnClass:'');
+    lockModal.classList.add('open');
+  };
 
-  </main>
-  <!-- 🎧 DIGIY ACCUEIL — bouton flottant de bienvenue -->
-  <script
-    src="https://digiy-accueil.digiylyfe.com/assets/js/digiy-welcome-floating.js"
-    data-module="DIGIY"
-    defer>
-  </script>
+  lockBtn.onclick = () => {
+    lockModal.classList.remove('open');
+    if(lockTarget >= 0) goTo(lockTarget);
+  };
 
+  // Bloquer le swipe vers la suivante si modale ouverte
+  track.addEventListener('touchstart', e=>{
+    if(lockModal.classList.contains('open')) e.preventDefault();
+  }, {passive:false});
+
+  // ── APP LINK ──
+  window.goToApp = function(){
+    window.location.href = './index.html';
+  };
+
+})();
+</script>
 </body>
 </html>
+
 
 
 
