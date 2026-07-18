@@ -1,344 +1,212 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#123c2d" name="theme-color"/>
-<meta content="bouton-module-404-retire-20260530" name="digiy-fix-no-activation-404"/>
-<meta content="paiement-direct-aside-retire-20260530" name="digiy-fix-hero-aside"/>
-<meta content="ancien-secours-secure-supprime-20260530" name="digiy-fix-public-clean"/>
-<meta content="index,follow" name="robots"/>
-<meta content="choisir-module-diaspora-sendwave-fr-en-20260620" name="digiy-version"/>
-<meta content="pro-carnet-grille-9a-9b-9c-lien-sans-404-20260712" name="digiy-strategy-update"/>
-<title>Tarifs & modules — DIGIYLYFE</title>
-<meta content="Tarifs et modules DIGIYLYFE : entrée gratuite, visibilité professionnelle payante, 0% commission, contact direct et paiement France/diaspora possible par Sendwave." name="description"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#123c2d">
+<meta name="robots" content="index,follow">
+<meta name="digiy-version" content="tarifs-presence-metier-carnet-fr-en-20260718">
+<title>Offres, tarifs & modules — DIGIYLYFE</title>
+<meta name="description" content="DIGIYLYFE : présence professionnelle avec fiche et QR à 19 900 FCFA par mois, logiciel métier en option à 8 000 FCFA, PRO CARNET en option et 0% commission.">
 <style>
-    :root{--bg:#123c2d;--bg2:#071b14;--card:#174b38;--line:rgba(255,255,255,.18);--text:#f7fff9;--muted:rgba(247,255,249,.82);--gold:#facc15;--green:#22c55e;--shadow:0 18px 48px rgba(0,0,0,.28)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,rgba(34,197,94,.18),transparent 34%),radial-gradient(circle at bottom right,rgba(250,204,21,.12),transparent 32%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font-size:18px;font-weight:850;padding-bottom:80px}a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:auto;padding:14px}.top{position:sticky;top:0;z-index:20;margin:-14px -14px 14px;padding:12px 14px;background:rgba(18,60,45,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.brand{font-weight:1000}.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{min-height:46px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);display:inline-flex;align-items:center;justify-content:center;padding:0 14px;font-weight:1000;color:inherit}.btn.gold{background:linear-gradient(135deg,var(--gold),#f59e0b);color:#061b14;border:0}.hero{border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,rgba(25,82,60,.96),rgba(16,61,46,.96));box-shadow:var(--shadow);padding:22px;margin-bottom:14px;display:grid;grid-template-columns:1fr;gap:16px}h1{margin:0;font-size:clamp(36px,6vw,66px);line-height:.98;font-weight:1000;letter-spacing:-.04em;color:#fff8db}p{color:var(--muted);line-height:1.6;font-weight:850}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:1000;color:#fff8db}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.module-card{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.07);padding:16px;display:grid;gap:8px;min-height:170px;box-shadow:0 12px 30px rgba(0,0,0,.12)}.module-card:hover{border-color:rgba(250,204,21,.7);background:rgba(250,204,21,.10)}.icon{font-size:32px}.code{width:max-content;border-radius:999px;border:1px solid rgba(250,204,21,.36);background:rgba(250,204,21,.10);color:#fff8db;padding:6px 10px;font-size:12px;font-weight:1000}.module-card strong{font-size:24px;line-height:1.08}.module-card small{color:var(--muted);font-size:15px;line-height:1.45;font-weight:850}.module-card em{color:#bbf7d0;font-style:normal;font-weight:1000;margin-top:auto}.footer{margin-top:16px;border:1px solid var(--line);border-radius:20px;padding:14px;background:rgba(255,255,255,.055);color:var(--muted);font-size:15px;line-height:1.5}
-
-    .langSwitch{display:inline-flex;align-items:center;gap:5px;min-height:46px;padding:4px;border-radius:999px;border:1px solid rgba(250,204,21,.38);background:rgba(255,255,255,.07)}
-    .langSwitch button{min-height:36px;min-width:50px;border:0;border-radius:999px;background:transparent;color:#f7fff9;font-weight:1000;cursor:pointer}
-    .langSwitch button.active{background:linear-gradient(135deg,var(--gold),#22c55e);color:#061b14}
-
-    .diaspora-card{margin:0 0 14px;border:2px solid rgba(250,204,21,.45);border-radius:26px;background:radial-gradient(circle at top left,rgba(250,204,21,.18),transparent 38%),linear-gradient(135deg,rgba(255,255,255,.10),rgba(34,197,94,.09));box-shadow:var(--shadow);padding:18px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px;align-items:center}
-    .diaspora-card h2{margin:0;font-size:clamp(28px,4vw,44px);line-height:1;font-weight:1000;letter-spacing:-.04em;color:#fff8db}
-    .diaspora-card p{margin:10px 0 0;font-size:16px}
-    .diaspora-actions{display:grid;gap:8px}
-    .diaspora-note{border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.12);border-radius:18px;padding:12px;color:#bbf7d0;font-size:14px;line-height:1.45;font-weight:1000}
-    .gold-emphasis{border:1px solid rgba(250,204,21,.55)!important;background:linear-gradient(135deg,rgba(250,204,21,.22),rgba(245,158,11,.14))!important;color:#fff8db!important;box-shadow:0 10px 24px rgba(250,204,21,.12)}
-    .gold-emphasis strong{color:#fff8db}
-
-    .value-card{margin:0 0 14px;border:2px solid rgba(250,204,21,.55);border-radius:26px;background:radial-gradient(circle at top right,rgba(250,204,21,.20),transparent 36%),linear-gradient(135deg,rgba(255,255,255,.11),rgba(34,197,94,.08));box-shadow:var(--shadow);padding:20px;display:grid;gap:12px}
-    .value-card h2{margin:0;font-size:clamp(30px,4.8vw,52px);line-height:1;font-weight:1000;letter-spacing:-.045em;color:#fff8db}
-    .value-card p{margin:0;font-size:17px}
-    .value-code{width:max-content;max-width:100%;border-radius:999px;border:1px solid rgba(250,204,21,.50);background:rgba(250,204,21,.14);color:#fff8db;padding:8px 12px;font-size:12px;font-weight:1000;letter-spacing:.02em}
-    .value-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-    .value-list span{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);border-radius:16px;padding:12px;color:#bbf7d0;font-size:14px;line-height:1.35;font-weight:1000}
-    .value-quote{border-left:4px solid var(--gold);background:rgba(0,0,0,.12);border-radius:16px;padding:12px 14px;color:#fff8db;font-weight:1000}
-    @media(max-width:760px){.hero,.grid,.diaspora-card,.value-list{grid-template-columns:1fr}.btn{width:100%}.nav{width:100%}.langSwitch{width:100%;justify-content:center}.langSwitch button{flex:1}.module-card{min-height:150px}.diaspora-actions .btn{width:100%}.value-code{width:100%;text-align:center}}
-  </style>
-<meta content="activer-pour-un-proche-lien-racine-sure-20260620" name="digiy-fix-diaspora-button"/></head>
+:root{--bg:#123c2d;--bg2:#071b14;--panel:#174b38;--line:rgba(255,255,255,.18);--text:#f7fff9;--muted:rgba(247,255,249,.82);--gold:#facc15;--green:#22c55e;--dark:#061b14;--shadow:0 18px 48px rgba(0,0,0,.28)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;padding-bottom:72px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,rgba(34,197,94,.18),transparent 34%),radial-gradient(circle at bottom right,rgba(250,204,21,.12),transparent 32%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);font-size:18px;font-weight:760}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100%);margin:auto;padding:14px}
+.top{position:sticky;top:0;z-index:20;margin:-14px -14px 14px;padding:12px 14px;background:rgba(18,60,45,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.brand{font-weight:1000}
+.nav,.pills,.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{min-height:46px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);display:inline-flex;align-items:center;justify-content:center;padding:0 14px;font-weight:950;color:inherit}
+.btn:hover{border-color:rgba(250,204,21,.7)}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#f59e0b);color:var(--dark);border:0}
+.langSwitch{display:inline-flex;align-items:center;gap:5px;min-height:46px;padding:4px;border-radius:999px;border:1px solid rgba(250,204,21,.38);background:rgba(255,255,255,.07)}
+.langSwitch button{min-height:36px;min-width:50px;border:0;border-radius:999px;background:transparent;color:var(--text);font-weight:1000;cursor:pointer}
+.langSwitch button.active{background:linear-gradient(135deg,var(--gold),var(--green));color:var(--dark)}
+.hero,.ladder,.diaspora,.section-head,.footer{border:1px solid var(--line);border-radius:26px;background:linear-gradient(180deg,rgba(25,82,60,.96),rgba(16,61,46,.96));box-shadow:var(--shadow)}
+.hero{padding:24px;margin-bottom:14px}
+.eyebrow,.code{display:inline-flex;width:max-content;max-width:100%;border:1px solid rgba(250,204,21,.48);background:rgba(250,204,21,.13);color:#fff8db;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:1000;letter-spacing:.03em}
+h1{margin:14px 0 0;font-size:clamp(38px,6.4vw,72px);line-height:.96;font-weight:1000;letter-spacing:-.05em;color:#fff8db}
+h2{margin:0;font-size:clamp(30px,4.5vw,52px);line-height:1;font-weight:1000;letter-spacing:-.04em;color:#fff8db}
+h3{margin:0;font-size:25px;line-height:1.05;font-weight:1000;color:#fff8db}
+p{color:var(--muted);line-height:1.55;font-weight:760}
+.hero p{max-width:900px;font-size:18px;margin:14px 0 0}
+.pills{margin-top:16px}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.07);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:1000;color:#fff8db}
+.pill.gold{border-color:rgba(250,204,21,.62);background:linear-gradient(135deg,rgba(250,204,21,.22),rgba(245,158,11,.14))}
+.ladder{padding:20px;margin-bottom:14px;background:radial-gradient(circle at top right,rgba(250,204,21,.17),transparent 34%),linear-gradient(180deg,rgba(25,82,60,.96),rgba(16,61,46,.96))}
+.ladder>p{margin:12px 0 0}
+.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.price-card{position:relative;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.07);padding:18px;display:flex;flex-direction:column;gap:10px;min-height:350px}
+.price-card.featured{border:2px solid rgba(250,204,21,.62);background:linear-gradient(150deg,rgba(250,204,21,.16),rgba(255,255,255,.07))}
+.step{color:#bbf7d0;font-size:12px;font-weight:1000;letter-spacing:.04em}
+.price{font-size:27px;font-weight:1000;color:var(--gold);line-height:1.1}
+.price-card p{margin:0;font-size:15px}
+.price-card ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.5}
+.note{margin-top:auto;border-top:1px solid var(--line);padding-top:10px;color:#bbf7d0;font-size:14px;font-weight:950}
+.quote{margin:14px 0 0;border-left:4px solid var(--gold);background:rgba(0,0,0,.13);border-radius:16px;padding:13px 15px;color:#fff8db;font-weight:1000}
+.special{margin-top:12px;border:1px solid rgba(34,197,94,.36);background:rgba(34,197,94,.11);border-radius:18px;padding:14px}
+.special strong{display:block;color:#bbf7d0;font-size:18px}
+.special p{margin:6px 0 0;font-size:14px}
+.diaspora{margin-bottom:14px;padding:18px;display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:center;background:radial-gradient(circle at top left,rgba(250,204,21,.16),transparent 38%),linear-gradient(135deg,rgba(255,255,255,.10),rgba(34,197,94,.09))}
+.diaspora p{margin:10px 0 0;font-size:16px}
+.diaspora-side{display:grid;gap:9px}
+.diaspora-note{border:1px solid rgba(34,197,94,.36);background:rgba(34,197,94,.12);border-radius:18px;padding:12px;color:#bbf7d0;font-size:14px;line-height:1.45;font-weight:950}
+.section-head{padding:20px;margin-bottom:12px}
+.section-head p{margin:10px 0 0}
+.module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.module-card{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.07);padding:17px;display:grid;gap:9px;min-height:195px;box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.module-card:hover{border-color:rgba(250,204,21,.72);background:rgba(250,204,21,.10);transform:translateY(-1px)}
+.icon{font-size:32px}
+.module-code{width:max-content;border-radius:999px;border:1px solid rgba(250,204,21,.36);background:rgba(250,204,21,.10);color:#fff8db;padding:6px 10px;font-size:12px;font-weight:1000}
+.module-card strong{font-size:24px;line-height:1.08}
+.module-card small{color:var(--muted);font-size:15px;line-height:1.5;font-weight:760}
+.module-card small b{color:#fff8db}
+.module-card em{color:#bbf7d0;font-style:normal;font-weight:1000;margin-top:auto}
+.footer{margin-top:16px;padding:15px;color:var(--muted);font-size:15px;line-height:1.5}
+@media(max-width:820px){.price-grid,.diaspora,.module-grid{grid-template-columns:1fr}.price-card{min-height:0}.nav{width:100%}.langSwitch{flex:1;justify-content:center}.langSwitch button{flex:1}.btn{flex:1}.diaspora-side .btn{width:100%}.eyebrow,.code{width:100%;justify-content:center;text-align:center}}
+@media(max-width:390px){body{font-size:16px}.wrap{padding:10px}.top{margin:-10px -10px 10px;padding:10px}.hero,.ladder,.diaspora,.section-head{padding:16px;border-radius:22px}h1{font-size:38px}.price{font-size:24px}.module-card{padding:15px}.btn{padding:0 10px}}
+</style>
+</head>
 <body>
 <main class="wrap">
 <header class="top">
-<a class="brand" data-i18n="brand" href="./">∞ DIGIYLYFE · Choisir mon module</a>
-<nav class="nav">
-<span aria-label="Choisir la langue / Choose language" class="langSwitch">
-<button class="active" id="langFr" type="button">FR</button>
-<button id="langEn" type="button">EN</button>
+<a class="brand" data-i18n="brand" href="./">∞ DIGIYLYFE · Offres & modules</a>
+<nav class="nav" aria-label="Navigation principale">
+<span class="langSwitch" aria-label="Choisir la langue / Choose language">
+<button class="active" id="langFr" type="button" aria-pressed="true">FR</button>
+<button id="langEn" type="button" aria-pressed="false">EN</button>
 </span>
 <a class="btn" data-i18n="site" href="https://digiylyfe.com/">🌍 Site</a>
 <a class="btn" data-i18n="hub" href="https://digiy-hub.digiylyfe.com/">🧭 HUB</a>
 </nav>
 </header>
-<section class="hero">
-<div>
-<h1 data-i18n="heroTitle">Tarifs & modules DIGIY</h1>
-<p data-i18n="heroText">Choisis ton métier. L’entrée de base est gratuite. DIGIY ne prend aucune commission sur tes ventes : tu paies seulement si tu veux activer une présence professionnelle, un QR officiel, une mise en avant ou un outil métier.</p>
+
+<section class="hero" aria-labelledby="hero-title">
+<div class="eyebrow" data-i18n="heroEyebrow">UNE PRÉSENCE · UN OUTIL MÉTIER · UN CARNET SI NÉCESSAIRE</div>
+<h1 id="hero-title" data-i18n="heroTitle">Chaque professionnel choisit sa puissance.</h1>
+<p data-i18n="heroText">Découvrir DIGIYLYFE et choisir son métier est libre. L’abonnement commence lorsque le professionnel active sa présence : sa fiche personnalisée, son QR officiel, son lien partageable et son contact direct. Il ajoute ensuite seulement les outils dont son activité a réellement besoin.</p>
 <div class="pills">
-<span class="pill" data-i18n="pillFixed">Entrée gratuite · packs clairs</span>
-<span class="pill" data-i18n="pillModule">Visibilité payante si activation</span>
-<span class="pill gold-emphasis" data-i18n="pillDiaspora">France & diaspora · Sendwave possible</span>
-<span class="pill" data-i18n="pillNdimbal">Tickets NDIMBAL Annonces</span>
-<span class="pill" data-i18n="pillRecruiter">Packs recruteurs JOBS</span>
+<span class="pill gold" data-i18n="pillPresence">Fiche + QR · 19 900 FCFA / mois</span>
+<span class="pill" data-i18n="pillBusiness">Logiciel métier · +8 000 FCFA / mois</span>
+<span class="pill" data-i18n="pillCarnet">PRO CARNET · en option</span>
 <span class="pill" data-i18n="pillZero">0% commission</span>
-<span class="pill" data-i18n="pillDirect">Contact direct</span>
-</div>
+<span class="pill" data-i18n="pillDirect">Paiement direct au pro</span>
 </div>
 </section>
-<section aria-label="Doctrine économique DIGIYLYFE" class="value-card">
-<div class="value-code" data-i18n="valueCode">ENTRÉE GRATUITE · VISIBILITÉ PAYANTE · 0% COMMISSION</div>
-<h2 data-i18n="valueTitle">Gratuit pour entrer. Payant pour briller. 0% commission pour rester libre.</h2>
-<p data-i18n="valueText">DIGIYLYFE ne gagne pas sa vie en prenant un pourcentage sur ton travail. Tu peux entrer gratuitement, choisir ton métier et créer ton premier contact avec l’écosystème. Ensuite, si tu veux une vraie présence professionnelle, DIGIY active pour toi une fiche métier, un QR officiel, un lien partageable, le contact direct, la visibilité locale, un module pro ou une mise en avant.</p>
-<div class="value-list" aria-label="Promesse DIGIYLYFE">
-<span data-i18n="valuePoint1">✅ Inscription de base gratuite</span>
-<span data-i18n="valuePoint2">🦅 Packs clairs pour être visible</span>
-<span data-i18n="valuePoint3">🤝 Paiement direct au professionnel</span>
-<span class="gold-emphasis" data-i18n="valuePoint4">🇫🇷 France / diaspora : paiement Sendwave possible</span>
+
+<section class="ladder" aria-labelledby="ladder-title">
+<div class="code" data-i18n="ladderCode">LA GAMME DIGIY · SIMPLE ET MODULAIRE</div>
+<h2 id="ladder-title" data-i18n="ladderTitle">Commencer proprement. Monter quand l’activité le demande.</h2>
+<p data-i18n="ladderText">Le socle donne au professionnel une identité numérique qu’il peut partager partout. L’outil métier organise son travail. PRO CARNET structure ses mouvements d’argent. Aucun module supplémentaire n’est imposé.</p>
+<div class="price-grid">
+<article class="price-card featured">
+<div class="step" data-i18n="presenceLabel">1 · SOCLE</div>
+<h3 data-i18n="presenceTitle">DIGIY PRÉSENCE</h3>
+<div class="price" data-i18n="presencePrice">19 900 FCFA / mois</div>
+<p data-i18n="presenceDesc">La fiche professionnelle personnalisée, le QR officiel, le lien partageable, le contact direct, la présence dans l’écosystème DIGIY et la maintenance essentielle.</p>
+<div class="note" data-i18n="presenceNote">Pour celui qui veut être visible, joignable et indépendant.</div>
+</article>
+<article class="price-card">
+<div class="step" data-i18n="businessLabel">2 · OPTION MÉTIER</div>
+<h3 data-i18n="businessTitle">DIGIY MÉTIER</h3>
+<div class="price" data-i18n="businessPrice">+8 000 FCFA / mois</div>
+<p data-i18n="businessDesc">Le logiciel adapté au métier : planning, réservations, clients, interventions, produits, stock ou suivi opérationnel selon le module choisi.</p>
+<div class="note" data-i18n="businessNote">Total standard Présence + Métier : 27 900 FCFA / mois.</div>
+</article>
+<article class="price-card">
+<div class="step" data-i18n="carnetLabel">3 · OPTION PILOTAGE</div>
+<h3 data-i18n="carnetTitle">PRO CARNET</h3>
+<div class="price" data-i18n="carnetPrice">À partir de +4 900 FCFA / mois</div>
+<p data-i18n="carnetDesc">Un carnet d’activité séparé, ajouté seulement lorsque le professionnel veut suivre plus précisément son argent et ses preuves.</p>
+<ul>
+<li data-i18n="carnet9a">9A Essentiel · +4 900 FCFA · encaissements, dépenses, réserve simple</li>
+<li data-i18n="carnet9b">9B Pro · +9 900 FCFA · preuves, dettes clients, suivi renforcé</li>
+<li data-i18n="carnet9c">9C Business · +24 900 FCFA · lecture renforcée pour activité dense</li>
+</ul>
+</article>
 </div>
-<p class="value-quote" data-i18n="valueQuote">Les plateformes disent : “Inscris-toi gratuitement, puis nous prendrons sur tes ventes.” DIGIYLYFE dit : “Entre gratuitement, deviens visible clairement, et garde ton argent.”</p>
+<p class="quote" data-i18n="ladderQuote">Je commence avec ma présence. J’ajoute mon outil métier quand j’en ai l’usage. Je prends PRO CARNET quand mon activité demande davantage de maîtrise.</p>
+<div class="special">
+<strong data-i18n="specialTitle">Des offres particulières restent séparées</strong>
+<p data-i18n="specialText">JOBS, packs recruteurs, NDIMBAL Annonces, RÉSEAU DIGIY et certains services spécialisés conservent leurs propres tarifs. Ils ne sont pas ajoutés automatiquement à l’abonnement d’un professionnel.</p>
+</div>
 </section>
-<section aria-label="Diaspora DIGIYLYFE" class="diaspora-card">
+
+<section class="diaspora" aria-labelledby="diaspora-title">
 <div>
-<h2 data-i18n="diasporaTitle">France & diaspora · activer une présence pour un proche</h2>
-<p data-i18n="diasporaText">Vous êtes en France ou à l’étranger et vous voulez prendre en charge la présence DIGIYLYFE d’un parent, chauffeur, artisan, commerçant ou d’une activité familiale au Sénégal ? Paiement possible par Sendwave vers Wave Sénégal sur demande. La fiche reste au nom du professionnel local : contact direct, 0% commission, le pro garde la main.</p>
+<h2 id="diaspora-title" data-i18n="diasporaTitle">France & diaspora · activer une présence pour un proche</h2>
+<p data-i18n="diasporaText">Vous êtes en France ou à l’étranger et vous voulez prendre en charge la présence DIGIYLYFE d’un parent, chauffeur, artisan, commerçant ou d’une activité familiale au Sénégal ? Le paiement peut être organisé par Sendwave vers Wave Sénégal sur demande. La fiche reste au nom du professionnel local : il garde son contact, son métier et ses clients.</p>
 <div class="pills">
-<span class="pill" data-i18n="diasporaPill1">Présence pour un proche</span>
-<span class="pill gold-emphasis" data-i18n="diasporaPill2">France → Sendwave Sénégal</span>
-<span class="pill" data-i18n="diasporaPill3">Fiche au nom du pro local</span>
+<span class="pill" data-i18n="diasporaPill1">Présence au nom du pro local</span>
+<span class="pill gold" data-i18n="diasporaPill2">France → Sendwave → Sénégal</span>
+<span class="pill" data-i18n="diasporaPill3">0% commission</span>
 </div>
 </div>
-<div class="diaspora-actions">
-<a class="btn gold" data-diaspora-action="activate-relative" data-i18n="diasporaBtn" href="https://commencer-a-payer.digiylyfe.com/" rel="noopener" target="_self">🌍 Activer pour un proche</a>
-<a class="btn" data-i18n="diasporaHub" href="#modules-pro">⬇️ Voir les modules pro dessous</a>
-<div class="diaspora-note gold-emphasis" data-i18n="diasporaNote">Depuis la France ou la diaspora, le payeur peut prendre en charge la présence DIGIY. Le paiement peut se faire par Sendwave vers Wave Sénégal sur demande. Le professionnel local garde son métier, sa fiche, son contact et ses clients.</div>
+<div class="diaspora-side">
+<a class="btn gold" data-i18n="diasporaBtn" href="https://commencer-a-payer.digiylyfe.com/">🌍 Activer pour un proche</a>
+<a class="btn" data-i18n="diasporaHub" href="#modules-pro">⬇️ Choisir un métier</a>
+<div class="diaspora-note" data-i18n="diasporaNote">Le proche peut financer l’outil. Le professionnel local conserve la main sur son activité.</div>
 </div>
 </section>
-<section aria-label="Choix des modules DIGIY" class="grid" id="modules-pro">
-<a class="module-card" href="https://driver-client.digiylyfe.com/inscription-driver.html?v=general">
-<span class="icon">🚗</span>
-<span class="code">DRIVER</span>
-<strong data-i18n="driverName">Je conduis</strong>
-<small data-i18n-html="driverDesc">Chauffeur, Jakarta, bus, taxi-local, VTC.<br/>0% commission · Contact direct<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="driverCta">Choisir le module DRIVER →</em>
-</a>
-<a class="module-card" href="https://loc.digiylyfe.com/inscription-loc.html?v=general">
-<span class="icon">🏠</span>
-<span class="code">LOC</span>
-<strong data-i18n="locName">Je loue</strong>
-<small data-i18n-html="locDesc">Logements, villas, chambres, locations courte durée.<br/>0% commission · Contact direct<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="locCta">Choisir le module LOC →</em>
-</a>
-<a class="module-card" href="https://resa-table-resto.digiylyfe.com/inscription-resa.html?v=general">
-<span class="icon">📅</span>
-<span class="code">RESA</span>
-<strong data-i18n="resaName">Je réserve</strong>
-<small data-i18n-html="resaDesc">Rendez-vous, tables, salons, docteurs, garages, services.<br/>0% commission · Contact direct<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="resaCta">Choisir le module RESA →</em>
-</a>
-<a class="module-card" href="https://resto.digiylyfe.com/inscription.html">
-<span class="icon">🍽️</span>
-<span class="code">MON RESTO</span>
-<strong data-i18n="restoName">Mon resto</strong>
-<small data-i18n-html="restoDesc">Restaurant, menu, photos, présence digitale, contact direct.<br/>Sans caisse · 0% commission<br/><b>Tarif MON RESTO · 15 000 FCFA / mois · 26 €</b></small>
-<em data-i18n="restoCta">Choisir le module MON RESTO →</em>
-</a>
-<a class="module-card" href="https://digiy-carnet-pro.digiylyfe.com/inscription-pay.html?v=general">
-<span class="icon">📒</span>
-<span class="code">PRO CARNET</span>
-<strong data-i18n="payName">Mon carnet d’activité</strong>
-<small data-i18n-html="payDesc">Encaissements, dépenses, réserves et preuves.<br/>Accès sécurisé par PIN · 0% commission<br/><b>9A Essentiel · 4 900 FCFA / mois · 9 €</b><br/><b>9B Pro · 9 900 FCFA / mois · 19 €</b><br/><b>9C Business · 24 900 FCFA / mois · 39 €</b></small>
-<em data-i18n="payCta">Voir les formules PRO CARNET →</em>
-</a>
-<a class="module-card" href="https://mon-commerce.digiylyfe.com/inscription-pos.html?v=general">
-<span class="icon">🧾</span>
-<span class="code">MON COMMERCE</span>
-<strong data-i18n="posName">Ma caisse</strong>
-<small data-i18n-html="posDesc">Caisse mobile, produits, tickets, stock, total.<br/>0% commission · Contact direct<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="posCta">Choisir le module MON COMMERCE →</em>
-</a>
-<a class="module-card" href="https://market.digiylyfe.com/inscription-market.html?v=general">
-<span class="icon">🛒</span>
-<span class="code">MARKET</span>
-<strong data-i18n="marketName">Je vends</strong>
-<small data-i18n-html="marketDesc">Boutiques, produits, catalogue, contact direct.<br/>0% commission · Fiche partageable<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="marketCta">Choisir le module MARKET →</em>
-</a>
-<a class="module-card" href="https://build.digiylyfe.com/inscription-build.html?v=general">
-<span class="icon">🧰</span>
-<span class="code">BUILD</span>
-<strong data-i18n="buildName">Mes services</strong>
-<small data-i18n-html="buildDesc">Artisans tout corps de métiers, devis, interventions.<br/>0% commission · Contact direct<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="buildCta">Choisir le module BUILD →</em>
-</a>
-<a class="module-card" href="https://jobs.digiylyfe.com/inscription-jobs.html?v=general">
-<span class="icon">💼</span>
-<span class="code">INSCRIPTION JOBS</span>
-<strong data-i18n="jobsName">Publier une mission</strong>
-<small data-i18n-html="jobsDesc">Inscription PRO JOBS : publier une offre, structurer une mission, recevoir des candidatures.<br/>Contact direct · 0% commission<br/><b>Tarif officiel affiché avant paiement</b></small>
-<em data-i18n="jobsCta">Inscrire une mission JOBS →</em>
-</a>
-<a class="module-card" href="https://jobs.digiylyfe.com/inscription-acces-recruteur.html">
-<span class="icon">👥</span>
-<span class="code">ACCÈS RECRUTEUR</span>
-<strong data-i18n="recruiterName">Packs recruteurs</strong>
-<small data-i18n-html="recruiterDesc">Accès encadré à des profils candidats qualifiés, consentis et préparés.<br/><b>Pack Découverte · 10 profils · 35 000 FCFA</b><br/><b>Pack Recruteur · 25 profils · 75 000 FCFA</b><br/><b>Pack Entreprise · 50 profils · 125 000 FCFA</b></small>
-<em data-i18n="recruiterCta">Choisir un pack recruteur →</em>
-</a>
-<a class="module-card" href="https://ndimbal-express.digiylyfe.com/inscription.html">
-<span class="icon">📣</span>
-<span class="code">NDIMBAL ANNONCES</span>
-<strong data-i18n="ndimbalName">Publier une annonce</strong>
-<small data-i18n-html="ndimbalDesc">
-          Vente voiture, terrain, maison, vélo, studio, appartement, service ou recherche.<br/>
-          Voir les annonces : gratuit · Publier avec ticket durée<br/>
-<b>1 semaine · 5 000 FCFA</b><br/>
-<b>15 jours · 10 000 FCFA</b><br/>
-<b>1 mois · 20 000 FCFA</b>
-</small>
-<em data-i18n="ndimbalCta">Publier une annonce NDIMBAL →</em>
-</a>
-<a class="module-card" href="https://explore.digiylyfe.com/inscription-explore.html?v=code8">
-<span class="icon">🌍</span>
-<span class="code">EXPLORE</span>
-<strong data-i18n="exploreName">Me faire connaître</strong>
-<small data-i18n-html="exploreDesc">Lieux, activités, guides, expériences locales.<br/>CODE 8 · Contact direct<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="exploreCta">Choisir le module EXPLORE →</em>
-</a>
-<a class="module-card" href="https://reseau-digiy.digiylyfe.com/inscription.html?v=general">
-<span class="icon">📣</span>
-<span class="code">RÉSEAU DIGIY</span>
-<strong data-i18n="reseauName">Visibilité qualifiée</strong>
-<small data-i18n-html="reseauDesc">Abonnés R7/R15/R30 ou FIRST non-abonné.<br/>Présence qualifiée · Contact direct<br/>Tarif officiel affiché à l'étape suivante</small>
-<em data-i18n="reseauCta">Choisir le module RÉSEAU →</em>
-</a>
+
+<section class="section-head" aria-labelledby="modules-title">
+<h2 id="modules-title" data-i18n="modulesTitle">Choisir mon métier</h2>
+<p data-i18n="modulesText">Les modules ci-dessous appliquent la gamme DIGIY lorsqu’elle correspond au métier. Le tarif exact et les options sont confirmés avant toute activation.</p>
 </section>
-<footer class="footer" data-i18n="footer">DIGIYLYFE — Chaque pro trouve son module. Entrée gratuite, visibilité professionnelle payante, 0% commission. La France et la diaspora peuvent prendre en charge une présence pour un proche par Sendwave sur demande. NDIMBAL Annonces publie avec ticket durée. Le terrain garde la main. 🦅</footer>
+
+<section class="module-grid" id="modules-pro" aria-label="Choix des modules DIGIY">
+<a class="module-card" href="https://driver-client.digiylyfe.com/inscription-driver.html?v=general"><span class="icon">🚗</span><span class="module-code">DRIVER</span><strong data-i18n="driverName">Je conduis</strong><small data-i18n-html="driverDesc">Chauffeur, Jakarta, bus, taxi local, VTC.<br><b>Présence : 19 900 FCFA / mois</b><br>Outil chauffeur : +8 000 FCFA · PRO CARNET en option</small><em data-i18n="driverCta">Choisir DRIVER →</em></a>
+<a class="module-card" href="https://loc.digiylyfe.com/inscription-loc.html?v=general"><span class="icon">🏠</span><span class="module-code">LOC</span><strong data-i18n="locName">Je loue</strong><small data-i18n-html="locDesc">Logements, villas, chambres, locations courte durée.<br><b>Fiche, QR et contact direct</b><br>Outil de gestion disponible selon la formule logement</small><em data-i18n="locCta">Choisir LOC →</em></a>
+<a class="module-card" href="https://resa-table-resto.digiylyfe.com/inscription-resa.html?v=general"><span class="icon">📅</span><span class="module-code">RESA</span><strong data-i18n="resaName">Je prends des réservations</strong><small data-i18n-html="resaDesc">Tables, rendez-vous, salons, cabinets, garages et services.<br><b>Présence professionnelle + réservation</b><br>Tarif exact confirmé selon l’activité</small><em data-i18n="resaCta">Choisir RESA →</em></a>
+<a class="module-card" href="https://resto.digiylyfe.com/inscription.html"><span class="icon">🍽️</span><span class="module-code">MON RESTO</span><strong data-i18n="restoName">Mon restaurant</strong><small data-i18n-html="restoDesc">Menu, photos, fiche, QR, contact direct et réservations.<br><b>Socle DIGIY à partir de 19 900 FCFA / mois</b><br>Outil restaurant disponible selon la formule</small><em data-i18n="restoCta">Choisir MON RESTO →</em></a>
+<a class="module-card" href="https://digiy-carnet-pro.digiylyfe.com/inscription-pay.html?v=general"><span class="icon">📒</span><span class="module-code">PRO CARNET</span><strong data-i18n="payName">Mon carnet d’activité</strong><small data-i18n-html="payDesc">Encaissements, dépenses, réserves, preuves et dettes clients.<br><b>9A · 4 900 FCFA</b> · <b>9B · 9 900 FCFA</b> · <b>9C · 24 900 FCFA</b><br>Option séparée, ajoutée selon le besoin</small><em data-i18n="payCta">Voir PRO CARNET →</em></a>
+<a class="module-card" href="https://mon-commerce.digiylyfe.com/inscription-pos.html?v=general"><span class="icon">🧾</span><span class="module-code">MON COMMERCE</span><strong data-i18n="posName">Mon commerce</strong><small data-i18n-html="posDesc">Produits, tickets, stock, total et suivi de caisse.<br><b>Présence : 19 900 FCFA / mois</b><br>Outil commerce : +8 000 FCFA · PRO CARNET en option</small><em data-i18n="posCta">Choisir MON COMMERCE →</em></a>
+<a class="module-card" href="https://market.digiylyfe.com/inscription-market.html?v=general"><span class="icon">🛒</span><span class="module-code">MARKET</span><strong data-i18n="marketName">Je vends</strong><small data-i18n-html="marketDesc">Boutique, catalogue, produits, fiche partageable et contact direct.<br><b>Socle DIGIY à partir de 19 900 FCFA / mois</b><br>Outils et boosts choisis séparément</small><em data-i18n="marketCta">Choisir MARKET →</em></a>
+<a class="module-card" href="https://build.digiylyfe.com/inscription-build.html?v=general"><span class="icon">🧰</span><span class="module-code">BUILD</span><strong data-i18n="buildName">Mes services</strong><small data-i18n-html="buildDesc">Artisans tous corps de métier, devis et interventions.<br><b>Présence : 19 900 FCFA / mois</b><br>Outil artisan : +8 000 FCFA · PRO CARNET en option</small><em data-i18n="buildCta">Choisir BUILD →</em></a>
+<a class="module-card" href="https://jobs.digiylyfe.com/inscription-jobs.html?v=general"><span class="icon">💼</span><span class="module-code">JOBS</span><strong data-i18n="jobsName">Publier une mission</strong><small data-i18n-html="jobsDesc">Publier une offre, structurer une mission et recevoir des candidatures.<br><b>Offre particulière JOBS</b><br>Tarif officiel confirmé avant paiement</small><em data-i18n="jobsCta">Choisir JOBS →</em></a>
+<a class="module-card" href="https://jobs.digiylyfe.com/inscription-acces-recruteur.html"><span class="icon">👥</span><span class="module-code">RECRUTEUR</span><strong data-i18n="recruiterName">Accéder aux profils</strong><small data-i18n-html="recruiterDesc">Profils candidats qualifiés, consentis et préparés.<br><b>10 profils · 35 000 FCFA</b><br><b>25 profils · 75 000 FCFA</b> · <b>50 profils · 125 000 FCFA</b></small><em data-i18n="recruiterCta">Choisir un pack recruteur →</em></a>
+<a class="module-card" href="https://ndimbal-express.digiylyfe.com/inscription.html"><span class="icon">📣</span><span class="module-code">NDIMBAL</span><strong data-i18n="ndimbalName">Publier une annonce</strong><small data-i18n-html="ndimbalDesc">Véhicule, terrain, maison, logement, service ou recherche.<br>Consultation gratuite · ticket de publication<br><b>7 jours · 5 000</b> · <b>15 jours · 10 000</b> · <b>30 jours · 20 000 FCFA</b></small><em data-i18n="ndimbalCta">Publier avec NDIMBAL →</em></a>
+<a class="module-card" href="https://explore.digiylyfe.com/inscription-explore.html?v=code8"><span class="icon">🌍</span><span class="module-code">EXPLORE</span><strong data-i18n="exploreName">Me faire connaître</strong><small data-i18n-html="exploreDesc">Lieux, activités, guides et expériences locales.<br><b>Présence et visibilité selon la formule EXPLORE</b><br>Contact direct · boosts facultatifs</small><em data-i18n="exploreCta">Choisir EXPLORE →</em></a>
+<a class="module-card" href="https://reseau-digiy.digiylyfe.com/inscription.html?v=general"><span class="icon">📡</span><span class="module-code">RÉSEAU DIGIY</span><strong data-i18n="reseauName">Renforcer ma visibilité</strong><small data-i18n-html="reseauDesc">Packs R7, R15, R30 ou FIRST pour une présence qualifiée.<br><b>Boost séparé de l’abonnement métier</b><br>Aucune activation automatique</small><em data-i18n="reseauCta">Choisir RÉSEAU DIGIY →</em></a>
+</section>
+
+<footer class="footer" data-i18n="footer">DIGIYLYFE — Une présence claire, un outil métier choisi, un carnet ajouté seulement si nécessaire. 0% commission, contact direct et paiement direct au professionnel. Le terrain garde la main. 🦅</footer>
 </main>
 <script>
-    (function(){
-      "use strict";
-
-      const META = {
-        fr: {
-          title: "Tarifs & modules — DIGIYLYFE",
-          desc: "Tarifs et modules DIGIYLYFE : entrée gratuite, visibilité professionnelle payante, 0% commission, contact direct et paiement France/diaspora possible par Sendwave."
-        },
-        en: {
-          title: "Pricing & modules — DIGIYLYFE",
-          desc: "DIGIYLYFE pricing and modules: free entry, paid professional visibility, 0% commission and direct contact."
-        }
-      };
-
-      const T = {
-        fr: {
-          brand:"∞ DIGIYLYFE · Tarifs & modules",
-          site:"🌍 Site",
-          hub:"🧭 HUB",
-          heroTitle:"Tarifs & modules DIGIY",
-          heroText:"Choisis ton métier. L’entrée de base est gratuite. DIGIY ne prend aucune commission sur tes ventes : tu paies seulement si tu veux activer une présence professionnelle, un QR officiel, une mise en avant ou un outil métier.",
-          pillFixed:"Entrée gratuite · packs clairs",
-          pillModule:"Visibilité payante si activation",
-          pillDiaspora:"France & diaspora · Sendwave possible",
-          pillNdimbal:"Tickets NDIMBAL Annonces",
-          pillRecruiter:"Packs recruteurs JOBS",
-          pillZero:"0% commission",
-          pillDirect:"Contact direct",
-          diasporaTitle:"France & diaspora · activer une présence pour un proche",
-          diasporaText:"Vous êtes en France ou à l’étranger et vous voulez prendre en charge la présence DIGIYLYFE d’un parent, chauffeur, artisan, commerçant ou d’une activité familiale au Sénégal ? Paiement possible par Sendwave vers Wave Sénégal sur demande. La fiche reste au nom du professionnel local : contact direct, 0% commission, le pro garde la main.",
-          diasporaPill1:"Présence pour un proche",
-          diasporaPill2:"France → Sendwave Sénégal",
-          diasporaPill3:"Fiche au nom du pro local",
-          diasporaBtn:"🌍 Activer pour un proche",
-          diasporaHub:"⬇️ Voir les modules pro dessous",
-          diasporaNote:"Depuis la France ou la diaspora, le payeur peut prendre en charge la présence DIGIY. Le paiement peut se faire par Sendwave vers Wave Sénégal sur demande. Le professionnel local garde son métier, sa fiche, son contact et ses clients.",
-          valueCode:"ENTRÉE GRATUITE · VISIBILITÉ PAYANTE · 0% COMMISSION",
-          valueTitle:"Gratuit pour entrer. Payant pour briller. 0% commission pour rester libre.",
-          valueText:"DIGIYLYFE ne gagne pas sa vie en prenant un pourcentage sur ton travail. Tu peux entrer gratuitement, choisir ton métier et créer ton premier contact avec l’écosystème. Ensuite, si tu veux une vraie présence professionnelle, DIGIY active pour toi une fiche métier, un QR officiel, un lien partageable, le contact direct, la visibilité locale, un module pro ou une mise en avant.",
-          valuePoint1:"✅ Inscription de base gratuite",
-          valuePoint2:"🦅 Packs clairs pour être visible",
-          valuePoint3:"🤝 Paiement direct au professionnel",
-          valuePoint4:"🇫🇷 France / diaspora : paiement Sendwave possible",
-          valueQuote:"Les plateformes disent : “Inscris-toi gratuitement, puis nous prendrons sur tes ventes.” DIGIYLYFE dit : “Entre gratuitement, deviens visible clairement, et garde ton argent.”",
-
-          driverName:"Je conduis", driverDesc:"Chauffeur, Jakarta, bus, taxi-local, VTC.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante", driverCta:"Choisir le module DRIVER →",
-          locName:"Je loue", locDesc:"Logements, villas, chambres, locations courte durée.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante", locCta:"Choisir le module LOC →",
-          resaName:"Je réserve", resaDesc:"Rendez-vous, tables, salons, docteurs, garages, services.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante", resaCta:"Choisir le module RESA →",
-          restoName:"Mon resto", restoDesc:"Restaurant, menu, photos, présence digitale, contact direct.<br>Sans caisse · 0% commission<br><b>Tarif MON RESTO · 15 000 FCFA / mois · 26 €</b>", restoCta:"Choisir le module MON RESTO →",
-          payName:"Mon carnet d’activité", payDesc:"Encaissements, dépenses, réserves et preuves.<br>Accès sécurisé par PIN · 0% commission<br><b>9A Essentiel · 4 900 FCFA / mois · 9 €</b><br><b>9B Pro · 9 900 FCFA / mois · 19 €</b><br><b>9C Business · 24 900 FCFA / mois · 39 €</b>", payCta:"Voir les formules PRO CARNET →",
-          posName:"Ma caisse", posDesc:"Caisse mobile, produits, tickets, stock, total.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante", posCta:"Choisir le module MON COMMERCE →",
-          marketName:"Je vends", marketDesc:"Boutiques, produits, catalogue, contact direct.<br>0% commission · Fiche partageable<br>Tarif officiel affiché à l'étape suivante", marketCta:"Choisir le module MARKET →",
-          buildName:"Mes services", buildDesc:"Artisans tout corps de métiers, devis, interventions.<br>0% commission · Contact direct<br>Tarif officiel affiché à l'étape suivante", buildCta:"Choisir le module BUILD →",
-          jobsName:"Publier une mission", jobsDesc:"Inscription PRO JOBS : publier une offre, structurer une mission, recevoir des candidatures.<br>Contact direct · 0% commission<br><b>Tarif officiel affiché avant paiement</b>", jobsCta:"Inscrire une mission JOBS →",
-          recruiterName:"Packs recruteurs", recruiterDesc:"Accès encadré à des profils candidats qualifiés, consentis et préparés.<br><b>Pack Découverte · 10 profils · 35 000 FCFA</b><br><b>Pack Recruteur · 25 profils · 75 000 FCFA</b><br><b>Pack Entreprise · 50 profils · 125 000 FCFA</b>", recruiterCta:"Choisir un pack recruteur →",
-          ndimbalName:"Publier une annonce", ndimbalDesc:"Vente voiture, terrain, maison, vélo, studio, appartement, service ou recherche.<br>Voir les annonces : gratuit · Publier avec ticket durée<br><b>1 semaine · 5 000 FCFA</b><br><b>15 jours · 10 000 FCFA</b><br><b>1 mois · 20 000 FCFA</b>", ndimbalCta:"Publier une annonce NDIMBAL →",
-          exploreName:"Me faire connaître", exploreDesc:"Lieux, activités, guides, expériences locales.<br>CODE 8 · Contact direct<br>Tarif officiel affiché à l'étape suivante", exploreCta:"Choisir le module EXPLORE →",
-          reseauName:"Visibilité qualifiée", reseauDesc:"Abonnés R7/R15/R30 ou FIRST non-abonné.<br>Présence qualifiée · Contact direct<br>Tarif officiel affiché à l'étape suivante", reseauCta:"Choisir le module RÉSEAU →",
-          footer:"DIGIYLYFE — Chaque pro trouve son module. Entrée gratuite, visibilité professionnelle payante, 0% commission. La France et la diaspora peuvent prendre en charge une présence pour un proche par Sendwave sur demande. NDIMBAL Annonces publie avec ticket durée. Le terrain garde la main. 🦅"
-        },
-
-        en: {
-          brand:"∞ DIGIYLYFE · Pricing & modules",
-          site:"🌍 Website",
-          hub:"🧭 HUB",
-          heroTitle:"DIGIY pricing & modules",
-          heroText:"Choose your activity. Basic entry is free. DIGIY takes no commission on your sales: you only pay when you want to activate a professional presence, an official QR, a featured boost or a business tool.",
-          pillFixed:"Free entry · clear packs",
-          pillModule:"Paid visibility when activated",
-          pillDiaspora:"France & diaspora · Sendwave possible",
-          pillNdimbal:"NDIMBAL Announcements tickets",
-          pillRecruiter:"JOBS recruiter packs",
-          pillZero:"0% commission",
-          pillDirect:"Direct contact",
-          diasporaTitle:"France & diaspora · activate a presence for someone close",
-          diasporaText:"You live in France or abroad and want to support the DIGIYLYFE presence of a parent, driver, artisan, shop owner or family activity in Senegal? Payment can be made by Sendwave to Wave Senegal on request. The page stays under the local professional’s name: direct contact, 0% commission, the pro keeps control.",
-          diasporaPill1:"Presence for someone close",
-          diasporaPill2:"France → Sendwave Senegal",
-          diasporaPill3:"Page under the local pro’s name",
-          diasporaBtn:"🌍 Activate for someone close",
-          diasporaHub:"⬇️ See pro modules below",
-          diasporaNote:"From France or the diaspora, the payer can support the DIGIY presence. Payment can be made by Sendwave to Wave Senegal on request. The local professional keeps the activity, page, contact and clients.",
-          valueCode:"FREE ENTRY · PAID VISIBILITY · 0% COMMISSION",
-          valueTitle:"Free to enter. Paid to shine. 0% commission to stay free.",
-          valueText:"DIGIYLYFE does not live by taking a percentage from your work. You can enter for free, choose your activity and create your first contact with the ecosystem. Then, when you want a real professional presence, DIGIY activates a business page, an official QR, a shareable link, direct contact, local visibility, a pro module or a featured boost.",
-          valuePoint1:"✅ Free basic registration",
-          valuePoint2:"🦅 Clear packs to be visible",
-          valuePoint3:"🤝 Direct payment to the professional",
-          valuePoint4:"🇫🇷 France / diaspora: Sendwave payment possible",
-          valueQuote:"Platforms say: “Sign up for free, then we will take from your sales.” DIGIYLYFE says: “Enter for free, become clearly visible, and keep your money.”",
-
-          driverName:"I drive", driverDesc:"Driver, Jakarta, bus, local taxi, VTC.<br>0% commission · Direct contact<br>Official price shown at the next step", driverCta:"Choose DRIVER module →",
-          locName:"I rent", locDesc:"Homes, villas, rooms, short-term rentals.<br>0% commission · Direct contact<br>Official price shown at the next step", locCta:"Choose LOC module →",
-          resaName:"I take bookings", resaDesc:"Appointments, tables, salons, doctors, garages, services.<br>0% commission · Direct contact<br>Official price shown at the next step", resaCta:"Choose RESA module →",
-          restoName:"My restaurant", restoDesc:"Restaurant, menu, photos, digital presence, direct contact.<br>No cash register · 0% commission<br><b>MON RESTO price · 15,000 FCFA / month · €26</b>", restoCta:"Choose MON RESTO module →",
-          payName:"My activity notebook", payDesc:"Income, expenses, reserves and evidence.<br>Secure PIN access · 0% commission<br><b>9A Essential · 4,900 FCFA / month · €9</b><br><b>9B Pro · 9,900 FCFA / month · €19</b><br><b>9C Business · 24,900 FCFA / month · €39</b>", payCta:"See PRO CARNET plans →",
-          posName:"My checkout", posDesc:"Mobile checkout, products, receipts, stock, total.<br>0% commission · Direct contact<br>Official price shown at the next step", posCta:"Choose MON COMMERCE module →",
-          marketName:"I sell", marketDesc:"Shops, products, catalogue, direct contact.<br>0% commission · Shareable page<br>Official price shown at the next step", marketCta:"Choose MARKET module →",
-          buildName:"My services", buildDesc:"All-trades artisans, quotes, interventions.<br>0% commission · Direct contact<br>Official price shown at the next step", buildCta:"Choose BUILD module →",
-          jobsName:"Publish a mission", jobsDesc:"PRO JOBS registration: publish an offer, structure a mission and receive applications.<br>Direct contact · 0% commission<br><b>Official price shown before payment</b>", jobsCta:"Register a JOBS mission →",
-          recruiterName:"Recruiter packs", recruiterDesc:"Controlled access to qualified, consenting and prepared candidate profiles.<br><b>Discovery pack · 10 profiles · 35,000 FCFA</b><br><b>Recruiter pack · 25 profiles · 75,000 FCFA</b><br><b>Enterprise pack · 50 profiles · 125,000 FCFA</b>", recruiterCta:"Choose a recruiter pack →",
-          ndimbalName:"Publish an announcement", ndimbalDesc:"Car, land, house, bicycle, studio, apartment, service or request.<br>Viewing is free · Publish with a duration ticket<br><b>1 week · 5,000 FCFA</b><br><b>15 days · 10,000 FCFA</b><br><b>1 month · 20,000 FCFA</b>", ndimbalCta:"Publish a NDIMBAL announcement →",
-          exploreName:"Make myself known", exploreDesc:"Places, activities, guides, local experiences.<br>CODE 8 · Direct contact<br>Official price shown at the next step", exploreCta:"Choose EXPLORE module →",
-          reseauName:"Qualified visibility", reseauDesc:"R7/R15/R30 subscribers or FIRST non-subscriber.<br>Qualified presence · Direct contact<br>Official price shown at the next step", reseauCta:"Choose RÉSEAU module →",
-          footer:"DIGIYLYFE — Each pro finds the right module. Free entry, paid professional visibility, 0% commission. France and the diaspora can support a presence for someone close by Sendwave on request. NDIMBAL Announcements publishes with duration tickets. The field keeps control. 🦅"
-        }
-      };
-
-      function setText(selector, value){
-        const el = document.querySelector(selector);
-        if(el) el.textContent = value;
-      }
-
-      function applyLang(lang){
-        const dict = T[lang] || T.fr;
-        document.documentElement.lang = lang === "en" ? "en" : "fr";
-        document.title = META[lang].title;
-        const meta = document.querySelector('meta[name="description"]');
-        if(meta) meta.setAttribute("content", META[lang].desc);
-
-        document.querySelectorAll("[data-i18n]").forEach(el => {
-          const key = el.getAttribute("data-i18n");
-          if(dict[key] !== undefined) el.textContent = dict[key];
-        });
-
-        document.querySelectorAll("[data-i18n-html]").forEach(el => {
-          const key = el.getAttribute("data-i18n-html");
-          if(dict[key] !== undefined) el.innerHTML = dict[key];
-        });
-
-        document.getElementById("langFr").classList.toggle("active", lang === "fr");
-        document.getElementById("langEn").classList.toggle("active", lang === "en");
-      }
-
-      window.digiySetLang = applyLang;
-      document.getElementById("langFr").addEventListener("click", () => applyLang("fr"));
-      document.getElementById("langEn").addEventListener("click", () => applyLang("en"));
-      applyLang("fr");
-    })();
-  </script>
-<!-- 🎧 DIGIY ACCUEIL — bouton flottant de bienvenue -->
-<script data-module="DIGIY" defer="" src="https://digiy-accueil.digiylyfe.com/assets/js/digiy-welcome-floating.js">
+(function(){
+  "use strict";
+  const T = {"fr":{"brand":"∞ DIGIYLYFE · Offres & modules","site":"🌍 Site","hub":"🧭 HUB","heroEyebrow":"UNE PRÉSENCE · UN OUTIL MÉTIER · UN CARNET SI NÉCESSAIRE","heroTitle":"Chaque professionnel choisit sa puissance.","heroText":"Découvrir DIGIYLYFE et choisir son métier est libre. L’abonnement commence lorsque le professionnel active sa présence : sa fiche personnalisée, son QR officiel, son lien partageable et son contact direct. Il ajoute ensuite seulement les outils dont son activité a réellement besoin.","pillPresence":"Fiche + QR · 19 900 FCFA / mois","pillBusiness":"Logiciel métier · +8 000 FCFA / mois","pillCarnet":"PRO CARNET · en option","pillZero":"0% commission","pillDirect":"Paiement direct au pro","ladderCode":"LA GAMME DIGIY · SIMPLE ET MODULAIRE","ladderTitle":"Commencer proprement. Monter quand l’activité le demande.","ladderText":"Le socle donne au professionnel une identité numérique qu’il peut partager partout. L’outil métier organise son travail. PRO CARNET structure ses mouvements d’argent. Aucun module supplémentaire n’est imposé.","presenceLabel":"1 · SOCLE","presenceTitle":"DIGIY PRÉSENCE","presencePrice":"19 900 FCFA / mois","presenceDesc":"La fiche professionnelle personnalisée, le QR officiel, le lien partageable, le contact direct, la présence dans l’écosystème DIGIY et la maintenance essentielle.","presenceNote":"Pour celui qui veut être visible, joignable et indépendant.","businessLabel":"2 · OPTION MÉTIER","businessTitle":"DIGIY MÉTIER","businessPrice":"+8 000 FCFA / mois","businessDesc":"Le logiciel adapté au métier : planning, réservations, clients, interventions, produits, stock ou suivi opérationnel selon le module choisi.","businessNote":"Total standard Présence + Métier : 27 900 FCFA / mois.","carnetLabel":"3 · OPTION PILOTAGE","carnetTitle":"PRO CARNET","carnetPrice":"À partir de +4 900 FCFA / mois","carnetDesc":"Un carnet d’activité séparé, ajouté seulement lorsque le professionnel veut suivre plus précisément son argent et ses preuves.","carnet9a":"9A Essentiel · +4 900 FCFA · encaissements, dépenses, réserve simple","carnet9b":"9B Pro · +9 900 FCFA · preuves, dettes clients, suivi renforcé","carnet9c":"9C Business · +24 900 FCFA · lecture renforcée pour activité dense","ladderQuote":"Je commence avec ma présence. J’ajoute mon outil métier quand j’en ai l’usage. Je prends PRO CARNET quand mon activité demande davantage de maîtrise.","specialTitle":"Des offres particulières restent séparées","specialText":"JOBS, packs recruteurs, NDIMBAL Annonces, RÉSEAU DIGIY et certains services spécialisés conservent leurs propres tarifs. Ils ne sont pas ajoutés automatiquement à l’abonnement d’un professionnel.","diasporaTitle":"France & diaspora · activer une présence pour un proche","diasporaText":"Vous êtes en France ou à l’étranger et vous voulez prendre en charge la présence DIGIYLYFE d’un parent, chauffeur, artisan, commerçant ou d’une activité familiale au Sénégal ? Le paiement peut être organisé par Sendwave vers Wave Sénégal sur demande. La fiche reste au nom du professionnel local : il garde son contact, son métier et ses clients.","diasporaPill1":"Présence au nom du pro local","diasporaPill2":"France → Sendwave → Sénégal","diasporaPill3":"0% commission","diasporaBtn":"🌍 Activer pour un proche","diasporaHub":"⬇️ Choisir un métier","diasporaNote":"Le proche peut financer l’outil. Le professionnel local conserve la main sur son activité.","modulesTitle":"Choisir mon métier","modulesText":"Les modules ci-dessous appliquent la gamme DIGIY lorsqu’elle correspond au métier. Le tarif exact et les options sont confirmés avant toute activation.","driverName":"Je conduis","driverDesc":"Chauffeur, Jakarta, bus, taxi local, VTC.<br><b>Présence : 19 900 FCFA / mois</b><br>Outil chauffeur : +8 000 FCFA · PRO CARNET en option","driverCta":"Choisir DRIVER →","locName":"Je loue","locDesc":"Logements, villas, chambres, locations courte durée.<br><b>Fiche, QR et contact direct</b><br>Outil de gestion disponible selon la formule logement","locCta":"Choisir LOC →","resaName":"Je prends des réservations","resaDesc":"Tables, rendez-vous, salons, cabinets, garages et services.<br><b>Présence professionnelle + réservation</b><br>Tarif exact confirmé selon l’activité","resaCta":"Choisir RESA →","restoName":"Mon restaurant","restoDesc":"Menu, photos, fiche, QR, contact direct et réservations.<br><b>Socle DIGIY à partir de 19 900 FCFA / mois</b><br>Outil restaurant disponible selon la formule","restoCta":"Choisir MON RESTO →","payName":"Mon carnet d’activité","payDesc":"Encaissements, dépenses, réserves, preuves et dettes clients.<br><b>9A · 4 900 FCFA</b> · <b>9B · 9 900 FCFA</b> · <b>9C · 24 900 FCFA</b><br>Option séparée, ajoutée selon le besoin","payCta":"Voir PRO CARNET →","posName":"Mon commerce","posDesc":"Produits, tickets, stock, total et suivi de caisse.<br><b>Présence : 19 900 FCFA / mois</b><br>Outil commerce : +8 000 FCFA · PRO CARNET en option","posCta":"Choisir MON COMMERCE →","marketName":"Je vends","marketDesc":"Boutique, catalogue, produits, fiche partageable et contact direct.<br><b>Socle DIGIY à partir de 19 900 FCFA / mois</b><br>Outils et boosts choisis séparément","marketCta":"Choisir MARKET →","buildName":"Mes services","buildDesc":"Artisans tous corps de métier, devis et interventions.<br><b>Présence : 19 900 FCFA / mois</b><br>Outil artisan : +8 000 FCFA · PRO CARNET en option","buildCta":"Choisir BUILD →","jobsName":"Publier une mission","jobsDesc":"Publier une offre, structurer une mission et recevoir des candidatures.<br><b>Offre particulière JOBS</b><br>Tarif officiel confirmé avant paiement","jobsCta":"Choisir JOBS →","recruiterName":"Accéder aux profils","recruiterDesc":"Profils candidats qualifiés, consentis et préparés.<br><b>10 profils · 35 000 FCFA</b><br><b>25 profils · 75 000 FCFA</b> · <b>50 profils · 125 000 FCFA</b>","recruiterCta":"Choisir un pack recruteur →","ndimbalName":"Publier une annonce","ndimbalDesc":"Véhicule, terrain, maison, logement, service ou recherche.<br>Consultation gratuite · ticket de publication<br><b>7 jours · 5 000</b> · <b>15 jours · 10 000</b> · <b>30 jours · 20 000 FCFA</b>","ndimbalCta":"Publier avec NDIMBAL →","exploreName":"Me faire connaître","exploreDesc":"Lieux, activités, guides et expériences locales.<br><b>Présence et visibilité selon la formule EXPLORE</b><br>Contact direct · boosts facultatifs","exploreCta":"Choisir EXPLORE →","reseauName":"Renforcer ma visibilité","reseauDesc":"Packs R7, R15, R30 ou FIRST pour une présence qualifiée.<br><b>Boost séparé de l’abonnement métier</b><br>Aucune activation automatique","reseauCta":"Choisir RÉSEAU DIGIY →","footer":"DIGIYLYFE — Une présence claire, un outil métier choisi, un carnet ajouté seulement si nécessaire. 0% commission, contact direct et paiement direct au professionnel. Le terrain garde la main. 🦅"},"en":{"brand":"∞ DIGIYLYFE · Offers & modules","site":"🌍 Website","hub":"🧭 HUB","heroEyebrow":"ONE PRESENCE · ONE BUSINESS TOOL · ONE CARNET WHEN NEEDED","heroTitle":"Every professional chooses their power.","heroText":"Exploring DIGIYLYFE and choosing an activity is free. The subscription starts when the professional activates a presence: a personalised page, an official QR, a shareable link and direct contact. They then add only the tools their activity truly needs.","pillPresence":"Page + QR · 19,900 FCFA / month","pillBusiness":"Business software · +8,000 FCFA / month","pillCarnet":"PRO CARNET · optional","pillZero":"0% commission","pillDirect":"Direct payment to the pro","ladderCode":"THE DIGIY RANGE · SIMPLE AND MODULAR","ladderTitle":"Start properly. Grow when the activity requires it.","ladderText":"The foundation gives the professional a digital identity they can share everywhere. The business tool organises their work. PRO CARNET structures their money movements. No extra module is imposed.","presenceLabel":"1 · FOUNDATION","presenceTitle":"DIGIY PRESENCE","presencePrice":"19,900 FCFA / month","presenceDesc":"A personalised professional page, official QR, shareable link, direct contact, presence in the DIGIY ecosystem and essential maintenance.","presenceNote":"For professionals who want visibility, direct contact and independence.","businessLabel":"2 · BUSINESS OPTION","businessTitle":"DIGIY BUSINESS","businessPrice":"+8,000 FCFA / month","businessDesc":"Software adapted to the activity: scheduling, bookings, clients, jobs, products, stock or operational tracking depending on the chosen module.","businessNote":"Standard Presence + Business total: 27,900 FCFA / month.","carnetLabel":"3 · MANAGEMENT OPTION","carnetTitle":"PRO CARNET","carnetPrice":"From +4,900 FCFA / month","carnetDesc":"A separate activity notebook, added only when the professional wants more detailed tracking of money and evidence.","carnet9a":"9A Essential · +4,900 FCFA · income, expenses and simple reserve","carnet9b":"9B Pro · +9,900 FCFA · evidence, customer debts and stronger tracking","carnet9c":"9C Business · +24,900 FCFA · enhanced reading for dense activity","ladderQuote":"I start with my presence. I add my business tool when I need it. I take PRO CARNET when my activity requires greater control.","specialTitle":"Some offers remain separate","specialText":"JOBS, recruiter packs, NDIMBAL Announcements, RÉSEAU DIGIY and certain specialised services keep their own pricing. They are never added automatically to a professional subscription.","diasporaTitle":"France & diaspora · activate a presence for someone close","diasporaText":"You live in France or abroad and want to support the DIGIYLYFE presence of a relative, driver, artisan, shop owner or family activity in Senegal? Payment can be arranged by Sendwave to Wave Senegal on request. The page remains in the local professional's name: they keep their contact, activity and clients.","diasporaPill1":"Presence in the local pro's name","diasporaPill2":"France → Sendwave → Senegal","diasporaPill3":"0% commission","diasporaBtn":"🌍 Activate for someone close","diasporaHub":"⬇️ Choose an activity","diasporaNote":"The relative can fund the tool. The local professional remains in control of the activity.","modulesTitle":"Choose my activity","modulesText":"The modules below apply the DIGIY range when it fits the activity. The exact price and options are confirmed before any activation.","driverName":"I drive","driverDesc":"Driver, Jakarta, bus, local taxi, VTC.<br><b>Presence: 19,900 FCFA / month</b><br>Driver tool: +8,000 FCFA · PRO CARNET optional","driverCta":"Choose DRIVER →","locName":"I rent","locDesc":"Homes, villas, rooms and short-term rentals.<br><b>Page, QR and direct contact</b><br>Management tool available according to the accommodation plan","locCta":"Choose LOC →","resaName":"I take bookings","resaDesc":"Tables, appointments, salons, practices, garages and services.<br><b>Professional presence + bookings</b><br>Exact price confirmed according to the activity","resaCta":"Choose RESA →","restoName":"My restaurant","restoDesc":"Menu, photos, page, QR, direct contact and bookings.<br><b>DIGIY foundation from 19,900 FCFA / month</b><br>Restaurant tool available according to the plan","restoCta":"Choose MY RESTAURANT →","payName":"My activity notebook","payDesc":"Income, expenses, reserves, evidence and customer debts.<br><b>9A · 4,900 FCFA</b> · <b>9B · 9,900 FCFA</b> · <b>9C · 24,900 FCFA</b><br>Separate option, added when needed","payCta":"See PRO CARNET →","posName":"My shop","posDesc":"Products, receipts, stock, totals and checkout tracking.<br><b>Presence: 19,900 FCFA / month</b><br>Shop tool: +8,000 FCFA · PRO CARNET optional","posCta":"Choose MY SHOP →","marketName":"I sell","marketDesc":"Shop, catalogue, products, shareable page and direct contact.<br><b>DIGIY foundation from 19,900 FCFA / month</b><br>Tools and boosts selected separately","marketCta":"Choose MARKET →","buildName":"My services","buildDesc":"All-trades artisans, quotes and jobs.<br><b>Presence: 19,900 FCFA / month</b><br>Artisan tool: +8,000 FCFA · PRO CARNET optional","buildCta":"Choose BUILD →","jobsName":"Publish a mission","jobsDesc":"Publish an offer, structure a mission and receive applications.<br><b>Separate JOBS offer</b><br>Official price confirmed before payment","jobsCta":"Choose JOBS →","recruiterName":"Access profiles","recruiterDesc":"Qualified, consenting and prepared candidate profiles.<br><b>10 profiles · 35,000 FCFA</b><br><b>25 profiles · 75,000 FCFA</b> · <b>50 profiles · 125,000 FCFA</b>","recruiterCta":"Choose a recruiter pack →","ndimbalName":"Publish an announcement","ndimbalDesc":"Vehicle, land, home, accommodation, service or request.<br>Free viewing · publication ticket<br><b>7 days · 5,000</b> · <b>15 days · 10,000</b> · <b>30 days · 20,000 FCFA</b>","ndimbalCta":"Publish with NDIMBAL →","exploreName":"Make myself known","exploreDesc":"Places, activities, guides and local experiences.<br><b>Presence and visibility according to the EXPLORE plan</b><br>Direct contact · optional boosts","exploreCta":"Choose EXPLORE →","reseauName":"Strengthen my visibility","reseauDesc":"R7, R15, R30 or FIRST packs for qualified presence.<br><b>Boost separate from the business subscription</b><br>No automatic activation","reseauCta":"Choose DIGIY NETWORK →","footer":"DIGIYLYFE — A clear presence, a chosen business tool and a carnet added only when needed. 0% commission, direct contact and direct payment to the professional. The field stays in control. 🦅"}};
+  const META = {
+    fr:{title:"Offres, tarifs & modules — DIGIYLYFE",desc:"DIGIYLYFE : présence professionnelle avec fiche et QR à 19 900 FCFA par mois, logiciel métier en option à 8 000 FCFA, PRO CARNET en option et 0% commission."},
+    en:{title:"Offers, pricing & modules — DIGIYLYFE",desc:"DIGIYLYFE: professional presence with page and QR at 19,900 FCFA per month, optional business software at 8,000 FCFA, optional PRO CARNET and 0% commission."}
+  };
+  function normaliseLang(value){return value === "en" ? "en" : "fr";}
+  function applyLang(value){
+    const lang=normaliseLang(value);const dict=T[lang];
+    document.documentElement.lang=lang;
+    document.title=META[lang].title;
+    const meta=document.querySelector('meta[name="description"]');if(meta)meta.content=META[lang].desc;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){const key=el.dataset.i18n;if(Object.prototype.hasOwnProperty.call(dict,key))el.textContent=dict[key];});
+    document.querySelectorAll("[data-i18n-html]").forEach(function(el){const key=el.dataset.i18nHtml;if(Object.prototype.hasOwnProperty.call(dict,key))el.innerHTML=dict[key];});
+    const frBtn=document.getElementById("langFr");const enBtn=document.getElementById("langEn");
+    frBtn.classList.toggle("active",lang==="fr");enBtn.classList.toggle("active",lang==="en");
+    frBtn.setAttribute("aria-pressed",String(lang==="fr"));enBtn.setAttribute("aria-pressed",String(lang==="en"));
+    try{localStorage.setItem("digiy_lang",lang);}catch(_error){}
+  }
+  function initialLang(){
+    const query=new URLSearchParams(location.search).get("lang");if(query==="fr"||query==="en")return query;
+    try{const saved=localStorage.getItem("digiy_lang");if(saved==="fr"||saved==="en")return saved;}catch(_error){}
+    return "fr";
+  }
+  document.getElementById("langFr").addEventListener("click",function(){applyLang("fr");});
+  document.getElementById("langEn").addEventListener("click",function(){applyLang("en");});
+  window.digiySetLang=applyLang;
+  applyLang(initialLang());
+})();
 </script>
+<script data-module="DIGIY" defer src="https://digiy-accueil.digiylyfe.com/assets/js/digiy-welcome-floating.js"></script>
 </body>
 </html>
 
